@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Olio란 무엇인가요?
+올리오는 소프트웨어마이스터고등학교에서 학생들의 포트폴리오를 책 형식으로 만드는 '드림북'을 대체하기 위한 웹&앱 서비스입니다
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 어떤 기능을 제공하나요?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 포트폴리오
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- 포트폴리오 작성
+- 포트폴리오 열람
+- 포트폴리오 수정
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 프로젝트
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 프로젝트 소개 페이지 작성
+- 프로젝트 소개 페이지 열람
+- 프로젝트 소개 페이지 수정
 
-## Learn More
+### 유저
 
-To learn more about Next.js, take a look at the following resources:
+- 로그인&회원가입
+- 아이디&비밀번호 찾기
+- 유저 프로필 작성
+- 유저 프로필 열람
+- 유저 프로필 삭제
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 검색
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 포트폴리오 검색
+- 프로젝트 검색
+- 유저 검색
+
+
+## Front-End 개발 참여인원
+- 이대훈 https://github.com/dann1y
+- 안채웅 https://github.com/dkscodnd
+- 김아련 https://github.com/Kimaryean
+- 이서린 https://github.com/iseolin76
+- 노연주 https://github.com/yjnoh1016
+
 
 ## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://olio-client.vercel.app/
