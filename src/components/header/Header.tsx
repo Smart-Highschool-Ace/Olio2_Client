@@ -2,7 +2,7 @@ import React from "react";
 import { Logo } from "src/assets";
 import * as S from "./Style";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <S.Positioner>
       <S.ContentWrapper>
