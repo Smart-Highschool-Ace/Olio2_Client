@@ -1,10 +1,18 @@
 import React from "react";
+import { Logo } from "src/assets";
 import * as S from "./Style";
 
 const Header = () => {
   return (
     <S.Positioner>
-      <S.ContentWrapper>헤더</S.ContentWrapper>
+      <S.ContentWrapper>
+        <S.Logo>
+          <Logo height={47} />
+        </S.Logo>
+        <S.AuthWrapper>
+          <div>로그인</div>
+        </S.AuthWrapper>
+      </S.ContentWrapper>
     </S.Positioner>
   );
 };

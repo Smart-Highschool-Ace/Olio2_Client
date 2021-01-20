@@ -1,10 +1,15 @@
 import * as React from "react";
 
-const Logo = () => {
+type LogoProps = {
+  width: number;
+  height: number;
+};
+
+const Logo = ({ width, height }: LogoProps) => {
   return (
     <svg
-      width={105}
-      height={55}
+      width={width}
+      height={height}
       viewBox="0 0 105 55"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +37,11 @@ const Logo = () => {
       </defs>
     </svg>
   );
+};
+
+Logo.defaultProps = {
+  width: 105,
+  height: 55,
 };
 
 export default Logo;
