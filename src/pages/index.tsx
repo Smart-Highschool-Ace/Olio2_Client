@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "src/components";
+import { Header } from "components";
 
 const index = () => {
   return (
