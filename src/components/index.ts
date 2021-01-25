@@ -1,4 +1,2 @@
-import Header from "./header/Header";
-import ProjectModal from "./project/ProjectModal";
-
-export { Header, ProjectModal };
+export { default as ProjectModal } from "./project/ProjectModal";
+export { default as Header } from "./header/Header";
