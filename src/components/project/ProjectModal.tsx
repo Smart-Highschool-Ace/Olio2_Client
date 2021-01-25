@@ -15,15 +15,17 @@ const ProjectModal: React.FC<ProjectModalProps> = (
           <S.ModalInner>
             <S.ModalTop>
               <div>
-                {/* <ProjectLogo /> */}
+                <S.ModalLogo>
+                  <ProjectLogo />
+                </S.ModalLogo>
                 <span id="modalH2">취준진담</span>
                 <button id="red">삭제</button>
                 <button>수정</button>
               </div>
-              <div>
+              <S.ModalToExplanation>
                 <span>3개교 마이스터고등학교 커뮤니티 앱 서비스</span>
                 <span>2020.11.23 ~ 2020.11.25</span>
-              </div>
+              </S.ModalToExplanation>
               <hr />
             </S.ModalTop>
             <S.ModalBox>
@@ -36,7 +38,9 @@ const ProjectModal: React.FC<ProjectModalProps> = (
                   <button>#koa.js</button>
                   <button>#NextJS</button>
                 </S.ButtonBox>
-                <div className="modalImg" />
+                <div className="modalImg">
+                  <ProjectImg />
+                </div>
                 <S.participants>
                   <div>참여자</div>
                   <div>

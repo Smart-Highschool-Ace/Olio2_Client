@@ -1,13 +1,8 @@
 import styled from "@emotion/styled";
 import ProjectModalProps from "./ProjectModal";
-import { ProjectImg } from "../../assets/index";
 
 interface ProjectModalProps {
   visible: boolean;
-}
-
-interface ProjectImg {
-  img: string;
 }
 
 export const ModalOverlay = styled.div<ProjectModalProps>`
@@ -57,9 +52,9 @@ export const ModalTop = styled.div`
   button {
     float: right;
     border: solid 0px;
-    background-color: #fff;
     outline: 0;
     font-size: 15px;
+    cursor: pointer;
   }
   #red {
     color: #cd6152;
@@ -67,15 +62,26 @@ export const ModalTop = styled.div`
   #modalH2 {
     font-size: 40px;
     font-weight: 700;
+    padding-left: 15px;
     color: black;
   }
-  & :nth-of-type(2) {
-    /* font-size: 18px; */
-    color: #737373;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 17px;
+`;
+
+export const ModalToExplanation = styled.div`
+  font-size: 18px;
+  color: #737373;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+  & :last-child {
+    font-size: 16px;
   }
+`;
+
+export const ModalLogo = styled.div`
+  display: inline-block;
+  position: relative;
+  top: 13px;
 `;
 
 export const ModalBox = styled.div`
@@ -92,12 +98,7 @@ export const ModalLeftBox = styled.div`
   .modalImg {
     width: 100%;
     height: 65%;
-    background-color: black;
-    display: block;
     border-radius: 10px;
-  }
-  & :nth-of-type(2) {
-    color: ff;
   }
 `;
 
