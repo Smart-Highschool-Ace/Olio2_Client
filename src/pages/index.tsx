@@ -1,16 +1,8 @@
 import React from "react";
-import { Header } from "components";
-import StartPage1 from "components/StartPage1/StartPage1";
-import StartPage2 from "components/StartPage2/StartPage2";
-import StartPage3 from "components/StartPage3/StartPage3";
 
-const index = () => {
+const index: React.FC = () => {
   return (
     <div>
-      <Header/>
-      <StartPage1/>
-      <StartPage2/>
-      <StartPage3/>
     </div>
   );
 };
