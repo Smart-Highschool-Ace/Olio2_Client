@@ -1,40 +1,34 @@
-import React from "react";
+import { Facebook, Github, Instagram, Logo } from 'assets';
+import React from 'react';
 import * as S from "./Style";
-import { Logo } from "assets";
-import { Instagram } from "assets";
-import { Facebook } from "assets";
-import { Github } from "assets";
-import { Footer_GSM_SHA } from "assets";
 
-
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
-        <S.FooterWrapper>
-            <S.ContentWrapper>
-                <S.Logo>
-                    <Logo width={148} height={78} />
-                </S.Logo>
-                <S.SHA>
-                    <Footer_GSM_SHA/>
-                </S.SHA>
-                <S.Line/>
-                <S.Copyright>
-                    Copyright © OLIO
-                </S.Copyright>
-                <S.SNSWrapper>
-                    <S.Instagram>
-                        <Instagram/>
-                    </S.Instagram>
-                    <S.Facebook>
-                        <Facebook/>
-                    </S.Facebook>
-                    <S.Github>
-                        <Github/>
-                    </S.Github> 
-                </S.SNSWrapper>  
-            </S.ContentWrapper>
-        </S.FooterWrapper>
+        <S.Positioner>
+            <S.Logo>
+                <Logo width={148} height={78} />
+            </S.Logo>
+            <S.SNSWrapper>
+                <S.Instagram>
+                    <Instagram/>
+                </S.Instagram>
+                <S.Facebook>
+                    <Facebook/>
+                </S.Facebook>
+                <S.Github>
+                    <Github/>
+                </S.Github>
+            </S.SNSWrapper>
+            <S.GSMSHA>
+                광주소프트웨어마이스터고등학교<br/>
+                <S.SHA><S.Capital>S</S.Capital>mart <S.Capital>H</S.Capital>ighschool <S.Capital>A</S.Capital>ce</S.SHA> 
+            </S.GSMSHA>
+            <S.Line/>
+            <S.Copyright>
+                Copyright © OLIO
+            </S.Copyright>
+        </S.Positioner>
     );
-}
+};
 
 export default Footer;
