@@ -6,3 +6,6 @@ export { default as SS } from "./svg/SS";
 export { default as StartImg } from "./svg/StartImg";
 export { default as TS } from "./svg/TS";
 export { default as WS } from "./svg/WS";
+export { default as Facebook } from "./svg/Facebook";
+export { default as Github } from "./svg/Github";
+export { default as Instagram } from "./svg/Instagram";
