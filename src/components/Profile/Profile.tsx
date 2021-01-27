@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./Style";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   return (
     <S.Positioner>
       <S.ProfileContentWrapper>내 프로필</S.ProfileContentWrapper>
