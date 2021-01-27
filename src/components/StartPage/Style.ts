@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import StartBackground from 'assets/svg/StartBackground';
 
 export const Positioner = styled.div `
     background: url(/StartBackground.svg);
