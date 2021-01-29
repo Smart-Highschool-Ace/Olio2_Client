@@ -5,6 +5,6 @@ export const InfoContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 65%;
+  width: 69%;
   height: 100%;
 `;

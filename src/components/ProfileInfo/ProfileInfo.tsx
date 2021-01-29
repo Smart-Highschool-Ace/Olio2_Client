@@ -1,3 +1,4 @@
+import { Clip, Mail } from "assets";
 import React from "react";
 import * as S from "./Style";
 
@@ -15,12 +16,42 @@ interface ProfileInfoProps {
   ProfileData: MyProfile[];
 }
 
-const ProfileInfo: React.FC = () => {
-  return (
-    <S.ProfileContentWrapper>
-      <div>내 프로필</div>
+const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
+  return ProfileData.map((data, idx) => (
+    <S.ProfileContentWrapper key={idx}>
+      <S.ProfileWrapper>
+        <S.ProfileImageWrapper>
+          <S.ProfileImage>
+            <S.Profile src={data.profile_img} />
+          </S.ProfileImage>
+        </S.ProfileImageWrapper>
+        <S.ProfileInputWrapper>
+          <S.NameTitle>
+            {data.std_no} {data.name}
+          </S.NameTitle>
+          <span style={{ color: "#878787", lineHeight: "50px" }}>
+            {data.school}
+          </span>
+          <span style={{ lineHeight: "50px", fontSize: 17 }}>
+            {data.introduce}
+          </span>
+          <S.linkWrapper>
+            <Clip />
+            <a href={data.site}>{data.site}</a>
+          </S.linkWrapper>
+          <S.linkWrapper>
+            <Mail />
+            <span>{data.email}</span>
+          </S.linkWrapper>
+          <span style={{ lineHeight: "50px", fontSize: 17 }}>
+            16 팔로워 20 팔로잉
+          </span>
+          <S.ProfileModify>프로필 수정</S.ProfileModify>
+        </S.ProfileInputWrapper>
+      </S.ProfileWrapper>
+      <S.StackWrapper></S.StackWrapper>
     </S.ProfileContentWrapper>
-  );
+  ));
 };
 
 export default ProfileInfo;

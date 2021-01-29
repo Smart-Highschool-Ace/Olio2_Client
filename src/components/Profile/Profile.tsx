@@ -8,18 +8,18 @@ const MyProfileDummyData = [
     name: "안채웅",
     std_no: "3109",
     school: "광주소프트웨어마이스터고등학교",
-    introduce: "Frontend 개발",
-    site: "notion/chae_woong",
+    introduce: "안녕하세요. Frontend 개발을 꿈꾸고있는 안채웅입니다.",
+    site: "https://www.notion.so/chaewoong",
     email: "s19011@gsm.hs.kr",
     profile_img:
-      "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/436/8142f53e51d2ec31bc0fa4bec241a919_crop.jpeg",
+      "https://pbs.twimg.com/profile_images/549171896013438979/rqtU6Cvn_400x400.png",
   },
 ];
 
 const Profile: React.FC = () => {
   return (
     <S.Positioner>
-      <ProfileInfo />
+      <ProfileInfo ProfileData={MyProfileDummyData} />
       <ProfileItems />
     </S.Positioner>
   );
