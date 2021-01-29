@@ -1,5 +1,5 @@
 import { Clip, Mail } from "assets";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import * as S from "./Style";
 
 type MyProfile = {
@@ -16,7 +16,7 @@ interface ProfileInfoProps {
   ProfileData: MyProfile[];
 }
 
-const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
+const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
   return ProfileData.map((data, idx) => (
     <S.ProfileContentWrapper key={idx}>
       <S.ProfileWrapper>
