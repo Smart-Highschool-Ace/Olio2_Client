@@ -1,4 +1,5 @@
 import { Clip, Mail } from "assets";
+import TechStack from "components/TechStack/TechStack";
 import React, { PropsWithChildren } from "react";
 import * as S from "./Style";
 
@@ -32,7 +33,7 @@ const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
           <span style={{ color: "#878787", lineHeight: "50px" }}>
             {data.school}
           </span>
-          <span style={{ lineHeight: "50px", fontSize: 17 }}>
+          <span style={{ lineHeight: "50px", fontSize: 17, color: "black" }}>
             {data.introduce}
           </span>
           <S.linkWrapper>
@@ -49,7 +50,7 @@ const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
           <S.ProfileModify>프로필 수정</S.ProfileModify>
         </S.ProfileInputWrapper>
       </S.ProfileWrapper>
-      <S.StackWrapper></S.StackWrapper>
+      <TechStack />
     </S.ProfileContentWrapper>
   ));
 };

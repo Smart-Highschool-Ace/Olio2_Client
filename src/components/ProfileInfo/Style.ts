@@ -14,15 +14,6 @@ export const ProfileWrapper = styled.div`
   height: 120%;
 `;
 
-export const StackWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 45%;
-`;
-
 export const ProfileImageWrapper = styled.div`
   width: 100%;
   flex: 1.2;
