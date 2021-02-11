@@ -37,7 +37,7 @@
 
 ## Front-End 개발 참여인원
 - 이대훈 https://github.com/dann1y
-- 안채웅 https://github.com/dkscodnd
+- 안채웅 https://github.com/chaewoong0407
 - 김아련 https://github.com/Kimaryean
 - 이서린 https://github.com/iseolin76
 - 노연주 https://github.com/yjnoh1016
