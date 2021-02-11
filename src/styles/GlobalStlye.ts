@@ -11,6 +11,7 @@ const GlobalStyle = css`
   button {
     cursor: pointer;
     outline: none;
+    border: 0;
   }
 `;
 

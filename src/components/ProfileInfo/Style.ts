@@ -108,4 +108,5 @@ export const EditImage = styled.div`
   position: relative;
   right: 60px;
   bottom: 35px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 `;

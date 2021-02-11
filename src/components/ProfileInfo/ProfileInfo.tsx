@@ -19,6 +19,7 @@ interface ProfileInfoProps {
 }
 
 const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
+  const [profile, setProfile] = useState(null);
   const [PopUp, setPopUp] = useState(false);
 
   const CheckPopUp = () => {
@@ -30,10 +31,12 @@ const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
       <S.ProfileWrapper>
         <S.ProfileImageWrapper>
           <S.ProfileImage>
-            <S.Profile src={data.profile_img} />
+            <S.Profile src={profile} alt="프로필 사진" />
           </S.ProfileImage>
           <S.EditImage onClick={CheckPopUp}>
-            {PopUp ? <ProfileModal toggle={CheckPopUp} /> : null}
+            {PopUp ? (
+              <ProfileModal toggle={CheckPopUp} setProfile={setProfile} />
+            ) : null}
             <Camera />
           </S.EditImage>
         </S.ProfileImageWrapper>
