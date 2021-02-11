@@ -1,6 +1,7 @@
-import { Clip, Mail } from "assets";
+import { Camera, Clip, Mail } from "assets";
+import ProfileModal from "components/ProfileModal/ProfileModal";
 import TechStack from "components/TechStack/TechStack";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import * as S from "./Style";
 
 type MyProfile = {
@@ -18,6 +19,12 @@ interface ProfileInfoProps {
 }
 
 const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
+  const [PopUp, setPopUp] = useState(false);
+
+  const CheckPopUp = () => {
+    setPopUp(!PopUp);
+  };
+
   return ProfileData.map((data, idx) => (
     <S.ProfileContentWrapper key={idx}>
       <S.ProfileWrapper>
@@ -25,6 +32,10 @@ const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
           <S.ProfileImage>
             <S.Profile src={data.profile_img} />
           </S.ProfileImage>
+          <S.EditImage onClick={CheckPopUp}>
+            {PopUp ? <ProfileModal toggle={CheckPopUp} /> : null}
+            <Camera />
+          </S.EditImage>
         </S.ProfileImageWrapper>
         <S.ProfileInputWrapper>
           <S.NameTitle>
@@ -44,9 +55,6 @@ const ProfileInfo = ({ ProfileData }: PropsWithChildren<ProfileInfoProps>) => {
             <Mail />
             <span>{data.email}</span>
           </S.linkWrapper>
-          <span style={{ lineHeight: "50px", fontSize: 17 }}>
-            16 팔로워 20 팔로잉
-          </span>
           <S.ProfileModify>프로필 수정</S.ProfileModify>
         </S.ProfileInputWrapper>
       </S.ProfileWrapper>

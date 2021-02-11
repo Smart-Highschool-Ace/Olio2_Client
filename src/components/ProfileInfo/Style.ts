@@ -20,6 +20,7 @@ export const ProfileImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-left: 4rem;
 `;
 
 export const ProfileImage = styled.div`
@@ -94,4 +95,17 @@ export const ProfileModify = styled.button`
   font-size: 16px;
   font-weight: normal;
   color: #929292;
+`;
+
+export const EditImage = styled.div`
+  width: 62px;
+  height: 62px;
+  background-color: #e3e3e3;
+  border-radius: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 60px;
+  bottom: 35px;
 `;
