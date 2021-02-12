@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { Slider } from "rsuite";
+import "rsuite/lib/styles/index.less";
 
 export const Positioner = styled.div`
   display: block;
