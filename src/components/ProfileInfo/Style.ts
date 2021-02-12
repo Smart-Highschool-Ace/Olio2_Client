@@ -32,7 +32,7 @@ export const ProfileImage = styled.div`
 
 export const ProfileInputWrapper = styled.div`
   width: 100%;
-  flex: 1;
+  height: 40%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

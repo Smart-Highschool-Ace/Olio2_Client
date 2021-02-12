@@ -5,9 +5,17 @@ import "rsuite/lib/styles/index.less";
 
 const TechStack: React.FC = () => {
   return (
-    <S.StackWrapper>
-      <div>기술 스택</div>
-    </S.StackWrapper>
+    <>
+      <S.TitleWrapper>
+        <span>기술 스택</span>
+      </S.TitleWrapper>
+      <S.StackWrapper>
+        <S.StackContent>콘텐트</S.StackContent>
+        <S.StackContent>콘텐트</S.StackContent>
+        <S.StackContent>콘텐트</S.StackContent>
+        <S.StackContent>콘텐트</S.StackContent>
+      </S.StackWrapper>
+    </>
   );
 };
 
