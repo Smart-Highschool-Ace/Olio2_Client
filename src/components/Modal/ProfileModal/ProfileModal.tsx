@@ -24,7 +24,7 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
 
   const onBeforeFileLoad = (elem: any) => {
     if (elem.target.files[0].size > 500000) {
-      alert("File is too big!");
+      alert("이미지의 크기가 너무 큽니다");
       elem.target.value = "";
     } else {
       console.log(typeof elem.target.files[0]);

@@ -8,6 +8,7 @@ export const StackWrapper = styled.div`
   margin-left: 70px;
   overflow: auto;
 `;
+
 export const TitleWrapper = styled.div`
   width: 100%;
   height: 30px;
