@@ -14,7 +14,7 @@ export const Positioner = styled.div`
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 30;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
   outline: 0;
@@ -23,7 +23,6 @@ export const Positioner = styled.div`
 export const ModalWrapper = styled.div<StyleProps>`
   display: block;
   position: fixed;
-  z-index: 2;
   top: 50%;
   left: 50%;
   right: 50%;

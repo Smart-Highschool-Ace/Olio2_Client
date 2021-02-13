@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./Style";
 import dynamic from "next/dynamic";
+import Template from "../Template/Template";
 
 const Avatar = dynamic(() => import("react-avatar-edit"), { ssr: false });
 
@@ -45,34 +46,32 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
   };
 
   return (
-    <S.Positioner onClick={ClosePopUp}>
-      <S.ModalWrapper onClick={(Event) => Event.stopPropagation()}>
-        <S.ModalInner>
-          <S.ModalHeader>
-            <span>Edit Media</span>
-            <span>Preview</span>
-          </S.ModalHeader>
-          <S.ModalContent>
-            <S.ImageWrapper>
-              <Avatar
-                width={500}
-                height={450}
-                onCrop={onCrop}
-                onClose={onClose}
-                onBeforeFileLoad={onBeforeFileLoad}
-              />
-            </S.ImageWrapper>
-            <S.ImageWrapper>
-              <img src={preview} alt="Preview" />
-            </S.ImageWrapper>
-          </S.ModalContent>
-          <S.ModalBottom>
-            <S.CancelButton onClick={ClosePopUp}>취소</S.CancelButton>
-            <S.ImageButton onClick={SaveImage}>저장하기</S.ImageButton>
-          </S.ModalBottom>
-        </S.ModalInner>
-      </S.ModalWrapper>
-    </S.Positioner>
+    <Template toggle={props.toggle} width={1200} height={650}>
+      <S.ModalInner>
+        <S.ModalHeader>
+          <span>Edit Media</span>
+          <span>Preview</span>
+        </S.ModalHeader>
+        <S.ModalContent>
+          <S.ImageWrapper>
+            <Avatar
+              width={500}
+              height={450}
+              onCrop={onCrop}
+              onClose={onClose}
+              onBeforeFileLoad={onBeforeFileLoad}
+            />
+          </S.ImageWrapper>
+          <S.ImageWrapper>
+            <img src={preview} alt="Preview" />
+          </S.ImageWrapper>
+        </S.ModalContent>
+        <S.ModalBottom>
+          <S.CancelButton onClick={ClosePopUp}>취소</S.CancelButton>
+          <S.ImageButton onClick={SaveImage}>저장하기</S.ImageButton>
+        </S.ModalBottom>
+      </S.ModalInner>
+    </Template>
   );
 };
 
