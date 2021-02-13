@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Logo } from "assets";
+import React from "react";
+import { Logo } from "Assets";
 import * as S from "./Style";
 
 const Header: React.FC = () => {
