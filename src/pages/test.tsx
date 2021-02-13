@@ -10,8 +10,11 @@ const test = () => {
   };
   return (
     <div>
-      <button onClick={CheckPopUp}>테스트 모달 열기</button>
-      {PopUp ? <TestModal toggle={CheckPopUp} /> : null}
+      <Header />
+      <button onClick={CheckPopUp} style={{ marginTop: 100 }}>
+        테스트 모달 열기
+      </button>
+      {PopUp && <TestModal toggle={CheckPopUp} />}
     </div>
   );
 };
