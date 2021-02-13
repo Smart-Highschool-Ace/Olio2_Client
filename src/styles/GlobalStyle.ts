@@ -12,6 +12,15 @@ const GlobalStyle = css`
     cursor: pointer;
     outline: none;
   }
+
+  ::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #5a948b;
+    border-radius: 10px;
+  }
 `;
 
 export default GlobalStyle;
