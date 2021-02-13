@@ -1,4 +1,4 @@
-import { Header, Profile } from "components";
+import { Header, Profile } from "Components";
 import React from "react";
 
 const profile: React.FC = () => {

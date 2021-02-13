@@ -1,5 +1,5 @@
-import { Header } from "components";
-import TestModal from "components/Modal/TestModal/TestModal";
+import { Header } from "Components";
+import TestModal from "Components/Modal/TestModal/TestModal";
 import React, { useState } from "react";
 
 const test = () => {

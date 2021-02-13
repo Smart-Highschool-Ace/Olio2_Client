@@ -1,5 +1,5 @@
-import ProfileInfo from "components/ProfileInfo/ProfileInfo";
-import ProfileItems from "components/ProfileItems/ProfileItems";
+import ProfileInfo from "Components/ProfileInfo/ProfileInfo";
+import ProfileItems from "Components/ProfileItems/ProfileItems";
 import React from "react";
 import * as S from "./Style";
 
