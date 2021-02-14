@@ -9,3 +9,5 @@ export { default as WS } from "./svg/WS";
 export { default as Facebook } from "./svg/Facebook";
 export { default as Github } from "./svg/Github";
 export { default as Instagram } from "./svg/Instagram";
+export { default as PhoneImg } from "./svg/PhoneImg";
+export { default as StartProfile } from "./svg/StartProfile";
