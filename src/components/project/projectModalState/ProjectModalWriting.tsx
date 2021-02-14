@@ -1,5 +1,5 @@
 import * as S from "../styled";
-import * as I from "../../../assets/index";
+import * as I from "../../../Assets/index";
 
 interface ProjectModalProps {
   visible?: boolean;
