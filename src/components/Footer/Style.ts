@@ -2,11 +2,12 @@ import styled from "@emotion/styled";
 
 export const Positioner = styled.footer `
     position: absolute;
-    left: 0;
-    top: 300vh;
     width: 100%;
     height: 460px;
 
+    left: 0;
+    top: 500vh;
+    
     background: #FAFAFA;
 `;
 
