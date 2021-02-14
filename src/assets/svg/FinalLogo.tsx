@@ -36,11 +36,11 @@ const FinalLogo = ({width, height}: FinalLogoProps) => {
       />
       <rect
         x={693.434}
-        y={151.972}
+        y={151.973}
         width={240.105}
         height={30.555}
         rx={15.277}
-        transform="rotate(140 693.434 151.972)"
+        transform="rotate(140 693.434 151.973)"
         stroke="#5A948B"
         strokeWidth={15}
       />
@@ -76,7 +76,7 @@ const FinalLogo = ({width, height}: FinalLogoProps) => {
       />
       <path
         fill="url(#FinalLogo)"
-        d="M197.706 255.574h353.503v184.951H197.706z"
+        d="M197.707 255.574H551.21v184.951H197.707z"
       />
       <circle cx={112} cy={15} r={15} fill="#5A948B" fillOpacity={0.36} />
       <circle cx={741.5} cy={224.5} r={7.5} fill="#5A948B" fillOpacity={0.69} />
@@ -93,7 +93,7 @@ const FinalLogo = ({width, height}: FinalLogoProps) => {
         fillOpacity={0.16}
       />
       <path
-        d="M405.886 646.74a1 1 0 01-1.047 1.379l-34.368-4.344a1 1 0 01-.671-1.596l20.946-27.592a1 1 0 011.718.218l13.422 31.935z"
+        d="M405.886 646.74a1 1 0 01-1.048 1.38l-34.367-4.344a1 1 0 01-.671-1.597l20.946-27.591a1 1 0 011.718.217l13.422 31.935z"
         stroke="#D5EACE"
         strokeWidth={8}
       />
