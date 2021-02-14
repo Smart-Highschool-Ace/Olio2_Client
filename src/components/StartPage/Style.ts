@@ -6,7 +6,7 @@ export const Positioner = styled.div `
     left: 0;
     top: 0;
     width: 100vw;
-    height: calc(500vh+460px);
+    height: 500vh;
 `;
 
 export const StartImg = styled.span `
