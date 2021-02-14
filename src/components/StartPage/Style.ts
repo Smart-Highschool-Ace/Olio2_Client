@@ -5,8 +5,8 @@ export const Positioner = styled.div `
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 300vh;
+    width: 100vw;
+    height: calc(500vh+460px);
 `;
 
 export const StartImg = styled.span `
@@ -28,7 +28,6 @@ export const SMH = styled.span `
 
     margin-left: 13vw;
     margin-top: -54.7vh;
-
 `;
 
 export const SMYP = styled.span `
@@ -74,7 +73,6 @@ export const StartedBtn1 = styled.button `
     border-radius: 10px;
 
     border: 0;
-    outline: 0;
 
     font-family: Josefin Sans;
     font-style: normal;
@@ -90,12 +88,118 @@ export const StartedBtn1 = styled.button `
     margin-top: 9.8vh;
 `;
 
+export const Explain1 = styled.span `
+    width: 797px;
+
+    font-family: Apple SD Gothic Neo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+
+    text-align: center;
+
+    color: #000000;
+
+    display: flex;
+    margin-left: 7.7vw;
+    margin-top: 48vh;
+`;
+
+export const Rec1 = styled.div `
+    width: 731px;
+    height: 39px;
+
+    background: rgba(213, 234, 206, 0.54);
+
+    display: flex;
+    margin-left: 11.67vw;
+    margin-top: -0.8vh;
+`;
+
+export const ExAbout1 = styled.div `
+    width: 669px;
+
+    font-family: Apple SD Gothic Neo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+
+    display: flex;
+    margin-top: 3.1vh;
+    margin-left: 13.23vw;
+`;
+
+export const ProfileImg = styled.div `
+
+    display: flex;
+    margin-top: 9vh;
+    margin-left: 18vw;
+`;
+
+export const Explain2 = styled.span `
+    width: 655px;
+
+    font-family: Apple SD Gothic Neo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+
+    text-align: center;
+
+    color: #000000;
+
+    display: flex;
+    margin-top: 22.3vh;
+    margin-left: 11.6vw;
+`;
+
+export const Rec2 = styled.div `
+    width: 669px;
+    height: 39px;
+
+    background: rgba(213, 234, 206, 0.54);
+
+    display: flex;
+    margin-left: 11.61vw;
+    margin-top: -2.6vh;
+`;
+
+export const ExAbout2 = styled.div `
+    width: 669px;
+
+    font-family: Apple SD Gothic Neo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+
+    display: flex;
+    margin-top: 4.33vh;
+    margin-left: 11.6vw;
+`;
+
+export const PhoneImg = styled.div `
+
+    display: flex;
+    margin-top: 10.3vh;
+    margin-left: 45.9vw;
+`;
+
 export const MiniSection = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin-top: 45.7vh;
+    margin-top: 8.2vh;
 `;
 
 export const MiniTitle = styled.div `
@@ -287,7 +391,6 @@ export const Olio2 = styled.span `
 `
 
 export const StartedBtn3 = styled.button `
-
     position: inline-block;
     width: 200px;
     height: 70px;
