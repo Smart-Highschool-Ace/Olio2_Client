@@ -1,15 +1,21 @@
+import styled from '@emotion/styled';
 import { Header, StartPage, Footer } from 'Components';
 import React from 'react';
 
 const index: React.FC = () => {
     return (
-        <div>
+        <Wrapper>
             <Header/>
             <StartPage/>
             <Footer/>
-        </div>
+        </Wrapper>
     );
 };
+
+const Wrapper = styled.div `
+    display: flex;
+    flex-direction: column;
+`;
 
 
 export default index;

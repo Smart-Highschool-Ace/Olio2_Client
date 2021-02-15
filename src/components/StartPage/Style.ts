@@ -8,12 +8,12 @@ export const Positioner = styled.div `
     display: flex;
 
     width: 100%;
-    height: 500vh;
+    padding-bottom: 17vh;
 `;
 
 export const Wrapper = styled.div `
+    position: relative;
     width: 100%;
-    height: 500vh;
 `;
 
 export const StartImg = styled.span `
