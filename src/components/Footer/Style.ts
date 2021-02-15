@@ -8,16 +8,15 @@ export const Positioner = styled.footer `
 
     background: #FAFAFA;
 
-    margin-top: -460px;
-
     clear: both;
+
+    margin-top: 0;
 `;
 
 export const Logo = styled.span `
     display: flex;
-    margin-top: 11.3vh;
     margin-left: 6.2vw;
-    padding-top: 117px;
+    padding-top: 11.3vh;
 `;
 
 export const SNSWrapper = styled.span `
