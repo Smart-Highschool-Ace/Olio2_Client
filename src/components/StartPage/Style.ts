@@ -1,16 +1,19 @@
 import styled from '@emotion/styled';
 
 export const Positioner = styled.div `
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 500vh;
-
-    margin: 0;
-    padding: 0;
+    position: relative;
 
     background: url(/StartBackground.svg);
-    position: absolute;
+
+    display: flex;
+
+    width: 100%;
+    height: 500vh;
+`;
+
+export const Wrapper = styled.div `
+    width: 100%;
+    height: 500vh;
 `;
 
 export const StartImg = styled.span `

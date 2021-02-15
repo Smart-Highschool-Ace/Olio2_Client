@@ -1,10 +1,11 @@
-import { FinalLogo, PhoneImg, SS, StartImg, StartProfile, TS, WS } from 'assets';
+import { FinalLogo, PhoneImg, SS, StartImg, StartProfile, TS, WS } from 'Assets';
 import React from 'react';
 import * as S from "./Style";
 
 const StartPage: React.FC = () => {
     return (
         <S.Positioner>
+            <S.Wrapper>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap" rel="stylesheet"></link>
             <S.StartImg>
@@ -87,6 +88,7 @@ const StartPage: React.FC = () => {
             <S.FinalLogo>
                     <FinalLogo/>
             </S.FinalLogo>
+            </S.Wrapper>
         </S.Positioner>
     );
 };

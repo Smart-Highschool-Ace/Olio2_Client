@@ -1,20 +1,22 @@
 import styled from "@emotion/styled";
 
 export const Positioner = styled.footer `
-    position: absolute;
+    position: relative;
+
     width: 100%;
     height: 460px;
-
-    left: 0;
-    top: 500vh;
     
     background: #FAFAFA;
+
+    clear: both;
+
+    margin-top: 0;
 `;
 
 export const Logo = styled.span `
     display: flex;
-    margin-top: 11.3vh;
     margin-left: 6.2vw;
+    padding-top: 11.3vh;
 `;
 
 export const SNSWrapper = styled.span `

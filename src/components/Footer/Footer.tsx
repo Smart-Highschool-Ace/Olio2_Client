@@ -1,4 +1,4 @@
-import { Facebook, Github, Instagram, Logo } from 'assets';
+import { Facebook, Github, Instagram, Logo } from 'Assets';
 import React from 'react';
 import * as S from "./Style";
 
