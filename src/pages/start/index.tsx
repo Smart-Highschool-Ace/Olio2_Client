@@ -6,7 +6,6 @@ const index: React.FC = () => {
         <div>
             <Header/>
             <StartPage/>
-            <Footer/>
         </div>
     );
 };
