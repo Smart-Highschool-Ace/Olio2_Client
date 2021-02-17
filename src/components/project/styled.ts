@@ -6,21 +6,6 @@ interface ProjectModalProps {
   state?: string;
 }
 
-export const ModalOverlay = styled.div<ProjectModalProps>`
-  display: ${(props) => (props.visible ? "block" : "none")};
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.3);
-  overflow: auto;
-  outline: 0;
-`;
-
 export const ModalWrapper = styled.div<ProjectModalProps>`
   display: ${(props) => (props.visible ? "block" : "none")};
   position: fixed;
@@ -29,8 +14,8 @@ export const ModalWrapper = styled.div<ProjectModalProps>`
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
-  width: 73%;
-  height: 853px;
+  width: 100%;
+  height: 100%;
   background-color: white;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   border-radius: 20px;
@@ -56,9 +41,9 @@ export const ModalInner = styled.div`
 `;
 
 export const ModalTop = styled.div`
-  padding: 3% 4.5% 0;
+  padding: 4% 4.5% 0;
   width: 100%;
-  height: 18.6%;
+  height: 17.6%;
   & > span {
     font-weight: 700;
     font-size: 40px;
@@ -93,6 +78,12 @@ export const ModalToExplanation = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 17px;
+  button {
+    border: solid 1px #5a948b;
+    color: #5a948b;
+    padding: 3px 27px;
+    border-radius: 20px;
+  }
   div {
     display: flex;
     align-items: flex-end;
@@ -153,6 +144,7 @@ export const ModalLeftBox = styled.div<ProjectModalProps>`
   height: 81.4%;
   margin-left: 4.5%;
   .modalImg {
+    margin-top: 28px;
     outline: none;
     border: none;
     color: #828282;
@@ -170,47 +162,11 @@ export const ModalLeftBox = styled.div<ProjectModalProps>`
   }
 `;
 
-export const ButtonBox = styled.div<ProjectModalProps>`
-  height: 8%;
-  svg {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top: -3px;
-  }
-  /* svg :hover {
-    width: 22px;
-    height: 22px;
-  } */
-  button :hover {
-    width: 22px;
-    height: 22px;
-  }
-  input {
-    background-color: #dcdcdc;
-    border-radius: 10px;
-    margin: 12px 14.4px 25px 0;
-    width: 177px;
-    padding: 3px 0;
-  }
-  button {
-    position: relative;
-    outline: 0;
-    background-color: white;
-    color: #6c6c6c;
-    border: 1px solid #6c6c6c;
-    padding: 3px 8px;
-    font-size: 12px;
-    border-radius: 10px;
-    margin: 12px 14.4px 25px 0;
-  }
-`;
-
 export const participants = styled.div`
   & > div {
     font-size: 16px;
   }
-  margin-top: 16px;
+  margin-top: 30px;
   .participantsGroup {
     display: flex;
     flex-flow: row wrap;
@@ -316,7 +272,7 @@ export const ModalRightBox = styled.div`
   }
   div {
     svg {
-      margin: 12px 7.3px;
+      margin: 12px 4px;
     }
   }
   .skills {
@@ -329,8 +285,7 @@ export const ModalRightBox = styled.div`
     }
     button {
       background-color: #fff;
-      border: none;
-      height: 20px;
+      height: 25px;
       svg {
         position: relative;
         top: -10px;
@@ -355,7 +310,7 @@ export const ModalRightBox = styled.div`
     margin-top: 7.5%;
   }
   & > div {
-    height: 23%;
+    height: 25%;
   }
   & > button {
     margin: 13% 0 0 50%;
@@ -366,5 +321,36 @@ export const ModalRightBox = styled.div`
     svg {
       margin: 12px 7.3px;
     }
+  }
+`;
+
+export const ButtonBox = styled.div<ProjectModalProps>`
+  height: 8%;
+  svg {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -3px;
+  }
+  button :hover {
+    width: 22px;
+    height: 22px;
+  }
+  input {
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    margin: 12px 14.4px 25px 0;
+    width: 177px;
+    padding: 3px 0;
+  }
+  button {
+    position: relative;
+    background-color: white;
+    color: #6c6c6c;
+    border: 1px solid #6c6c6c;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    margin: 3px 2.5px;
   }
 `;
