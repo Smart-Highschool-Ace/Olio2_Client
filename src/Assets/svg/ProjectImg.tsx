@@ -4,13 +4,13 @@ function ProjectImg() {
   return (
     <svg
       width={1000}
-      height={434}
-      viewBox="0 0 1000 434"
+      height={500}
+      viewBox="0 0 1000 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <rect width={1000} height={434} rx={10} fill="url(#project-img)" />
+      <rect width={1000} height={500} rx={10} fill="url(#project-img)" />
       <defs>
         <pattern
           id="project-img"
