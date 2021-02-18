@@ -13,11 +13,11 @@ const ProjectModal: React.FC<ProjectModalProps> = (
 ) => {
   console.log(props.state);
   return props.state === "writing" ? (
-    <Template toggle={props.toggle} width={1400} height={975}>
+    <Template toggle={props.toggle} width={1450} height={870}>
       <ProjectModalWriting visible={props.visible} />
     </Template>
   ) : (
-    <Template toggle={props.toggle} width={1400} height={975}>
+    <Template toggle={props.toggle} width={1450} height={870}>
       <ProjectModalEdit visible={props.visible} state={props.state} />
     </Template>
   );

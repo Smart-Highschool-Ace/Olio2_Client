@@ -41,7 +41,7 @@ export const ModalInner = styled.div`
 `;
 
 export const ModalTop = styled.div`
-  padding: 4% 4.5% 0;
+  padding: 3.4% 4.5% 0;
   width: 100%;
   height: 17.6%;
   & > span {
@@ -78,11 +78,19 @@ export const ModalToExplanation = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 17px;
-  button {
-    border: solid 1px #5a948b;
-    color: #5a948b;
-    padding: 3px 27px;
-    border-radius: 20px;
+  span {
+    button {
+      position: relative;
+      top: -40px;
+      border: solid 1px #5a948b;
+      color: #5a948b;
+      padding: 3px 30px;
+      border-radius: 20px;
+    }
+    span {
+      position: relative;
+      right: -75px;
+    }
   }
   div {
     display: flex;
@@ -141,7 +149,7 @@ export const ModalBox = styled.div`
 
 export const ModalLeftBox = styled.div<ProjectModalProps>`
   width: 63%;
-  height: 81.4%;
+  height: 86%;
   margin-left: 4.5%;
   .modalImg {
     margin-top: 28px;
@@ -261,7 +269,7 @@ export const ModalRightBox = styled.div`
     width: 100%;
   }
   width: 37%;
-  height: 81.4%;
+  height: 82.4%;
   /* background-color: #ffff00; */
   margin-right: 4.5%;
   * div {
@@ -313,7 +321,7 @@ export const ModalRightBox = styled.div`
     height: 25%;
   }
   & > button {
-    margin: 13% 0 0 50%;
+    margin-left: 40%;
     background: #ffffff;
     border: 3px solid #000000;
     border-radius: 20px;

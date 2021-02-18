@@ -35,8 +35,8 @@ const ProjectModalEdit: React.FC<ProjectModalProps> = (
               <S.ModalToExplanation>
                 <span>3개교 마이스터고등학교 커뮤니티 앱 서비스</span>
                 <span>
+                  <button className="field">IOS</button>
                   <span>2020.11.23 ~ 2020.11.25</span>
-                  <button>IOS</button>
                 </span>
               </S.ModalToExplanation>
               <hr />
