@@ -60,9 +60,11 @@ export const ModalTop = styled.div`
     outline: 0;
     font-size: 15px;
     background-color: white;
+    color: #8c8c8c;
   }
   #red {
     color: #cd6152;
+    margin-left: 7px;
   }
   #modalH2 {
     font-size: 40px;
@@ -81,7 +83,7 @@ export const ModalToExplanation = styled.div`
   span {
     button {
       position: relative;
-      top: -40px;
+      top: -35px;
       border: solid 1px #5a948b;
       color: #5a948b;
       padding: 3px 30px;
@@ -359,6 +361,6 @@ export const ButtonBox = styled.div<ProjectModalProps>`
     padding: 3px 8px;
     font-size: 12px;
     border-radius: 10px;
-    margin: 3px 2.5px;
+    margin: 3px 2px;
   }
 `;
