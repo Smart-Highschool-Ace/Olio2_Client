@@ -3,14 +3,14 @@ import * as React from "react";
 function ProjectImg() {
   return (
     <svg
-      width={1400}
-      height={700}
-      viewBox="0 0 1400 700"
+      width={2000}
+      height={800}
+      viewBox="0 0 2000 800"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <rect width={1400} height={700} rx={10} fill="url(#project-img)" />
+      <rect width={2000} height={800} rx={10} fill="url(#project-img)" />
       <defs>
         <pattern
           id="project-img"
