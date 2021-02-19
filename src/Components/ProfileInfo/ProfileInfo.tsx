@@ -47,6 +47,7 @@ interface ProfileInfoProps {
   ProfileData: MyProfile[];
 }
 
+//@ts-ignore
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
   const [profile, setProfile] = useState(null);
   const [PopUp, setPopUp] = useState(false);

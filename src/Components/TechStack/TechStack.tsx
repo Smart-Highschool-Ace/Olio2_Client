@@ -19,6 +19,7 @@ const { Line } = Progress;
 const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
   const [Stackvisible, setStackvisible] = useState(false);
   const [displayColorPicker, setdisplayColorPicker] = useState(false);
+  const [backcolor, setColor] = useState("");
 
   const setStack = () => {
     setStackvisible(!Stackvisible);
@@ -42,17 +43,17 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
         <span>기술 스택</span>
         <div onClick={setStack}>추가 +</div>
       </S.TitleWrapper>
-      <S.StackWrapper>
+      <S.StackWrapper onClick={handleClose}>
         {Stackvisible && (
           <S.StackContent>
-            <S.ContentWrapper>
+            <S.ContentWrapper onClick={(e) => e.stopPropagation()}>
               <S.InputWrapper>
                 <input type="text" placeholder="사용기술을 입력해주세요" />
                 <button onClick={handleClick}>색상 선택</button>
               </S.InputWrapper>
               <Line
                 percent={50}
-                strokeColor="red"
+                strokeColor={backcolor}
                 status="active"
                 style={{ width: "80%" }}
               />
@@ -62,10 +63,13 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
                     position: "relative",
                     zIndex: 30,
                     bottom: 30,
-                    left: 300,
+                    left: 325,
                   }}
                 >
-                  <BlockPicker />
+                  <BlockPicker
+                    color={backcolor}
+                    onChange={(color) => setColor(color.hex)}
+                  />
                 </div>
               )}
             </S.ContentWrapper>
