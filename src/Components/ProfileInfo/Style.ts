@@ -7,19 +7,18 @@ export const ProfileContentWrapper = styled.div`
 
 export const ProfileWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 120%;
+  height: 100%;
 `;
 
 export const ProfileImageWrapper = styled.div`
   width: 100%;
-  flex: 1.2;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-left: 4rem;
 `;
 
@@ -98,15 +97,15 @@ export const ProfileModify = styled.button`
 `;
 
 export const EditImage = styled.div`
+  position: relative;
   width: 62px;
   height: 62px;
+  top: 75%;
+  right: 10%;
   background-color: #e3e3e3;
   border-radius: 31px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  right: 60px;
-  bottom: 35px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 `;

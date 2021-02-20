@@ -40,7 +40,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
   return (
     <>
       <S.TitleWrapper>
-        <span>기술 스택</span>
+        <span>사용기술</span>
         <div onClick={setStack}>추가 +</div>
       </S.TitleWrapper>
       <S.StackWrapper onClick={handleClose}>

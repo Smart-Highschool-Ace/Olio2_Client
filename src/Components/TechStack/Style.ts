@@ -18,7 +18,7 @@ export const TitleWrapper = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   span {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: bold;
     color: black;
     border-bottom: 1px solid rgba(213, 234, 206, 0.54);
