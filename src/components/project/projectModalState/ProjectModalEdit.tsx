@@ -54,8 +54,17 @@ const ProjectModalEdit: React.FC<ProjectModalProps> = (
                   ),
                   edit: (
                     <>
-                      <span>3개교 마이스터고등학교 커뮤니티 앱 서비스</span>
+                      <div className="explanation">
+                        3개교 마이스터고등학교 커뮤니티 앱 서비스
+                      </div>
                       <div>
+                        <div>
+                          <span>참여기간</span>
+                          <button>
+                            진행중
+                            <I.Check />
+                          </button>
+                        </div>
                         <input
                           type="text"
                           placeholder="시작년도"
@@ -99,10 +108,6 @@ const ProjectModalEdit: React.FC<ProjectModalProps> = (
                           pattern="[0-9]{2}"
                           title={"숫자를 입력해주세요"}
                         />
-                        <button>
-                          진행중
-                          <I.Check />
-                        </button>
                       </div>
                     </>
                   ),

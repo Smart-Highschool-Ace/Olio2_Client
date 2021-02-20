@@ -12,6 +12,7 @@ export const ModalForm = styled.form`
 `;
 
 export const ModalInner = styled.div<ProjectModalProps>`
+  z-index: 99999;
   display: ${(props) => (props.visible ? "block" : "none")};
   width: 100%;
   height: 100%;
@@ -34,6 +35,7 @@ export const ModalTop = styled.div`
   & > span {
     font-weight: 700;
     font-size: 40px;
+    width: 300px;
   }
   #cameraBtn {
     background-color: #e7e7e7;
@@ -67,6 +69,10 @@ export const ModalToExplanation = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 17px;
+  .explanation {
+    justify-content: flex-start;
+    width: 80%;
+  }
   span {
     button {
       position: relative;
@@ -82,16 +88,25 @@ export const ModalToExplanation = styled.div`
     }
   }
   div {
-    height: 50px;
+    width: 90%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    flex-wrap: wrap;
     position: relative;
-    button {
-      align-self: flex-start;
-    }
     div {
-      /* align-self: flex-start; */
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      span {
+        margin-left: 165px;
+      }
+      button {
+        svg {
+          position: relative;
+          top: 3px;
+        }
+      }
     }
     input {
       font-size: 12px;
@@ -145,7 +160,7 @@ export const ModalLeftBox = styled.div<ProjectModalProps>`
     align-items: center;
     flex-direction: column;
     width: 98%;
-    height: 52%;
+    height: 50%;
     overflow: hidden;
     border-radius: 10px;
     svg {
@@ -263,22 +278,23 @@ export const ModalRightBox = styled.div`
     border-bottom: 0.5px solid #7d7d7d;
     margin-bottom: 12.3px;
   }
-  div {
-    svg {
-      margin: 12px;
-    }
-  }
   .skills {
+    button {
+      background-color: #fff;
+      position: relative;
+      svg {
+        position: absolute;
+        top: -3px !important;
+        left: none !important;
+        right: -3px !important;
+      }
+    }
     div {
       display: flex;
       justify-content: space-between;
     }
     span {
       font-size: 16px;
-    }
-    button {
-      background-color: #fff;
-      height: 25px;
     }
   }
   .result {
@@ -289,6 +305,17 @@ export const ModalRightBox = styled.div`
       border-radius: 10px;
       width: 80px;
       height: 80px;
+    }
+    .addBtn {
+      position: relative;
+      top: 3px;
+      border: none;
+      border-radius: 10px;
+      width: 80px;
+      height: 80px;
+    }
+    svg {
+      margin: 12px;
     }
   }
   span {
@@ -318,18 +345,9 @@ export const ModalRightBox = styled.div`
 
 export const ButtonBox = styled.div<ProjectModalProps>`
   height: 8%;
-  /* display: flex;
-  flex-direction: column;
-  div {
-    margin-top: 10px;
-    border: none;
-  } */
   svg {
-    position: absolute;
     width: 12px;
     height: 12px;
-    left: 44px;
-    top: -16px;
   }
   button :hover {
     width: 20px;
