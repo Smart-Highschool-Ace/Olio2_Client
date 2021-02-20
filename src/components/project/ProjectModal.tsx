@@ -1,5 +1,6 @@
-import ProjectModalWriting from "./projectModalState/ProjectModalWriting";
 import ProjectModalEdit from "./projectModalState/ProjectModalEdit";
+import ProjectModalWriting from "./projectModalState/ProjectModalWriting";
+import FieldChoice from "./projectModalState/FieldChoice";
 import Template from "../Modal/Template/Template";
 
 interface ProjectModalProps {
@@ -21,6 +22,11 @@ const ProjectModal: React.FC<ProjectModalProps> = (
     writing: (
       <Template toggle={props.toggle} width={1450} height={1000}>
         <ProjectModalWriting visible={props.visible} />
+      </Template>
+    ),
+    Choice: (
+      <Template toggle={props.toggle} width={1400} height={1000}>
+        <FieldChoice visible={props.visible} />
       </Template>
     ),
     view: (

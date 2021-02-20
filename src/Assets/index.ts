@@ -20,3 +20,4 @@ export { default as X } from "./svg/X";
 export { default as Camera } from "./svg/Camera";
 export { default as GithubLogo } from "./svg/GithubLogo";
 export { default as Check } from "./svg/Check";
+export { default as FieldChoiceImage } from "./svg/FieldChoiceImage";
