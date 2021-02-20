@@ -31,30 +31,30 @@ const ProjectModal: React.FC<ProjectModalProps> = (
             <S.ModalToExplanation>
               <input type="text" placeholder="프로젝트 소개를 입력하세요." />
               <div>
-                <button>
-                  진행중
-                  <I.Check />
-                </button>
+                <div>
+                  <span>참여기간</span>
+                  <button>
+                    진행중
+                    <I.Check />
+                  </button>
+                </div>
                 <input
                   type="text"
                   placeholder="시작년도"
                   maxLength={4}
                   pattern="[0-9]{4}"
-                  title={"숫자를 입력해주세요"}
                 />
                 <input
                   type="text"
                   placeholder="월"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
                 />
                 <input
                   type="text"
                   placeholder="일"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
                 />
                 <I.Line />
                 <input
@@ -62,21 +62,18 @@ const ProjectModal: React.FC<ProjectModalProps> = (
                   placeholder="종료년도"
                   maxLength={4}
                   pattern="[0-9]{4}"
-                  title={"숫자를 입력해주세요"}
                 />
                 <input
                   type="text"
                   placeholder="월"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
                 />
                 <input
                   type="text"
                   placeholder="일"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
                 />
               </div>
             </S.ModalToExplanation>
@@ -85,8 +82,7 @@ const ProjectModal: React.FC<ProjectModalProps> = (
           <S.ModalBox>
             <S.ModalLeftBox>
               <button className="modalImg">
-                <I.Camera />
-                <span>프로젝트 결과물에 대한 사진을 첨부해주세요.</span>
+                <span>프로젝트 결과물 이미지</span>
               </button>
               <S.participants>
                 <div>참여자</div>
@@ -117,23 +113,19 @@ const ProjectModal: React.FC<ProjectModalProps> = (
                 <div>프로젝트 내용</div>
                 <textarea placeholder="내용을 입력하세요." />
               </div>
-              <div className="skills">
+              <S.ButtonBox className="skills">
                 <div>
                   <span>사용기술</span>
                 </div>
-                <S.ButtonBox>
-                  <input type="text" placeholder="# 태그 검색" />
-                  <div>
-                    <button>
-                      #React
-                      <I.X />
-                    </button>
-                  </div>
-                </S.ButtonBox>
-              </div>
+                <input type="text" placeholder="# 태그 검색" />
+                <button>
+                  #React
+                  <I.X />
+                </button>
+              </S.ButtonBox>
               <div className="result">
                 <div>프로젝트 결과물</div>
-                <button>
+                <button className="addBtn">
                   <I.Plus />
                 </button>
               </div>
