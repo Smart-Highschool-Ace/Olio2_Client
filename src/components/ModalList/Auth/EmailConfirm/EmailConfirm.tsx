@@ -3,7 +3,7 @@ import { AuthTemplate } from "Components";
 import * as S from "./Style";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
-import { LoginModal } from "Components";
+import { InfoModal } from "Components";
 import { Envelope } from "Assets";
 
 const EmailConfirm: React.FC = () => {
@@ -14,12 +14,12 @@ const EmailConfirm: React.FC = () => {
     if (value.length > maxLength) value = value.slice(0, maxLength);
   };
 
-  const handleClickLogin = useCallback(() => {
+  const handleClickComplete = useCallback(() => {
     removeModal();
 
     addModal({
       title: "",
-      element: <LoginModal />,
+      element: <InfoModal />,
       showOnlyBody: true,
       width: "1150px",
       height: "697px",
@@ -36,9 +36,7 @@ const EmailConfirm: React.FC = () => {
           `input[name=input-${parseInt(fieldIndex, 10) + 1}]`
         );
 
-        if (nextInput !== null) {
-          nextInput.focus();
-        }
+        if (nextInput !== null) nextInput.focus();
       }
     }
   };
@@ -165,7 +163,7 @@ const EmailConfirm: React.FC = () => {
             </S.PinContainer>
           </S.InputWrapper>
           <div className="complete">
-            <S.CompleteBtn>완료</S.CompleteBtn>
+            <S.CompleteBtn onClick={handleClickComplete}>완료</S.CompleteBtn>
           </div>
         </S.Wrapper>
       </S.Positioner>

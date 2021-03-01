@@ -4,7 +4,7 @@ export const Positioner = styled.div`
   width: 47%;
   height: 70%;
 
-  margin-top: 142px;
+  margin-top: 120px;
 
   display: flex;
   flex-direction: column;
@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 15px;
 
   width: 100%;
   height: 100%;
@@ -32,7 +33,7 @@ export const Wrapper = styled.div`
   .complete {
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: auto;
   }
 `;
 
@@ -68,7 +69,7 @@ export const Resend = styled.span`
 export const Message = styled.div`
   width: 100%;
   height: 114px;
-  margin-top: 10px;
+  margin-top: 20px;
 
   display: flex;
   flex-direction: column;
