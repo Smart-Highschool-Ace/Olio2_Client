@@ -9,3 +9,4 @@ export { default as RegisterModal } from "./ModalList/Auth/RegisterModal/Registe
 export { default as Template } from "./ModalList/Template/Template";
 export { default as AuthTemplate } from "./ModalList/Auth/AuthTemplate/AuthTemplate";
 export { default as EmailConfirm } from "./ModalList/Auth/EmailConfirm/EmailConfirm";
+export { default as InfoModal } from "./ModalList/InfoModal/InfoModal";
