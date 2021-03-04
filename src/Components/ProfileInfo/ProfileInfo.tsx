@@ -59,6 +59,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
   return ProfileData.map((data, idx) => (
     <S.ProfileContentWrapper key={idx}>
       <S.ProfileWrapper>
+        <S.ContentWrapper>
         <S.ProfileImageWrapper>
           <S.ProfileImage>
             <S.Profile src={profile} alt="프로필 사진" />
@@ -90,6 +91,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
           </S.linkWrapper>
           <S.ProfileModify>프로필 수정</S.ProfileModify>
         </S.ProfileInputWrapper>
+        </S.ContentWrapper>
       </S.ProfileWrapper>
       <TechStack StackData={StackDummyData} />
     </S.ProfileContentWrapper>

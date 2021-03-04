@@ -3,16 +3,14 @@ import styled from "@emotion/styled";
 export const InfoContentWrapper = styled.div`
   width: 69%;
   height: auto;
-  margin-left: 9rem;
+  margin-left: 6rem;
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
   min-height: 400px;
-  overflow: visible;
 `;
 
 export const ContentTitle = styled.div`
@@ -32,7 +30,7 @@ export const ContentTitle = styled.div`
 
 export const ProjectContent = styled.div`
   display: grid;
-  grid-template-columns: 550px 550px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
@@ -43,8 +41,6 @@ export const ProjectWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 550px;
-  height: 100px;
   background-color: white;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
@@ -55,10 +51,10 @@ export const EtcContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 1138px;
+  flex: 1;
   height: 102px;
   background-color: white;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
-  margin: 2rem 1rem 0rem 1rem;
+  margin: 1rem 2rem 0rem 2rem;
 `;

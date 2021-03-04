@@ -20,7 +20,7 @@ const Profile: React.FC = () => {
   return (
     <S.Positioner>
       <ProfileInfo ProfileData={MyProfileDummyData} />
-      <ProfileItems />
+      <ProfileItems/>
     </S.Positioner>
   );
 };

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const ProfileContentWrapper = styled.div`
   width: 31%;
-  height: 100%;
+  height: auto;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -14,12 +14,17 @@ export const ProfileWrapper = styled.div`
   height: 100%;
 `;
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  margin-left: 10rem;
+`;
+
 export const ProfileImageWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 4rem;
 `;
 
 export const ProfileImage = styled.div`
@@ -37,7 +42,7 @@ export const ProfileInputWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-top: 5%;
-  margin-left: 40%;
+  padding-left: 25px;
 
   span {
     font-size: 19px;
@@ -101,7 +106,7 @@ export const EditImage = styled.div`
   width: 62px;
   height: 62px;
   top: 75%;
-  right: 10%;
+  right: 14%;
   background-color: #e3e3e3;
   border-radius: 31px;
   display: flex;
