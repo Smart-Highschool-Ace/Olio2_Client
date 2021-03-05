@@ -25,6 +25,8 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  cursor: pointer;
 `;
 
 export const SearchWrapper = styled.div`

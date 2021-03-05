@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { Logo, Search } from "Assets";
 import * as S from "./Style";
-
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import LoginModal from "Components/ModalList/Auth/LoginModal/LoginModal";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const { addModal } = useModalContext();
@@ -21,9 +21,11 @@ const Header: React.FC = () => {
   return (
     <S.Positioner>
       <S.ContentWrapper>
-        <S.Logo>
-          <Logo height={47} />
-        </S.Logo>
+        <Link href="/main/portfolios">
+          <S.Logo>
+            <Logo height={47} />
+          </S.Logo>
+        </Link>
         <S.SearchWrapper>
           <S.SearchButton onClick={() => alert("검색입니다!")}>
             <Search />
