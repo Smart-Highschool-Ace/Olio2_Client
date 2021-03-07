@@ -13,23 +13,27 @@ const ProfileItems = () => {
       <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
       <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
       <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
+      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
+      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
     </S.ProjectContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
     <S.ContentTitle>
       <span>수상경력</span>
     </S.ContentTitle>
-    <S.EtcContent>수상경력 소개</S.EtcContent>
-    <S.EtcContent>수상경력 소개</S.EtcContent>
-    <S.EtcContent>수상경력 소개</S.EtcContent>
+    <S.EtcContent>
+      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
+      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
+      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
+    </S.EtcContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
     <S.ContentTitle>
       <span>자격증</span>
     </S.ContentTitle>
-    <S.EtcContent>자격증 소개</S.EtcContent>
-    <S.EtcContent>자격증 소개</S.EtcContent>
-    <S.EtcContent>자격증 소개</S.EtcContent>
+      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
+      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
+      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
     </S.ContentWrapper>
     </S.InfoContentWrapper>
   );

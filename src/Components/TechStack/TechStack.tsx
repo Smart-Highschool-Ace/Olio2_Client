@@ -38,7 +38,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
   };
 
   return (
-    <>
+    <S.Positioner>
       <S.TitleWrapper>
         <span>사용기술</span>
         <div onClick={setStack}>추가 +</div>
@@ -89,7 +89,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
           </S.StackContent>
         ))}
       </S.StackWrapper>
-    </>
+    </S.Positioner>
   );
 };
 

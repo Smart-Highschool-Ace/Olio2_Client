@@ -10,6 +10,8 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: auto;
+  overflow: visible;
   min-height: 400px;
 `;
 
@@ -18,9 +20,10 @@ export const ContentTitle = styled.div`
   height: 30px;
   display: flex;
   align-items: flex-end;
+  margin-bottom: 1rem;
 
   span {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: black;
     border-bottom: 1px solid rgba(213, 234, 206, 0.54);
@@ -31,10 +34,10 @@ export const ContentTitle = styled.div`
 export const ProjectContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 100px;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  margin: 2rem;
+  grid-template-rows: repeat(3, minmax(105px, auto));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  margin: 1rem 5rem 3rem 0.7rem;
 `;
 
 export const ProjectWrapper = styled.div`
@@ -46,7 +49,7 @@ export const ProjectWrapper = styled.div`
   border-radius: 10px;
 `;
 
-export const EtcContent = styled.div`
+export const EtcWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,5 +59,11 @@ export const EtcContent = styled.div`
   background-color: white;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
-  margin: 1rem 2rem 0rem 2rem;
+  margin: 1rem 5rem 0rem 0.7rem;
+`
+
+export const EtcContent = styled.div`
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 100%;
 `;

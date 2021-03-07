@@ -23,7 +23,7 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
   };
 
   const onBeforeFileLoad = (elem: any) => {
-    if (elem.target.files[0].size > 500000) {
+    if (elem.target.files[0].size > 700000) {
       alert("이미지의 크기가 너무 큽니다");
       elem.target.value = "";
     } else {

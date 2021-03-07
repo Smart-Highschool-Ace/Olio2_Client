@@ -92,8 +92,8 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
           <S.ProfileModify>프로필 수정</S.ProfileModify>
         </S.ProfileInputWrapper>
         </S.ContentWrapper>
+        <TechStack StackData={StackDummyData} />
       </S.ProfileWrapper>
-      <TechStack StackData={StackDummyData} />
     </S.ProfileContentWrapper>
   ));
 };

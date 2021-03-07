@@ -5,6 +5,8 @@ export const ProfileContentWrapper = styled.div`
   height: auto;
 `;
 
+
+
 export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -19,7 +21,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   width: auto;
   height: 100%;
-  margin-left: 10rem;
+  margin-left: 5rem;
 `;
 
 export const ProfileImageWrapper = styled.div`
@@ -91,7 +93,7 @@ export const ProfileModify = styled.button`
   justify-content: center;
   margin-top: 35px;
   width: 320px;
-  height: 54px;
+  height: 80px;
   background: #ffffff;
   border: 1px solid #929292;
   border-radius: 5px;
