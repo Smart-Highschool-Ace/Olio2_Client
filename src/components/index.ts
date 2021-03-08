@@ -1,12 +1,1 @@
 export { default as Header } from "./Header/Header";
-export { default as Board } from "./Board/Board";
-export { default as BoardItem } from "./BoardItem/BoardItem";
-export { default as MainToggle } from "./MainToggle/MainToggle";
-export { default as Filter } from "./Filter/Filter";
-export { default as Modal } from "./Modal/Modal";
-export { default as LoginModal } from "./ModalList/Auth/LoginModal/LoginModal";
-export { default as RegisterModal } from "./ModalList/Auth/RegisterModal/RegisterModal";
-export { default as Template } from "./ModalList/Template/Template";
-export { default as AuthTemplate } from "./ModalList/Auth/AuthTemplate/AuthTemplate";
-export { default as EmailConfirm } from "./ModalList/Auth/EmailConfirm/EmailConfirm";
-export { default as InfoModal } from "./ModalList/InfoModal/InfoModal";
