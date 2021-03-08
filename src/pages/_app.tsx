@@ -1,5 +1,8 @@
 import { Modal } from "Components";
 import type { AppProps } from "next/app";
+import { Fragment } from "react";
+import GlobalStyle from "Styles/GlobalStyle";
+import { Global } from "@emotion/react";
 
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
