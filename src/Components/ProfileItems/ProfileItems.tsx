@@ -45,6 +45,9 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           </S.ProjectTitle>
         </S.ProjectWrapper>
       ))}
+      <S.AddWrapper>
+        +
+      </S.AddWrapper>
     </S.ProjectContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
@@ -59,12 +62,16 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           <div>{data.date}</div>
         </S.EtcWrapper>
       ))}
+      <S.AddWrapper style={{ margin: '1rem 5rem 0rem 0.7rem' }}>
+        +
+      </S.AddWrapper>
     </S.EtcContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
     <S.ContentTitle>
       <span>자격증</span>
     </S.ContentTitle>
+    <S.EtcContent>
       {CertificateDummyData.map((data, idx) => (
         <S.EtcWrapper key={idx}>
           <span>{data.name}</span>
@@ -72,6 +79,10 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           <div>{data.date}</div>
         </S.EtcWrapper>
       ))}
+      <S.AddWrapper style={{ margin: '1rem 5rem 0rem 0.7rem' }}>
+        +
+      </S.AddWrapper>
+      </S.EtcContent>
     </S.ContentWrapper>
     </S.InfoContentWrapper>
   );

@@ -50,6 +50,18 @@ export const ProjectWrapper = styled.div`
   border-radius: 10px;
 `;
 
+export const AddWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(213, 234, 206, 0.54);
+  height: 105px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 38px;
+  color: #5A948B;
+`;
+
 export const ProjectTitle = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,7 +85,7 @@ export const EtcWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  height: 102px;
+  height: 105px;
   background-color: white;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
