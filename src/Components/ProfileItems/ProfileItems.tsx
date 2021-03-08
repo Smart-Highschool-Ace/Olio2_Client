@@ -1,7 +1,34 @@
 import React from "react";
 import * as S from "./Style";
 
-const ProfileItems = () => {
+type MyProject = {
+  name: string;
+  icon: string;
+  description: string;
+}
+
+type MyAward = {
+  name: string;
+  organization: string;
+  date: string;
+}
+
+type MyCertificate = {
+  name: string;
+  organization: string;
+  date: string;
+}
+
+interface ProfileItemProps {
+  ProjectDummyData: MyProject[];
+  AwardDummyData: MyAward[];
+  CertificateDummyData: MyCertificate[];
+}
+
+const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
+
+  const { AwardDummyData, ProjectDummyData, CertificateDummyData} = props;
+
   return (
     <S.InfoContentWrapper>
     <S.ContentWrapper>
@@ -9,12 +36,15 @@ const ProfileItems = () => {
       <span>프로젝트</span>
     </S.ContentTitle>
     <S.ProjectContent>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
-      <S.ProjectWrapper>콘텐트</S.ProjectWrapper>
+      {ProjectDummyData.map((data, idx) => (
+        <S.ProjectWrapper key={idx}>
+          <img src={data.icon} style={{ margin: '1.5rem'}}/>
+          <S.ProjectTitle>
+              <span>{data.name}</span>
+              <div>{data.description}</div>
+          </S.ProjectTitle>
+        </S.ProjectWrapper>
+      ))}
     </S.ProjectContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
@@ -22,18 +52,26 @@ const ProfileItems = () => {
       <span>수상경력</span>
     </S.ContentTitle>
     <S.EtcContent>
-      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
-      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
-      <S.EtcWrapper>수상경력 소개</S.EtcWrapper>
+      {AwardDummyData.map((data, idx) => (
+        <S.EtcWrapper key={idx}>
+          <span>{data.name}</span>
+          <div>{data.organization}</div>
+          <div>{data.date}</div>
+        </S.EtcWrapper>
+      ))}
     </S.EtcContent>
     </S.ContentWrapper>
     <S.ContentWrapper>
     <S.ContentTitle>
       <span>자격증</span>
     </S.ContentTitle>
-      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
-      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
-      <S.EtcWrapper>자격증 소개</S.EtcWrapper>
+      {CertificateDummyData.map((data, idx) => (
+        <S.EtcWrapper key={idx}>
+          <span>{data.name}</span>
+          <div>{data.organization}</div>
+          <div>{data.date}</div>
+        </S.EtcWrapper>
+      ))}
     </S.ContentWrapper>
     </S.InfoContentWrapper>
   );

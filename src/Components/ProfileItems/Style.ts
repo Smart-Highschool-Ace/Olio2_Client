@@ -35,6 +35,7 @@ export const ProjectContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, minmax(105px, auto));
+	grid-auto-rows: minmax(105px, auto);
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   margin: 1rem 5rem 3rem 0.7rem;
@@ -42,17 +43,34 @@ export const ProjectContent = styled.div`
 
 export const ProjectWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
   background-color: white;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
 `;
 
+export const ProjectTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  div {
+    color: #9A9A9A;
+    font-weight: 600;
+    font-size: 14px;
+  }
+`;
+
 export const EtcWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   flex: 1;
   height: 102px;
@@ -60,6 +78,18 @@ export const EtcWrapper = styled.div`
   border: 1px solid #bdbdbd;
   border-radius: 10px;
   margin: 1rem 5rem 0rem 0.7rem;
+  padding-left: 35px;
+
+  div {
+    font-size: 14px;
+    color: #959595;
+  }
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #504F4F;
+  }
 `
 
 export const EtcContent = styled.div`
