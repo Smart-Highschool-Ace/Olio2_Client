@@ -4,3 +4,6 @@ export { default as Star } from "./svg/Star";
 export { default as Search } from "./svg/Search";
 export { default as ModalBanner } from "./svg/ModalBanner";
 export { default as Envelope } from "./svg/Envelope";
+export { default as Camera } from "./svg/Camera";
+export { default as GreenMark } from "./svg/GreenMark";
+export { default as LightGreenMark } from "./svg/LightGreenMark";
