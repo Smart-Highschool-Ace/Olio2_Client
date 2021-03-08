@@ -1,4 +1,4 @@
-import * as I from "../../../Assets/index";
+import * as I from "../../../../Assets/index";
 import * as S from "../styled";
 
 interface ProjectModalProps {

@@ -1,7 +1,7 @@
-import ProjectModalEdit from "./projectModalState/ProjectModalEdit";
-import ProjectModalWriting from "./projectModalState/ProjectModalWriting";
-import FieldChoice from "./projectModalState/FieldChoice";
-import Template from "../Modal/Template/Template";
+import ProjectModalEdit from "./ProjectModalItem/ProjectModalEdit";
+import ProjectModalWriting from "./ProjectModalItem/ProjectModalWriting";
+import FieldChoice from "./FieldChoice/FieldChoice";
+import Template from "../../Modal/Template/Template";
 
 interface ProjectModalProps {
   visible: boolean;
@@ -25,7 +25,7 @@ const ProjectModal: React.FC<ProjectModalProps> = (
       </Template>
     ),
     Choice: (
-      <Template toggle={props.toggle} width={1400} height={1000}>
+      <Template toggle={props.toggle} width={1400} height={870}>
         <FieldChoice visible={props.visible} />
       </Template>
     ),
