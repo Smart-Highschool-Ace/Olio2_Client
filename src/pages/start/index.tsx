@@ -6,7 +6,6 @@ import {
   MockupPage_portfoilo,
   AboutPage,
   LastPage,
-  Footer,
 } from "Components";
 import React from "react";
 
@@ -19,7 +18,6 @@ const index: React.FC = () => {
       <MockupPage_project />
       <AboutPage />
       <LastPage />
-      <Footer/>
     </Wrapper>
   );
 };
