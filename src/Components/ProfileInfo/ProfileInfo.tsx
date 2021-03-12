@@ -60,37 +60,37 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
     <S.ProfileContentWrapper key={idx}>
       <S.ProfileWrapper>
         <S.ContentWrapper>
-        <S.ProfileImageWrapper>
-          <S.ProfileImage>
-            <S.Profile src={profile} alt="프로필 사진" />
-          </S.ProfileImage>
-          <S.EditImage onClick={CheckPopUp}>
-            {PopUp ? (
-              <ProfileModal toggle={CheckPopUp} setProfile={setProfile} />
-            ) : null}
-            <Camera />
-          </S.EditImage>
-        </S.ProfileImageWrapper>
-        <S.ProfileInputWrapper>
-          <S.NameTitle>
-            {data.std_no} {data.name}
-          </S.NameTitle>
-          <span style={{ color: "#878787", lineHeight: "50px" }}>
-            {data.school}
-          </span>
-          <span style={{ lineHeight: "50px", fontSize: 17, color: "black" }}>
-            {data.introduce}
-          </span>
-          <S.linkWrapper>
-            <Clip />
-            <a href={data.site}>{data.site}</a>
-          </S.linkWrapper>
-          <S.linkWrapper>
-            <Mail />
-            <span>{data.email}</span>
-          </S.linkWrapper>
-          <S.ProfileModify>프로필 수정</S.ProfileModify>
-        </S.ProfileInputWrapper>
+          <S.ProfileImageWrapper>
+            <S.ProfileImage>
+              <S.Profile src={profile} alt="프로필 사진" />
+            </S.ProfileImage>
+            <S.EditImage onClick={CheckPopUp}>
+              {PopUp ? (
+                <ProfileModal toggle={CheckPopUp} setProfile={setProfile} />
+              ) : null}
+              <Camera />
+            </S.EditImage>
+          </S.ProfileImageWrapper>
+          <S.ProfileInputWrapper>
+            <S.NameTitle>
+              {data.std_no} {data.name}
+            </S.NameTitle>
+            <span style={{ color: "#878787", lineHeight: "50px" }}>
+              {data.school}
+            </span>
+            <span style={{ lineHeight: "50px", fontSize: 17, color: "black" }}>
+              {data.introduce}
+            </span>
+            <S.linkWrapper>
+              <Clip />
+              <a href={data.site}>{data.site}</a>
+            </S.linkWrapper>
+            <S.linkWrapper>
+              <Mail />
+              <span>{data.email}</span>
+            </S.linkWrapper>
+            <S.ProfileModify>프로필 수정</S.ProfileModify>
+          </S.ProfileInputWrapper>
         </S.ContentWrapper>
         <TechStack StackData={StackDummyData} />
       </S.ProfileWrapper>

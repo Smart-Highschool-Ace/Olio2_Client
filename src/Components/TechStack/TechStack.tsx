@@ -61,7 +61,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
                 <div
                   style={{
                     position: "relative",
-                    zIndex: 30, 
+                    zIndex: 30,
                   }}
                 >
                   <BlockPicker
