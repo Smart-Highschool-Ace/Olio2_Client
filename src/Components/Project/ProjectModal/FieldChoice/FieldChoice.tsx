@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./Styled";
 import * as I from "../../../../Assets/index";
-import ProjectModalWriting from "../ProjectModalItem/ProjectModalWriting";
+import ProjectModal from "../ProjectModal/ProjectModal";
 import Template from "../../../Modal/Template/Template";
 
 interface FieldChoiceProps {
@@ -38,7 +38,7 @@ const FieldChoice: React.FC<FieldChoiceProps> = (props: FieldChoiceProps) => {
             <button onClick={openModal}>다 음</button>
             {modalVisible && (
               <Template toggle={props.toggle} width={1450} height={1050}>
-                <ProjectModalWriting visible={modalVisible} />
+                <ProjectModal visible={modalVisible} />
               </Template>
             )}
           </S.FieldChoice>
