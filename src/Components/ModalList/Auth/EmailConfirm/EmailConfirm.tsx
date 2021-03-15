@@ -49,13 +49,13 @@ const EmailConfirm: React.FC = () => {
           <S.Resend>이메일 재발송</S.Resend>
           <S.Message>
             <Envelope />
-            <h3>
+            <div className="desc">
               인증 메일을 발송했습니다. <br />
               메일함을 확인하여 이메일 인증코드를 입력해주세요.{" "}
-            </h3>
+            </div>
           </S.Message>
           <S.InputWrapper>
-            <h4>인증번호 6자리를 입력해주세요</h4>
+            <span className="confirm">인증번호 6자리를 입력해주세요</span>
             <S.PinContainer>
               <S.Pin>
                 <S.PinInput

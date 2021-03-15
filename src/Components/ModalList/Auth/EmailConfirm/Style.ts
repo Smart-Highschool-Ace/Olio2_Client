@@ -35,6 +35,22 @@ export const Wrapper = styled.div`
     align-items: center;
     margin-top: auto;
   }
+
+  .desc {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .confirm {
+    font-weight: thin;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+    color: #6a6a6a;
+  }
 `;
 
 export const Resend = styled.span`
