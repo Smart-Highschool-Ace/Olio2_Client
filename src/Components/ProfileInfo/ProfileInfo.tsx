@@ -1,4 +1,4 @@
-import { Camera, Clip, Mail } from "Assets";
+import { ProfileCamera, Clip, Mail } from "Assets";
 import { ProfileModal, TechStack } from "Components";
 import React, { useState } from "react";
 import * as S from "./Style";
@@ -68,7 +68,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ ProfileData }) => {
               {PopUp ? (
                 <ProfileModal toggle={CheckPopUp} setProfile={setProfile} />
               ) : null}
-              <Camera />
+              <ProfileCamera />
             </S.EditImage>
           </S.ProfileImageWrapper>
           <S.ProfileInputWrapper>

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Camera = () => {
+const ProfileCamera = () => {
   return (
     <svg
       width={33}
@@ -28,4 +28,4 @@ const Camera = () => {
   );
 };
 
-export default Camera;
+export default ProfileCamera;
