@@ -13,6 +13,7 @@ export const ModalForm = styled.form`
 export const ModalInner = styled.div<FieldChoiceProps>`
   display: ${(props) => (props.visible ? "flex" : "none")};
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   /* justify-content: center; */
   width: 100%;
@@ -27,7 +28,7 @@ export const ModalInner = styled.div<FieldChoiceProps>`
     outline: none;
   }
   svg {
-    margin: 141px 0 39px;
+    margin-bottom: 39px;
   }
 `;
 
@@ -35,6 +36,7 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 65px;
   div {
     font-size: 25px;
