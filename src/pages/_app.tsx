@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ModalProvider>
+      <Global styles={GlobalStyle} />
       <Component {...pageProps} />
       {renderModals()}
     </ModalProvider>
