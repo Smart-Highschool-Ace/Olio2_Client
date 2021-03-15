@@ -1,7 +1,12 @@
 import React from "react";
+import { Header } from "Components";
 
 const index = () => {
-  return <div>Hi Olio!</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default index;

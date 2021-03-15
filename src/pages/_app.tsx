@@ -1,7 +1,15 @@
 import type { AppProps } from "next/app";
+import { Fragment } from "react";
+import GlobalStyle from "Styles/GlobalStyle";
+import { Global } from "@emotion/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Fragment>
+      <Global styles={GlobalStyle} />
+      <Component {...pageProps} />
+    </Fragment>
+  );
 }
 
 export default MyApp;
