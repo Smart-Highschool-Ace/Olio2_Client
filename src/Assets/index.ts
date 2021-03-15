@@ -1,6 +1,14 @@
+export { default as Camera } from "./svg/Camera";
+export { default as Envelope } from "./svg/Envelope";
+export { default as GreenMark } from "./svg/GreenMark";
+export { default as LightGreenMark } from "./svg/LightGreenMark";
 export { default as Logo } from "./svg/Logo";
+export { default as ModalBanner } from "./svg/ModalBanner";
 export { default as ProjectImg } from "./svg/ProjectImg";
 export { default as ProjectLogo } from "./svg/ProjectLogo";
 export { default as Clip } from "./svg/Clip";
 export { default as Mail } from "./svg/Mail";
 export { default as ProfileCamera } from "./svg/ProfileCamera";
+export { default as Search } from "./svg/Search";
+export { default as Star } from "./svg/Star";
+export { default as Views } from "./svg/Views";
