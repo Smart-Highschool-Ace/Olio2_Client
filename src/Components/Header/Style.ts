@@ -1,13 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Positioner = styled.div`
-  position: absolute;
   border-bottom: 1px solid #d6d6d6;
   background-color: #ffffff;
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 30;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 `;
 
@@ -27,6 +25,38 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  cursor: pointer;
+`;
+
+export const SearchWrapper = styled.div`
+  width: 580px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid;
+
+  cursor: pointer;
+`;
+
+export const SearchButton = styled.div`
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SearchBar = styled.input`
+  width: 95%;
+  height: 100%;
+  border: none;
+  text-decoration: none;
+
+  :focus {
+    outline: none;
+  }
 `;
 
 export const AuthWrapper = styled.div`
@@ -38,5 +68,7 @@ export const AuthWrapper = styled.div`
   div {
     font-size: 17px;
     font-weight: 100;
+
+    cursor: pointer;
   }
 `;
