@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Positioner = styled.div`
+  position: fixed;
   border-bottom: 1px solid #d6d6d6;
   background-color: #ffffff;
   top: 0px;
@@ -18,6 +19,7 @@ export const ContentWrapper = styled.div`
   height: 85px;
   padding-left: 3%;
   padding-right: 6%;
+  
 `;
 
 export const Logo = styled.div`
@@ -64,7 +66,6 @@ export const AuthWrapper = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-
   div {
     font-size: 17px;
     font-weight: 100;

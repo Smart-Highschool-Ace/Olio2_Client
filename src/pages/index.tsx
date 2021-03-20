@@ -1,10 +1,8 @@
 import React from "react";
-import { Header } from "Components";
 
-const index = () => {
+const index: React.FC = () => {
   return (
     <div>
-      <Header />
     </div>
   );
 };
