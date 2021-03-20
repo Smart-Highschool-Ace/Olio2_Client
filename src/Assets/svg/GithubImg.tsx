@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function github() {
+function githubImg() {
   return (
     <svg
       width={97}
@@ -34,4 +34,4 @@ function github() {
   );
 }
 
-export default github;
+export default githubImg;

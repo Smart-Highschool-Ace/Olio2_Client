@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Camera() {
+function CameraImg() {
   return (
     <svg
       width={30}
@@ -27,4 +27,4 @@ function Camera() {
   );
 }
 
-export default Camera;
+export default CameraImg;
