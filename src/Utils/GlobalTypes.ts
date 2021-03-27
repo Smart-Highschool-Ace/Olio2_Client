@@ -5,7 +5,7 @@ export type PortfolioType = {
   views: number;
   stars: number;
   desc: string;
-  skill: Array<string>;
+  skill: string[];
 };
 
 export type BoardObj = {
