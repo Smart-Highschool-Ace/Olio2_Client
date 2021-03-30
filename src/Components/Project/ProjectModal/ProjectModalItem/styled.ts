@@ -26,12 +26,8 @@ export const ModalToExplanation = styled.div`
     flex-wrap: wrap;
     position: relative;
     div {
-      align-items: flex-start;
       justify-content: space-between;
       margin-bottom: 5px;
-      span {
-        margin-left: 165px;
-      }
       button {
         border: none;
         background-color: #fff;
@@ -39,6 +35,9 @@ export const ModalToExplanation = styled.div`
           position: relative;
           top: 3px;
         }
+      }
+      span {
+        margin-left: 165px;
       }
     }
     input {
@@ -52,7 +51,7 @@ export const ModalToExplanation = styled.div`
   }
   div svg {
     position: relative;
-    top: -13px;
+    top: -10px;
     margin: 0 7px;
   }
   input::-webkit-outer-spin-button,
@@ -67,7 +66,8 @@ export const ModalToExplanation = styled.div`
 
 export const Explanation = styled.div`
   padding-top: 15px;
-  justify-content: flex-start;
+  position: relative;
+  right: 26%;
   width: 80%;
 `;
 
@@ -108,16 +108,16 @@ export const Participants = styled.div`
   .searchbar {
     position: relative;
     top: -30px;
-    background-color: #E7E7E7;
+    background-color: #e7e7e7;
     border-radius: 10px;
     width: 160px;
     input {
-      background-color: #E7E7E7;
+      background-color: #e7e7e7;
       width: 140px;
     }
   }
   textarea {
-    background-color: #E7E7E7;
+    background-color: #e7e7e7;
     border-radius: 10px;
     border: none;
     resize: none;
@@ -130,10 +130,8 @@ export const Participants = styled.div`
     width: 205px;
     height: 55px;
     margin: 0 6.5px 12px;
+    padding-top: 6px;
     text-align: left;
-    svg {
-      margin: 6px 0;
-    }
     div {
       font-size: 12px;
       width: 70%;
@@ -159,13 +157,12 @@ export const Participants = styled.div`
       svg {
         float: right;
         position: relative;
-        left: 10px;
-        top: -3px;
+        left: 70px;
+        top: -45px;
       }
     }
   }
 `;
-
 
 export const SearchBar = styled.div`
   font-size: 12px;
@@ -189,9 +186,9 @@ export const SearchBar = styled.div`
     resize: none;
     border: none;
     outline: none;
+    margin-right: 5px;
   }
   #addBtn {
-    /* margin: 0 0 0 200px; */
     padding: 3px 15px;
     background-color: white;
     color: #999999;
@@ -199,6 +196,7 @@ export const SearchBar = styled.div`
     border-radius: 8px;
     width: 55px;
     height: 25px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -269,4 +267,3 @@ export const GithubBtn = styled.div`
     }
   }
 `;
-

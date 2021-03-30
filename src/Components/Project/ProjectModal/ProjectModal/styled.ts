@@ -1,18 +1,12 @@
 import styled from "@emotion/styled";
 
-interface ProjectModalProps {
-  visible?: boolean;
-  state?: string;
-}
-
 export const ModalForm = styled.form`
   width: 100%;
   height: 100%;
 `;
 
-export const ModalInner = styled.div<ProjectModalProps>`
-  z-index: 99999;
-  display: ${(props) => (props.visible ? "block" : "none")};
+export const ModalInner = styled.div`
+  display: block;
   width: 100%;
   height: 100%;
   color: black;

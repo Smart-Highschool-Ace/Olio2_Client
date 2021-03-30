@@ -1,5 +1,5 @@
-import * as S from "./styled";
 import * as I from "../../../../Assets/index";
+import * as S from "./styled";
 
 interface GithubBtnProps {
   state: string;
@@ -8,11 +8,11 @@ interface GithubBtnProps {
 const GithubBtn: React.FC<GithubBtnProps> = (props: GithubBtnProps) => {
   if (props.state == "view" || props.state == "viewOnly") {
     return (
-      <>
+      <S.GithubBtn>
         <button className="githubBtn">
-          <I.Github />
+          <I.githubImg />
         </button>
-      </>
+      </S.GithubBtn>
     );
   } else if (props.state == "writing") {
     return (

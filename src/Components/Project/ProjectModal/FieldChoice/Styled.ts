@@ -10,12 +10,12 @@ export const ModalForm = styled.form`
   height: 100%;
 `;
 
-export const ModalInner = styled.div<FieldChoiceProps>`
-  display: ${(props) => (props.visible ? "flex" : "none")};
+export const ModalInner = styled.div`
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   width: 100%;
   height: 100%;
   color: black;
