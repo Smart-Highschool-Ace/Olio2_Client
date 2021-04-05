@@ -21,3 +21,4 @@ export { default as EmailConfirm } from "./ModalList/Auth/EmailConfirm/EmailConf
 export { default as InfoModal } from "./ModalList/InfoModal/InfoModal";
 export { default as ProjectModal } from "./Project/ProjectModal/ProjectModal/ProjectModal";
 export { default as FieldChoice } from "./Project/ProjectModal/FieldChoice/FieldChoice";
+export { default as Project } from "./Project/ProjectModal/Project";

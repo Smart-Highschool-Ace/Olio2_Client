@@ -1,6 +1,9 @@
+import React, { useState, useCallback } from "react";
 import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 import * as C from "../ProjectModalItem";
+import { useModalContext } from "Utils/Contexts/ModalContext";
+import FieldChoice from "../FieldChoice/FieldChoice";
 
 interface ProjectModalProps {
   visible?: boolean;
@@ -10,10 +13,23 @@ interface ProjectModalProps {
 const ProjectModal: React.FC<ProjectModalProps> = (
   props: ProjectModalProps
 ) => {
+  const { addModal, removeModal } = useModalContext();
+
+  const handleClickRegister = useCallback(() => {
+    removeModal();
+
+    addModal({
+      title: "",
+      element: <FieldChoice state={props.state} />,
+      width: "1450px",
+      height: "1000px",
+    });
+  }, []);
+
   return (
     <>
       <S.ModalForm>
-        <S.ModalInner visible={props.visible}>
+        <S.ModalInner>
           <S.ModalTop>
             <C.ModalTop state={props.state} />
             <S.ResultBox>
@@ -48,7 +64,9 @@ const ProjectModal: React.FC<ProjectModalProps> = (
                 {
                   writing: (
                     <S.BackBtn>
-                      <button>이전</button>
+                      <button onClick={() => handleClickRegister()}>
+                        이전
+                      </button>
                       <button>저장</button>
                     </S.BackBtn>
                   ),

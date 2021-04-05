@@ -1,40 +1,46 @@
-import { ProjectModal, FieldChoice } from "Components";
-import Template from "Components/Modal/Template/Template";
+import React, { useState, useCallback } from "react";
+import ProjectModal from "./ProjectModal/ProjectModal";
+import FieldChoice from "./FieldChoice/FieldChoice";
+import { useModalContext } from "Utils/Contexts/ModalContext";
 
 interface ProjectProps {
-  visible: boolean;
   state: string;
-  toggle?: any;
 }
 
-const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
-  return {
-    edit: (
-      <Template toggle={props.toggle} width={1450} height={1000}>
-        <ProjectModal visible={props.visible} state={props.state} />
-      </Template>
-    ),
-    writing: (
-      <Template toggle={props.toggle} width={1450} height={1000}>
-        <ProjectModal visible={props.visible} state={props.state} />
-      </Template>
-    ),
-    Choice: (
-      <Template toggle={props.toggle} width={1450} height={1000}>
-        <FieldChoice visible={props.visible} />
-      </Template>
-    ),
-    view: (
-      <Template toggle={props.toggle} width={1450} height={1000}>
-        <ProjectModal visible={props.visible} state={props.state} />
-      </Template>
-    ),
-    viewOnly: (
-      <Template toggle={props.toggle} width={1450} height={1000}>
-        <ProjectModal visible={props.visible} state={props.state} />
-      </Template>
-    ),
-  }[props.state];
+const Project = (props: ProjectProps) => {
+  const { addModal } = useModalContext();
+
+  const handleClickRegister = useCallback(() => {
+    addModal({
+      title: "",
+      element: <ProjectModal state={props.state} />,
+      showOnlyBody: true,
+      width: "1450px",
+      height: "1000px",
+    });
+  }, []);
+
+  const handleClickRegisterToChoice = useCallback(() => {
+    addModal({
+      title: "",
+      element: <FieldChoice state={props.state} />,
+      showOnlyBody: true,
+      width: "1450px",
+      height: "1000px",
+    });
+  }, []);
+
+  const openModal = () => {
+    switch (props.state) {
+      case "writing":
+        handleClickRegisterToChoice();
+        break;
+      default:
+        handleClickRegister();
+    }
+  };
+
+  return <button onClick={() => openModal()}>modal을 보고싶어?</button>;
 };
 
 export default Project;
