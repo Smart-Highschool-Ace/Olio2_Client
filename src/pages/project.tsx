@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ProjectModal } from "../Components/index";
+import { ProjectModal } from "Components";
 
 const project = () => {
   const [modalVisible, setModalVisible] = useState(false);

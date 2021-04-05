@@ -1,6 +1,5 @@
-import ProjectModal from "./ProjectModal/ProjectModal";
-import FieldChoice from "./FieldChoice/FieldChoice";
-import Template from "../../Modal/Template/Template";
+import { ProjectModal, FieldChoice } from "Components";
+import Template from "Components/Modal/Template/Template";
 
 interface ProjectProps {
   visible: boolean;
@@ -9,7 +8,6 @@ interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
-  console.log(props.state);
   return {
     edit: (
       <Template toggle={props.toggle} width={1450} height={1000}>

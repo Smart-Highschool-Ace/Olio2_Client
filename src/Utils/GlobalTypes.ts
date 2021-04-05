@@ -5,6 +5,15 @@ export type PortfolioType = {
   views: number;
   stars: number;
   desc: string;
+};
+
+export type ProjectType = {
+  id: number;
+  title: string;
+  image: string;
+  views: number;
+  stars: number;
+  desc: string;
   skill: string[];
 };
 

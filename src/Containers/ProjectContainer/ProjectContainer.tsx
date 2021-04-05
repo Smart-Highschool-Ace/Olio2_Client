@@ -4,7 +4,7 @@ import { Board, Filter } from "Components";
 
 const projectList = [
   {
-    id: "1",
+    id: 1,
     title: "취준진단",
     image: "image1",
     views: 85,
@@ -13,7 +13,7 @@ const projectList = [
     skill: ["android", "ios"],
   },
   {
-    id: "2",
+    id: 2,
     title: "Olio",
     image: "image1",
     views: 345,
@@ -22,7 +22,7 @@ const projectList = [
     skill: ["web", "app"],
   },
   {
-    id: "3",
+    id: 3,
     title: "Dotori",
     image: "image1",
     views: 65,
@@ -31,7 +31,7 @@ const projectList = [
     skill: ["web"],
   },
   {
-    id: "4",
+    id: 4,
     title: "ONDO",
     image: "image1",
     views: 345,
@@ -40,7 +40,7 @@ const projectList = [
     skill: ["web", "app"],
   },
   {
-    id: "5",
+    id: 5,
     title: "MADI",
     image: "image1",
     views: 1000,
@@ -49,7 +49,7 @@ const projectList = [
     skill: ["web"],
   },
   {
-    id: "6",
+    id: 6,
     title: "GSM SPACE",
     image: "image1",
     views: 85,
@@ -58,7 +58,7 @@ const projectList = [
     skill: ["web"],
   },
   {
-    id: "7",
+    id: 7,
     title: "Battleground",
     image: "image1",
     views: 83,
@@ -67,7 +67,7 @@ const projectList = [
     skill: ["game"],
   },
   {
-    id: "8",
+    id: 8,
     title: "아이폰 부시기",
     image: "image1",
     views: 23,
@@ -76,7 +76,7 @@ const projectList = [
     skill: ["ios"],
   },
   {
-    id: "9",
+    id: 9,
     title: "삼성 갤럭시 최고!",
     image: "image1",
     views: 932,
@@ -85,7 +85,7 @@ const projectList = [
     skill: ["android"],
   },
   {
-    id: "10",
+    id: 10,
     title: "자율주행시스템",
     image: "image1",
     views: 993,

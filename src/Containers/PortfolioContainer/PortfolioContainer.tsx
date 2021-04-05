@@ -4,7 +4,7 @@ import { Board } from "Components";
 
 const portfolioList = [
   {
-    id: "1",
+    id: 1,
     title: "3111 이대훈",
     image: "image1",
     views: 85,
@@ -12,7 +12,7 @@ const portfolioList = [
     desc: "I love React Hooks..❤️",
   },
   {
-    id: "2",
+    id: 2,
     title: "3308 김아련",
     image: "image1",
     views: 345,
@@ -20,7 +20,7 @@ const portfolioList = [
     desc: "저는 기마련 입니다~",
   },
   {
-    id: "3",
+    id: 3,
     title: "3219 진예원",
     image: "image1",
     views: 65,
@@ -28,7 +28,7 @@ const portfolioList = [
     desc: "UI/UX 디자이너 진예원입니다!",
   },
   {
-    id: "4",
+    id: 4,
     title: "3116 정현문",
     image: "image1",
     views: 345,
@@ -36,7 +36,7 @@ const portfolioList = [
     desc: "상큼한 현문짱입니다.",
   },
   {
-    id: "5",
+    id: 5,
     title: "3211 서 진",
     image: "image1",
     views: 1000,
@@ -44,7 +44,7 @@ const portfolioList = [
     desc: "저는 서진입니다!!",
   },
   {
-    id: "6",
+    id: 6,
     title: "3111 이대훈",
     image: "image1",
     views: 85,

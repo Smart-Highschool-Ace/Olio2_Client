@@ -19,3 +19,5 @@ export { default as Template } from "./ModalList/Template/Template";
 export { default as AuthTemplate } from "./ModalList/Auth/AuthTemplate/AuthTemplate";
 export { default as EmailConfirm } from "./ModalList/Auth/EmailConfirm/EmailConfirm";
 export { default as InfoModal } from "./ModalList/InfoModal/InfoModal";
+export { default as ProjectModal } from "./Project/ProjectModal/ProjectModal/ProjectModal";
+export { default as FieldChoice } from "./Project/ProjectModal/FieldChoice/FieldChoice";

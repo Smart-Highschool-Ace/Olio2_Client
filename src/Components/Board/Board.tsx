@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./Style";
-import { PortfolioType } from "Utils/GlobalTypes";
+import { PortfolioType, ProjectType } from "Utils/GlobalTypes";
 import { BoardItem } from "Components";
 import { useRouter } from "next/router";
 
 interface PortfolioProps {
-  kind: PortfolioType[];
+  kind: PortfolioType[] | ProjectType[];
 }
 
 const Board: React.FC<PortfolioProps> = ({ kind }) => {
@@ -18,7 +18,7 @@ const Board: React.FC<PortfolioProps> = ({ kind }) => {
   const router = useRouter();
   const { id } = router.query;
 
-  const MappingReturnProject = (kind: PortfolioType[]) =>
+  const MappingReturnProject = (kind) =>
     kind.map((item, idx) =>
       skills === "all" ? (
         <BoardItem list={item} key={idx} />
