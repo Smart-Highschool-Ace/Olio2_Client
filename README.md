@@ -41,6 +41,7 @@
 - 김아련 https://github.com/Kimaryean
 - 이서린 https://github.com/iseolin76
 - 노연주 https://github.com/yjnoh1016
+- 권희준 (Techical Advisor) https://github.com/GwonHeeJun
 
 <br/>
 
