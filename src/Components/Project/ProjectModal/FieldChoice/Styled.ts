@@ -5,7 +5,7 @@ interface FieldChoiceProps {
   state?: string;
 }
 
-export const ModalForm = styled.form`
+export const ModalForm = styled.div`
   width: 100%;
   height: 100%;
 `;

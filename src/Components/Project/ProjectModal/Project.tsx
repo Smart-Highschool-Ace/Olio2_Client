@@ -16,7 +16,7 @@ const Project = (props: ProjectProps) => {
       element: <ProjectModal state={props.state} />,
       showOnlyBody: true,
       width: "1450px",
-      height: "1000px",
+      height: "900px",
     });
   }, []);
 
@@ -26,7 +26,7 @@ const Project = (props: ProjectProps) => {
       element: <FieldChoice state={props.state} />,
       showOnlyBody: true,
       width: "1450px",
-      height: "1000px",
+      height: "900px",
     });
   }, []);
 

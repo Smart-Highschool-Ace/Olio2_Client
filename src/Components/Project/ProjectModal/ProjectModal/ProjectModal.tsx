@@ -22,7 +22,7 @@ const ProjectModal: React.FC<ProjectModalProps> = (
       title: "",
       element: <FieldChoice state={props.state} />,
       width: "1450px",
-      height: "1000px",
+      height: "900px",
     });
   }, []);
 

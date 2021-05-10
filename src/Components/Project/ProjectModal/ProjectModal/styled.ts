@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ModalForm = styled.form`
+export const ModalForm = styled.div`
   width: 100%;
   height: 100%;
 `;
