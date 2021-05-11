@@ -6,43 +6,36 @@ export const CREATE_PROJECT = gql`
   }
 `;
 
-export const GET_PROJECT = gql`
-  query {
-    project(id: 1) {
-      id
-      owner {
-        email
-      }
-      view
-      name
-      logo
-      introduction
-      start_at
-      end_at
-      ProjectSkill {
-        skill {
-          name
-        }
-      }
-      ProjectMember {
-        member {
-          email
-        }
-      }
-      ProjectField {
+export const GET_PROJECT = (id: number) => gql`
+{
+  query project(id: ${id}) {
+    name
+    logo
+    introduction
+    description
+    start_at
+    end_at
+    images
+    link
+    ProjectSkill {
+      skill {
         name
       }
-      ProjectLike {
-        user {
-          email
-        }
+    }
+    ProjectMember {
+      member {
+        email
       }
     }
+    ProjectField {
+      name
+    }
   }
+}
 `;
 
 //TODO: 변경하는 자료마다 자료 요청쿼리 생각하기
-export const UPDATE_PROJECT = (id: number, project: any) => gql`
+export const UPDATE_PROJECT = (project: any) => gql`
   mutation updateProject(${project}: ProjectUpdateInput!) {
     updateProject(id: $id, project: $project) {
       link
@@ -53,5 +46,30 @@ export const UPDATE_PROJECT = (id: number, project: any) => gql`
 export const DELETE_PROJECT = (id: number) => gql`
   mutation deleteProject(id: ${id}) {
 	  error
+  }
+`;
+
+export const SKILL_SEARCH = (keyword: string) => gql`
+  query {
+    skillSearch(search_word: ${keyword}) {
+      skill {
+        name
+      }
+    }
+  }
+`;
+
+export const USER_SEARCH = (keyword: string) => gql`
+  query {
+    nameSearch(search_word: ${keyword}) {
+      user {
+        profile_image
+        introduction
+        name
+        portfolio {
+          link
+        }
+      }
+    }
   }
 `;
