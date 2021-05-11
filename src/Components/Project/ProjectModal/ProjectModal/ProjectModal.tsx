@@ -4,6 +4,8 @@ import * as I from "../../../../Assets/index";
 import * as C from "../ProjectModalItem";
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import FieldChoice from "../FieldChoice/FieldChoice";
+import { useQuery } from "@apollo/client";
+import { GET_PROJECT } from "../GQL/GQL";
 
 interface ProjectModalProps {
   visible?: boolean;
@@ -14,6 +16,9 @@ const ProjectModal: React.FC<ProjectModalProps> = (
   props: ProjectModalProps
 ) => {
   const { addModal, removeModal } = useModalContext();
+  const { loading, error, data } = useQuery(GET_PROJECT(1));
+
+  console.log(loading, error, data);
 
   const handleClickRegister = useCallback(() => {
     removeModal();
