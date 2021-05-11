@@ -4,15 +4,8 @@ import GlobalStyle from "Styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
-import {
-  ApolloClient,
-  ApolloProvider,
-  HttpLink,
-  InMemoryCache,
-} from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { setContext } from "apollo-link-context";
-
-const httpLink = new HttpLink({ uri: "http://localhost:4000" });
 
 const authLink = setContext(async (req, { headers }) => {
   const token = localStorage.getItem("token");
@@ -25,10 +18,8 @@ const authLink = setContext(async (req, { headers }) => {
   };
 });
 
-const link = authLink.concat(httpLink as any);
-
 const client = new ApolloClient({
-  link: link as any,
+  uri: "http://3.37.43.254",
   cache: new InMemoryCache(),
 });
 
