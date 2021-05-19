@@ -1,6 +1,7 @@
-import React, { useState, useCallback } from "react";
-import ProjectModal from "./ProjectModal/ProjectModal";
+import React, { useCallback } from "react";
+import ProjectViewModal from "./ProjectModal/ViewModal/ViewModal";
 import FieldChoice from "./FieldChoice/FieldChoice";
+import ProjectEditModal from "./ProjectModal/EditModal/EditModal";
 import { useModalContext } from "Utils/Contexts/ModalContext";
 
 interface ProjectProps {
@@ -13,7 +14,17 @@ const Project = (props: ProjectProps) => {
   const handleClickRegister = useCallback(() => {
     addModal({
       title: "",
-      element: <ProjectModal state={props.state} />,
+      element: <ProjectViewModal state={props.state} />,
+      showOnlyBody: true,
+      width: "1450px",
+      height: "900px",
+    });
+  }, []);
+
+  const handleClickRegisterToEdit = useCallback(() => {
+    addModal({
+      title: "",
+      element: <ProjectEditModal state={props.state} />,
       showOnlyBody: true,
       width: "1450px",
       height: "900px",
@@ -34,6 +45,9 @@ const Project = (props: ProjectProps) => {
     switch (props.state) {
       case "writing":
         handleClickRegisterToChoice();
+        break;
+      case "edit":
+        handleClickRegisterToEdit();
         break;
       default:
         handleClickRegister();
