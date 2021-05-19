@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import * as S from "./Styled";
 import * as I from "../../../../Assets/index";
-import ProjectModal from "../ProjectModal/ProjectModal";
+import ProjectEditModal from "../ProjectModal/EditModal/EditModal";
 import { useModalContext } from "Utils/Contexts/ModalContext";
 
 interface FieldChoiceProps {
@@ -16,7 +16,7 @@ const FieldChoice: React.FC<FieldChoiceProps> = (props: FieldChoiceProps) => {
 
     addModal({
       title: "",
-      element: <ProjectModal state={props.state} />,
+      element: <ProjectEditModal state={props.state} />,
       width: "1450px",
       height: "900px",
     });

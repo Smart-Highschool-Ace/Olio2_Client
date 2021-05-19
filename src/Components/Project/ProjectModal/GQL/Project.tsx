@@ -8,7 +8,7 @@ export const CREATE_PROJECT = gql`
 
 export const GET_PROJECT = (id: number) => gql`
 {
-  query project(id: ${id}) {
+  project(id: ${id}) {
     name
     logo
     introduction
@@ -34,11 +34,9 @@ export const GET_PROJECT = (id: number) => gql`
 }
 `;
 
-//TODO: 변경하는 자료마다 자료 요청쿼리 생각하기
 export const UPDATE_PROJECT = (project: any) => gql`
   mutation updateProject(${project}: ProjectUpdateInput!) {
     updateProject(id: $id, project: $project) {
-      link
     }
   }
 `;
@@ -46,30 +44,5 @@ export const UPDATE_PROJECT = (project: any) => gql`
 export const DELETE_PROJECT = (id: number) => gql`
   mutation deleteProject(id: ${id}) {
 	  error
-  }
-`;
-
-export const SKILL_SEARCH = (keyword: string) => gql`
-  query {
-    skillSearch(search_word: ${keyword}) {
-      skill {
-        name
-      }
-    }
-  }
-`;
-
-export const USER_SEARCH = (keyword: string) => gql`
-  query {
-    nameSearch(search_word: ${keyword}) {
-      user {
-        profile_image
-        introduction
-        name
-        portfolio {
-          link
-        }
-      }
-    }
   }
 `;
