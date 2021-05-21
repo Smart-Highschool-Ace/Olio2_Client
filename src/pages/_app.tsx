@@ -19,7 +19,7 @@ const authLink = setContext(async (req, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: "http://3.37.43.254",
+  uri: "http://3.37.43.254/graphql",
   cache: new InMemoryCache(),
 });
 

@@ -139,12 +139,12 @@ export const ModalToExplanation = styled.div`
     button {
       position: relative;
       top: -35px;
-      right: -190px;
       border: solid 1px #5a948b;
       color: #5a948b;
       background-color: #fff;
       padding: 2px 30px;
       border-radius: 20px;
+      margin-left: 5px;
     }
   }
   div {
@@ -279,19 +279,8 @@ export const Participants = styled.div`
         top: 7px;
         left: 5px;
       }
-      div {
-        svg {
-          float: right;
-          position: relative;
-          left: 59px;
-          top: -55px;
-        }
-      }
       svg {
         float: right;
-        position: relative;
-        left: 70px;
-        top: -45px;
       }
     }
   }

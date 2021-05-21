@@ -6,7 +6,7 @@ const project = () => {
   return (
     <>
       <div>어쨌든 프로젝트 페이지</div>
-      <Project state="writing" />
+      <Project state="viewOnly" />
     </>
   );
 };
