@@ -6,43 +6,47 @@ export const CREATE_PROJECT = gql`
   }
 `;
 
-export const GET_PROJECT = (id: number) => gql`
-{
-  project(id: ${id}) {
-    name
-    logo
-    introduction
-    description
-    start_at
-    end_at
-    images
-    link
-    ProjectSkill {
-      skill {
+export const GET_PROJECT = gql`
+  query getProject($id: Int) {
+    project(id: $id) {
+      name
+      logo
+      introduction
+      description
+      start_at
+      end_at
+      ProjectImage {
+        image
+        order
+      }
+      link
+      ProjectSkill {
+        skill {
+          name
+        }
+      }
+      ProjectMember {
+        member {
+          email
+        }
+      }
+      ProjectField {
         name
       }
     }
-    ProjectMember {
-      member {
-        email
-      }
-    }
-    ProjectField {
+  }
+`;
+
+export const UPDATE_PROJECT = gql`
+  mutation updateProject($id: Int!, $project: ProjectUpdateInput!) {
+    updateProject(id: $id, project: $project) {
       name
     }
   }
-}
 `;
 
-export const UPDATE_PROJECT = (project: any) => gql`
-  mutation updateProject(${project}: ProjectUpdateInput!) {
-    updateProject(id: $id, project: $project) {
-    }
-  }
-`;
-
-export const DELETE_PROJECT = (id: number) => gql`
-  mutation deleteProject(id: ${id}) {
-	  error
+export const DELETE_PROJECT = gql`
+  mutation deleteProject($id: Int!) {
+    error
   }
 `;
