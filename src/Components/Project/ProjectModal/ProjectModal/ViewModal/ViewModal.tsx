@@ -5,6 +5,7 @@ import {
   useProjectViewQuery,
   useProjectDeleteQuery,
 } from "./ViewModalContainer";
+import { useModalContext } from "Utils/Contexts/ModalContext";
 
 const projectId: number = 1;
 
@@ -13,8 +14,19 @@ const ProjectViewModal: React.FC<ProjectModalProps> = (
 ) => {
   const [loading, error, data] = useProjectViewQuery(projectId);
 
+  const useOnClickDelete = (projectId: number) => {
+    const [loading, error] = useProjectDeleteQuery(projectId);
+    if (loading) return <h1>Loading...</h1>;
+    if (error) return <h1>error! {error}</h1>;
+    if (!loading) {
+      const { removeModal } = useModalContext();
+      removeModal();
+    }
+  };
+
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>error! {error}</h1>;
+
   return (
     <>
       <S.ModalForm>
@@ -31,7 +43,7 @@ const ProjectViewModal: React.FC<ProjectModalProps> = (
                     <>
                       <button
                         id="red"
-                        onClick={() => useProjectDeleteQuery(projectId)}
+                        onClick={() => useOnClickDelete(projectId)}
                       >
                         삭제
                       </button>
@@ -76,14 +88,6 @@ const ProjectViewModal: React.FC<ProjectModalProps> = (
                     </div>
                   </button>
                 ))}
-                <button>
-                  <I.Profile3218 />
-                  <div>
-                    <div>3218 진예원</div>
-                    <span>기획 및 UI/UX 디자인</span>
-                    <I.Arrow />
-                  </div>
-                </button>
               </S.Participants>
             </S.ModalLeftBox>
             <S.ModalRightBox>
@@ -96,7 +100,6 @@ const ProjectViewModal: React.FC<ProjectModalProps> = (
                 {data.project.ProjectSkill.map((skillList, index: number) => (
                   <button key={index}>#{skillList.skill.name}</button>
                 ))}
-                <button>#React</button>
               </S.SkillBox>
               <S.ProjectResult>
                 <div>프로젝트 결과물</div>
