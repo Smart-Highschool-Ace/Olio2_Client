@@ -4,56 +4,36 @@ import GlobalStyle from "Styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
-import {
-  ApolloClient,
-  ApolloProvider,
-  HttpLink,
-  InMemoryCache,
-} from "@apollo/client";
-import { setContext } from "apollo-link-context";
 
-const httpLink = new HttpLink({ uri: process.env.REACT_APP_API_URL });
+import { ApolloProvider } from "@apollo/react-hooks";
+import withApolloClient from "lib/withApollo";
 
-const authLink = setContext(async (req, { headers }) => {
-  const token = localStorage.getItem("token");
-
-  return {
-    ...headers,
-    headers: {
-      Authorization: token && `Bearer ${token}`,
-    },
-  };
-});
-
-const link = authLink.concat(httpLink as any);
-
-const client = new ApolloClient({
-  link: link as any,
-  cache: new InMemoryCache(),
-});
-
-function MyApp({ Component, pageProps }: AppProps) {
-  const renderModals = () => {
-    return (
-      <ModalConsumer>
-        {(state) =>
-          (state[0].modalList as ModalInfo[]).map((modal) => (
-            <Modal key={modal.id} info={modal} />
-          ))
-        }
-      </ModalConsumer>
-    );
-  };
-
+const renderModals = () => {
   return (
-    <ApolloProvider client={client}>
-      <ModalProvider>
-        <Global styles={GlobalStyle} />
-        <Component {...pageProps} />
-        {renderModals()}
-      </ModalProvider>
-    </ApolloProvider>
+    <ModalConsumer>
+      {(state) =>
+        (state[0].modalList as ModalInfo[]).map((modal) => (
+          <Modal key={modal.id} info={modal} />
+        ))
+      }
+    </ModalConsumer>
+  );
+};
+
+function App({ Component, pageProps, apollo }) {
+  return (
+    <ModalProvider>
+      <Global styles={GlobalStyle} />
+      <Component {...pageProps} />
+      {renderModals()}
+    </ModalProvider>
   );
 }
 
-export default MyApp;
+App.getInitialProps = async ({ ctx, Component }) => {
+  const pageProps = await Component.getInitialProps?.(ctx);
+
+  return pageProps;
+};
+
+export default App;
