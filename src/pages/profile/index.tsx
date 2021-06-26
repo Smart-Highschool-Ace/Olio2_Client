@@ -1,11 +1,12 @@
-import { Header, Profile } from "Components";
+import { Header } from "Components";
+import { ProfileContainer } from "Containers";
 import React from "react";
 
 const profile: React.FC = () => {
   return (
     <>
       <Header />
-      <Profile />
+      <ProfileContainer />
     </>
   );
 };

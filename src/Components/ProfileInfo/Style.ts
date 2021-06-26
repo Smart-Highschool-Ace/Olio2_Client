@@ -5,8 +5,6 @@ export const ProfileContentWrapper = styled.div`
   height: auto;
 `;
 
-
-
 export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: flex-start;

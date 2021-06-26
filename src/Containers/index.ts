@@ -1,2 +1,3 @@
 export { default as PortfolioContainer } from "./PortfolioContainer/PortfolioContainer";
 export { default as ProjectContainer } from "./ProjectContainer/ProjectContainer";
+export { default as ProfileContainer } from './ProfileContainer/ProfileContainer';
