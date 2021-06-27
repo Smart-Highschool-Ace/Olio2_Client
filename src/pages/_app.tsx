@@ -8,6 +8,10 @@ import ModalInfo from "Utils/Models/ModalInfo";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withApolloClient from "lib/withApollo";
 
+interface MyAppProps extends AppProps {
+  apollo: any;
+}
+
 const renderModals = () => {
   return (
     <ModalConsumer>
@@ -20,20 +24,16 @@ const renderModals = () => {
   );
 };
 
-function App({ Component, pageProps, apollo }) {
+function App({ Component, pageProps, apollo }: MyAppProps) {
   return (
-    <ModalProvider>
-      <Global styles={GlobalStyle} />
-      <Component {...pageProps} />
-      {renderModals()}
-    </ModalProvider>
+    <ApolloProvider client={apollo}>
+      <ModalProvider>
+        <Global styles={GlobalStyle} />
+        <Component {...pageProps} />
+        {renderModals()}
+      </ModalProvider>
+    </ApolloProvider>
   );
 }
 
-App.getInitialProps = async ({ ctx, Component }) => {
-  const pageProps = await Component.getInitialProps?.(ctx);
-
-  return pageProps;
-};
-
-export default App;
+export default withApolloClient(App);
