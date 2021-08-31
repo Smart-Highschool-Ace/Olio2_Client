@@ -1,16 +1,12 @@
 import { Modal } from "Components";
-import type { AppProps } from "next/app";
 import GlobalStyle from "Styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
+import client from "lib/withApollo";
 
-import { ApolloProvider } from "@apollo/react-hooks";
-import withApolloClient from "lib/withApollo";
-
-interface MyAppProps extends AppProps {
-  apollo: any;
-}
+import { AppProps } from "next/dist/next-server/lib/router/router";
+import { ApolloProvider } from "@apollo/client";
 
 const renderModals = () => {
   return (
@@ -24,9 +20,9 @@ const renderModals = () => {
   );
 };
 
-function App({ Component, pageProps, apollo }: MyAppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={apollo}>
+    <ApolloProvider client={client}>
       <ModalProvider>
         <Global styles={GlobalStyle} />
         <Component {...pageProps} />
@@ -36,4 +32,4 @@ function App({ Component, pageProps, apollo }: MyAppProps) {
   );
 }
 
-export default withApolloClient(App);
+export default App;

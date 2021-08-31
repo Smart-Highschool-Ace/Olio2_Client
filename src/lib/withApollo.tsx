@@ -1,12 +1,8 @@
-import ApolloClient, { InMemoryCache } from "apollo-boost";
-import { withApollo } from "next-with-apollo";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const prod = process.env.NODE_ENV === "production";
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_API_URL,
+  cache: new InMemoryCache(),
+});
 
-export default withApollo(
-  ({ initialState }) =>
-    new ApolloClient({
-      cache: new InMemoryCache().restore(initialState || {}),
-      uri: prod ? "" : process.env.REACT_APP_API_URL,
-    })
-);
+export default client;
