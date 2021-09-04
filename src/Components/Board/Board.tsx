@@ -13,8 +13,6 @@ const Board: React.FC<PortfolioProps> = ({ kind }) => {
     query: { skills },
   } = useRouter();
 
-  console.log(skills);
-
   const router = useRouter();
   const { id } = router.query;
 

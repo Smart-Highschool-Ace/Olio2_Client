@@ -3,7 +3,6 @@ import * as S from "./Style";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
-import { kMaxLength } from "buffer";
 
 const InfoModal: React.FC = () => {
   const { addModal, removeModal } = useModalContext();
@@ -14,6 +13,10 @@ const InfoModal: React.FC = () => {
   });
 
   const { name, school, intro } = inputs;
+
+  // setInterval(() => {
+  //   console.log(inputs);
+  // }, 2000);
 
   return (
     <S.Positioner>

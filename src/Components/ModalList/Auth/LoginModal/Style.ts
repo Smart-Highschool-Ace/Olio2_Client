@@ -4,7 +4,7 @@ interface Color {
   focus: Boolean;
 }
 
-export const LoginWrapper = styled.div`
+export const LoginWrapper = styled.form`
   width: 58%;
   height: 55%;
 
