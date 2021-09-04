@@ -16,14 +16,14 @@ const LOGIN = gql`
 const LoginModal: React.FC = () => {
   const [emailFocus, setEmailFocus] = useState(false);
   const [passwordFocus, setPasswordFocus] = useState(false);
-  const [values, setValues] = useState({ email: "", password: "" });
-
-  const { addModal, removeModal } = useModalContext();
-
-  const [login, { data, loading, error }] = useMutation(LOGIN, {
-    variables: values,
-    errorPolicy: "all",
+  const [values, setValues] = useState({
+    loginEmail: "",
+    loginPassword: "",
   });
+
+  const { loginEmail, loginPassword } = values;
+  const { addModal, removeModal } = useModalContext();
+  const [login, { data, loading, error }] = useMutation(LOGIN);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -31,12 +31,11 @@ const LoginModal: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    login();
+    login({ variables: values });
+
     if (loading) console.log(loading);
-    if (error) {
-      console.log(error);
-    }
-    console.log(values);
+    if (error) console.log(error);
+
     e.preventDefault();
   };
 
@@ -64,7 +63,7 @@ const LoginModal: React.FC = () => {
             onBlur={() => setEmailFocus(false)}
             onChange={handleChange}
             placeholder="Email"
-            value={values.email}
+            value={loginEmail}
             type="text"
           />
         </S.InputWrapper>
@@ -76,7 +75,7 @@ const LoginModal: React.FC = () => {
             onBlur={() => setPasswordFocus(false)}
             onChange={handleChange}
             placeholder="비밀번호"
-            value={values.password}
+            value={loginPassword}
             type="password"
           />
         </S.InputWrapper>
