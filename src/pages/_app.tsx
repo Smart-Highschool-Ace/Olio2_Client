@@ -4,7 +4,6 @@ import { Global } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
 import client from "lib/withApollo";
-
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import { ApolloProvider } from "@apollo/client";
 

@@ -14,4 +14,7 @@ module.exports = withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
   },
+  env: {
+    GQL_ENDPOINT: process.env.REACT_APP_API_URL,
+  },
 });
