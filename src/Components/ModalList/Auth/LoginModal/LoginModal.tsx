@@ -58,19 +58,19 @@ const LoginModal: React.FC = () => {
         <S.InputWrapper focus={emailFocus}>
           <S.FormText>이메일</S.FormText>
           <S.Input
-            name="email"
+            name="loginEmail"
             onFocus={() => setEmailFocus(true)}
             onBlur={() => setEmailFocus(false)}
             onChange={handleChange}
             placeholder="Email"
             value={loginEmail}
-            type="text"
+            type="email"
           />
         </S.InputWrapper>
         <S.InputWrapper focus={passwordFocus}>
           <S.FormText>비밀번호</S.FormText>
           <S.Input
-            name="password"
+            name="loginPassword"
             onFocus={() => setPasswordFocus(true)}
             onBlur={() => setPasswordFocus(false)}
             onChange={handleChange}
