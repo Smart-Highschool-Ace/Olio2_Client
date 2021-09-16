@@ -1,9 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import * as S from "./Style";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { AuthTemplate, RegisterModal } from "Components";
 import { gql, useMutation } from "@apollo/client";
+import useLocalForm from "hook/useLocalForm";
 
 const LOGIN = gql`
   mutation LoginMutation($loginEmail: String!, $loginPassword: String!) {
@@ -14,30 +15,25 @@ const LOGIN = gql`
 `;
 
 const LoginModal: React.FC = () => {
-  const [emailFocus, setEmailFocus] = useState(false);
-  const [passwordFocus, setPasswordFocus] = useState(false);
-  const [values, setValues] = useState({
+  const [emailFocus, setEmailFocus] = useState<Boolean>(false);
+  const [passwordFocus, setPasswordFocus] = useState<Boolean>(false);
+  const { addModal, removeModal } = useModalContext();
+  const [login, { data, error, loading }] = useMutation(LOGIN);
+  const form = useLocalForm<{ loginEmail: string; loginPassword: string }>({
     loginEmail: "",
     loginPassword: "",
   });
 
-  const { loginEmail, loginPassword } = values;
-  const { addModal, removeModal } = useModalContext();
-  const [login, { data, loading, error }] = useMutation(LOGIN);
+  useEffect(() => {
+    if (data != null) {
+      localStorage.setItem("token", data.login.token);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    login({ variables: values });
-
-    if (loading) console.log(loading);
-    if (error) console.log(error);
-
-    e.preventDefault();
-  };
+      if (!error) {
+        removeModal();
+        alert("로그인 성공!");
+      }
+    }
+  }, [data, error]);
 
   const handleClickRegister = useCallback(() => {
     removeModal();
@@ -51,9 +47,14 @@ const LoginModal: React.FC = () => {
     });
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    login({ variables: form });
+  };
+
   return (
     <AuthTemplate>
-      <S.LoginWrapper onSubmit={handleSubmit}>
+      <S.LoginWrapper onSubmit={handleSubmit} noValidate>
         <S.Title>로그인</S.Title>
         <S.InputWrapper focus={emailFocus}>
           <S.FormText>이메일</S.FormText>
@@ -61,10 +62,9 @@ const LoginModal: React.FC = () => {
             name="loginEmail"
             onFocus={() => setEmailFocus(true)}
             onBlur={() => setEmailFocus(false)}
-            onChange={handleChange}
             placeholder="Email"
-            value={loginEmail}
             type="email"
+            {...form.getInputProps("loginEmail")}
           />
         </S.InputWrapper>
         <S.InputWrapper focus={passwordFocus}>
@@ -73,10 +73,9 @@ const LoginModal: React.FC = () => {
             name="loginPassword"
             onFocus={() => setPasswordFocus(true)}
             onBlur={() => setPasswordFocus(false)}
-            onChange={handleChange}
             placeholder="비밀번호"
-            value={loginPassword}
             type="password"
+            {...form.getInputProps("loginPassword")}
           />
         </S.InputWrapper>
 
