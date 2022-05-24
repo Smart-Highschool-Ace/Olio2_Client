@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "./Style";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import next from "next";
+import path from "../../constants/path.json";
 
 const filterList = [
   {
@@ -59,7 +59,7 @@ const Filter: React.FC = () => {
   }, []);
 
   const mappingMenuList = filterList.map((data, idx) => (
-    <Link href={`/main/projects?skills=${data.router}`}>
+    <Link href={`${path.MAIN_PROJECT}?skills=${data.router}`}>
       <S.Navigation
         isActive={currentRouter === data.router}
         key={idx}

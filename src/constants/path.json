@@ -1,0 +1,8 @@
+{
+  "antd_css": "https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css",
+  "josefin_font": "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap",
+  "font_gstatic": "https://fonts.gstatic.com",
+  "MAIN_PORTFOLIO": "/main/portfolios",
+  "MAIN_PROJECT": "/main/projects",
+  "MAIN_PROJECT_WITH_ALL_SKILL": "/main/projects?skills=all"
+}
