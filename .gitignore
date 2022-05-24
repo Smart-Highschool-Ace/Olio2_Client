@@ -6,3 +6,7 @@ node_modules
 .env
 
 .idea
+
+*.log
+
+package-lock.json
