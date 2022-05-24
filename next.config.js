@@ -7,7 +7,7 @@ module.exports = withLess({
     return [
       {
         source: "/api/:path*",
-        destination: process.env.REACT_APP_API_URL,
+        destination: process.env.NEXT_PUBLIC_API_URL,
       },
     ];
   },
@@ -15,6 +15,6 @@ module.exports = withLess({
     javascriptEnabled: true,
   },
   env: {
-    GQL_ENDPOINT: process.env.REACT_APP_API_URL,
+    GQL_ENDPOINT: process.env.NEXT_PUBLIC_API_URL,
   },
 });
