@@ -1,23 +1,8 @@
 import React, { useState } from "react";
+import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
 import * as S from "./Style";
 
-import { useModalContext } from "Utils/Contexts/ModalContext";
-import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
-
 const InfoModal: React.FC = () => {
-  const { addModal, removeModal } = useModalContext();
-  const [inputs, setInputs] = useState({
-    name: "",
-    school: "",
-    intro: "",
-  });
-
-  const { name, school, intro } = inputs;
-
-  // setInterval(() => {
-  //   console.log(inputs);
-  // }, 2000);
-
   return (
     <S.Positioner>
       <S.LeftMark>

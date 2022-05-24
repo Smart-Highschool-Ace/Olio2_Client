@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useCallback, useEffect, useRef, Children } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { borderColor, height } from "styled-system";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
@@ -9,7 +9,47 @@ interface ModalProps {
   info: ModalInfo;
 }
 
-const Modal = (props: ModalProps) => {
+interface ModalBoxProps {
+  height: any;
+}
+
+const CloseIcon = styled.div`
+  position: absolute !important;
+  right: -10px;
+`;
+
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1050;
+`;
+
+const ModalBox = styled.div<ModalBoxProps>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: ${props => (props.height ? "initial" : "70%")};
+  overflow-y: scroll;
+  border: 1px solid;
+  border-radius: 7px;
+  box-shadow: 4px 6px 20px 0 rgba(0, 0, 0, 0.09);
+  transform: translate(-50%, -50%);
+  ${borderColor}
+  ${height}
+`;
+
+const ModalHeader = styled.div`
+  position: relative;
+  border-bottom: 1px solid;
+  ${borderColor}
+`;
+
+function Modal(props: ModalProps) {
   const { info } = props;
   const { removeModal } = useModalContext();
 
@@ -31,7 +71,7 @@ const Modal = (props: ModalProps) => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [info]);
 
   const onConfirm = useCallback(() => {
     if (info.confirmAction) {
@@ -66,10 +106,12 @@ const Modal = (props: ModalProps) => {
         {!info.showOnlyBody && (
           <div>
             {info.closeAction && (
-              <button onClick={onClose}>{info.closeLabel || "취소"}</button>
+              <button type="button" onClick={onClose}>
+                {info.closeLabel || "취소"}
+              </button>
             )}
             {!info.withoutConfirm && (
-              <button onClick={onConfirm} ref={buttonRef}>
+              <button type="submit" onClick={onConfirm} ref={buttonRef}>
                 {info.confirmLabel || "확인"}
               </button>
             )}
@@ -78,46 +120,6 @@ const Modal = (props: ModalProps) => {
       </ModalBox>
     </ModalBackground>
   );
-};
-
-export default Modal;
-
-interface ModalBoxProps {
-  height: any;
 }
 
-const CloseIcon = styled.div`
-  position: absolute !important;
-  right: -10px;
-`;
-
-const ModalBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  z-index: 1050;
-`;
-
-const ModalBox = styled.div<ModalBoxProps>`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-height: ${(props) => (props.height ? "initial" : "70%")};
-  overflow-y: scroll;
-  border: 1px solid;
-  border-radius: 7px;
-  box-shadow: 4px 6px 20px 0 rgba(0, 0, 0, 0.09);
-  transform: translate(-50%, -50%);
-  ${borderColor}
-  ${height}
-`;
-
-const ModalHeader = styled.div`
-  position: relative;
-  border-bottom: 1px solid;
-  ${borderColor}
-`;
+export default Modal;

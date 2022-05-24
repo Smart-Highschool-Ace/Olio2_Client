@@ -100,7 +100,7 @@ export const InputBox = styled.div`
 
 export const InputName = styled.input<Size>`
   width: 100%;
-  height: ${(p) => p.height}px;
+  height: ${p => p.height}px;
 
   background: #f7f7f7;
   border: none;
@@ -119,7 +119,7 @@ export const InputName = styled.input<Size>`
 
 export const Introduce = styled.textarea<Size>`
   width: 100%;
-  height: ${(p) => p.height}px;
+  height: ${p => p.height}px;
 
   background: #f7f7f7;
   border: none;

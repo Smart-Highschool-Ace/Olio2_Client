@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type StartProfileProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const StartProfile = ({width, height}: StartProfileProps) => {
+function StartProfile({ width, height }: StartProfileProps) {
   return (
     <svg
       width={width}
@@ -23,7 +23,10 @@ const StartProfile = ({width, height}: StartProfileProps) => {
           width={1}
           height={1}
         >
-          <use xlinkHref="#StartProfile_image" transform="scale(.00063 .00154)" />
+          <use
+            xlinkHref="#StartProfile_image"
+            transform="scale(.00063 .00154)"
+          />
         </pattern>
         <image
           id="StartProfile_image"
@@ -34,10 +37,10 @@ const StartProfile = ({width, height}: StartProfileProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 StartProfile.defaultProps = {
-    width: 1597,
-    height: 648,
+  width: 1597,
+  height: 648,
 };
 export default StartProfile;

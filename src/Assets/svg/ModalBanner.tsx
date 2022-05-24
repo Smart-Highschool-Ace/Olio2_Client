@@ -1,7 +1,7 @@
 import { ModalBackground } from "Components/Modal/Style";
 import * as React from "react";
 
-const ModalBanner = () => {
+function ModalBanner() {
   return (
     <svg
       width={423}
@@ -68,6 +68,6 @@ const ModalBanner = () => {
       </defs>
     </svg>
   );
-};
+}
 
 export default ModalBanner;

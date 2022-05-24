@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Clip = () => {
+function Clip() {
   return (
     <svg
       width={24}
@@ -20,6 +20,6 @@ const Clip = () => {
       </defs>
     </svg>
   );
-};
+}
 
 export default Clip;

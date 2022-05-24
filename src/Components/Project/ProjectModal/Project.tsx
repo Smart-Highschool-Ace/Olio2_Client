@@ -1,19 +1,20 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
+import { useModalContext } from "Utils/Contexts/ModalContext";
 import ProjectModal from "./ProjectModal/ProjectModal";
 import FieldChoice from "./FieldChoice/FieldChoice";
-import { useModalContext } from "Utils/Contexts/ModalContext";
 
 interface ProjectProps {
   state: string;
 }
 
-const Project = (props: ProjectProps) => {
+function Project(props: ProjectProps) {
   const { addModal } = useModalContext();
+  const { state } = props;
 
   const handleClickRegister = useCallback(() => {
     addModal({
       title: "",
-      element: <ProjectModal state={props.state} />,
+      element: <ProjectModal state={state} />,
       showOnlyBody: true,
       width: "1450px",
       height: "1000px",
@@ -23,7 +24,7 @@ const Project = (props: ProjectProps) => {
   const handleClickRegisterToChoice = useCallback(() => {
     addModal({
       title: "",
-      element: <FieldChoice state={props.state} />,
+      element: <FieldChoice state={state} />,
       showOnlyBody: true,
       width: "1450px",
       height: "1000px",
@@ -31,7 +32,7 @@ const Project = (props: ProjectProps) => {
   }, []);
 
   const openModal = () => {
-    switch (props.state) {
+    switch (state) {
       case "writing":
         handleClickRegisterToChoice();
         break;
@@ -40,7 +41,11 @@ const Project = (props: ProjectProps) => {
     }
   };
 
-  return <button onClick={() => openModal()}>modal을 보고싶어?</button>;
-};
+  return (
+    <button type="button" onClick={() => openModal()}>
+      modal 을 보고싶어?
+    </button>
+  );
+}
 
 export default Project;

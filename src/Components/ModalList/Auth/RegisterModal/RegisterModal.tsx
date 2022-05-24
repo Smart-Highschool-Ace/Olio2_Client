@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
-import * as S from "./Style";
 import { AuthTemplate, EmailConfirm, LoginModal } from "Components";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
+import * as S from "./Style";
 
 const RegisterModal: React.FC = () => {
   const [emailFocus, setEmailFocus] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "./Style";
 import { Board, Filter } from "Components";
+import * as S from "./Style";
 
 const projectList = [
   {

@@ -1,7 +1,7 @@
 import ProfileInfo from "Components/ProfileInfo/ProfileInfo";
 import ProfileItems from "Components/ProfileItems/ProfileItems";
 import React from "react";
-import * as S from "./Style";
+import Positioner from "./Style";
 
 const MyProfileDummyData = [
   {
@@ -19,32 +19,27 @@ const MyProfileDummyData = [
 const ProjectDummyData = [
   {
     name: "ONDO",
-    icon:
-      "https://cdn.discordapp.com/attachments/757847456489668659/818410920094990356/2c14918aadd67cf1.png",
+    icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410920094990356/2c14918aadd67cf1.png",
     description: "감정온도 일기장",
   },
   {
     name: "Beansil Web",
-    icon:
-      "https://cdn.discordapp.com/attachments/757847456489668659/818410916999725076/f820b1bb78c2919f.png",
+    icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410916999725076/f820b1bb78c2919f.png",
     description: "빈실 동아리를 소개하는 웹 페이지",
   },
   {
     name: "DOTORI",
-    icon:
-      "https://media.discordapp.net/attachments/757847456489668659/818410913739964416/b70f35fef0db50ae.png",
+    icon: "https://media.discordapp.net/attachments/757847456489668659/818410913739964416/b70f35fef0db50ae.png",
     description: "기숙사 관리 웹 서비스",
   },
   {
     name: "olio",
-    icon:
-      "https://cdn.discordapp.com/attachments/757847456489668659/818410921604939786/4823f246d82ec8c9.png",
+    icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410921604939786/4823f246d82ec8c9.png",
     description: "포트폴리오 관리 웹사이트",
   },
   {
     name: "SLAT",
-    icon:
-      "https://cdn.discordapp.com/attachments/757847456489668659/818410918492504085/9f0d2771a011c69e.png",
+    icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410918492504085/9f0d2771a011c69e.png",
     description: "학교생활 시간표 알림 앱 서비스",
   },
 ];
@@ -87,14 +82,14 @@ const CertificateDummyData = [
 
 const Profile: React.FC = () => {
   return (
-    <S.Positioner>
+    <Positioner>
       <ProfileInfo ProfileData={MyProfileDummyData} />
       <ProfileItems
         ProjectDummyData={ProjectDummyData}
         AwardDummyData={AwardDummyData}
         CertificateDummyData={CertificateDummyData}
       />
-    </S.Positioner>
+    </Positioner>
   );
 };
 

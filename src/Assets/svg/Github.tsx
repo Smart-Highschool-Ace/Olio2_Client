@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type GithubProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const Github = ({width, height}: GithubProps) => {
+function Github({ width, height }: GithubProps) {
   return (
     <svg
       width={width}
@@ -20,11 +20,11 @@ const Github = ({width, height}: GithubProps) => {
       />
     </svg>
   );
-};
+}
 
 Github.defaultProps = {
-    width: 50,
-    height: 50,
+  width: 50,
+  height: 50,
 };
 
 export default Github;

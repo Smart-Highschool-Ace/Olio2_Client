@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const LightGreenMark = () => {
+function LightGreenMark() {
   return (
     <svg
       style={{ borderBottomLeftRadius: 7 }}
@@ -16,6 +16,6 @@ const LightGreenMark = () => {
       />
     </svg>
   );
-};
+}
 
 export default LightGreenMark;

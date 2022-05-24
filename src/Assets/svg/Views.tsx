@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Views = () => {
+function Views() {
   return (
     <svg
       width={15}
@@ -19,7 +19,7 @@ const Views = () => {
       />
     </svg>
   );
-};
+}
 
 Views.defaultProps = {
   width: 15,

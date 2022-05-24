@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 
@@ -6,6 +7,8 @@ interface SkillBoxProps {
 }
 
 const SkillBox: React.FC<SkillBoxProps> = (props: SkillBoxProps) => {
+  const { state } = props;
+
   return (
     <S.SkillBox className="skills">
       <div>사용기술</div>
@@ -13,48 +16,48 @@ const SkillBox: React.FC<SkillBoxProps> = (props: SkillBoxProps) => {
         {
           view: (
             <>
-              <button>#React</button>
-              <button>#Web</button>
-              <button>#Figma</button>
-              <button>#Typescript</button>
-              <button>#koa.js</button>
-              <button>#NextJS</button>
+              <button type="button">#React</button>
+              <button type="button">#Web</button>
+              <button type="button">#Figma</button>
+              <button type="button">#Typescript</button>
+              <button type="button">#koa.js</button>
+              <button type="button">#NextJS</button>
             </>
           ),
           viewOnly: (
             <>
-              <button>#React</button>
-              <button>#Web</button>
-              <button>#Figma</button>
-              <button>#Typescript</button>
-              <button>#koa.js</button>
-              <button>#NextJS</button>
+              <button type="button">#React</button>
+              <button type="button">#Web</button>
+              <button type="button">#Figma</button>
+              <button type="button">#Typescript</button>
+              <button type="button">#koa.js</button>
+              <button type="button">#NextJS</button>
             </>
           ),
           edit: (
             <>
               <input type="text" placeholder="# 태그 검색" />
-              <button>
+              <button type="button">
                 #React
                 <I.X />
               </button>
-              <button>
+              <button type="button">
                 #Web
                 <I.X />
               </button>
-              <button>
+              <button type="button">
                 #Figma
                 <I.X />
               </button>
-              <button>
+              <button type="button">
                 #Typescript
                 <I.X />
               </button>
-              <button>
+              <button type="button">
                 #koa.js
                 <I.X />
               </button>
-              <button>
+              <button type="button">
                 #NextJS
                 <I.X />
               </button>
@@ -63,13 +66,13 @@ const SkillBox: React.FC<SkillBoxProps> = (props: SkillBoxProps) => {
           writing: (
             <>
               <input type="text" placeholder="# 태그 검색" />
-              <button>
+              <button type="button">
                 #React
                 <I.X />
               </button>
             </>
           ),
-        }[props.state]
+        }[state]
       }
     </S.SkillBox>
   );

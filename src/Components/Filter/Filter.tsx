@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import * as S from "./Style";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import next from "next";
+import * as S from "./Style";
 
 const filterList = [
   {
@@ -35,20 +34,10 @@ const filterList = [
   },
 ];
 
-const useUser = () => ({ user: null, loading: false });
-
 const Filter: React.FC = () => {
   const nextRouter = useRouter();
-  const { user, loading } = useUser();
-  const { id } = nextRouter.query;
 
   const [currentRouter, setCurrentRouter] = useState("all");
-
-  // useEffect(() => {
-  //   if (!(user || loading)) {
-  //     //nextRouter.push("/home/all");
-  //   }
-  // }, [user, loading, id]);
 
   useEffect(() => {
     const {
@@ -56,7 +45,7 @@ const Filter: React.FC = () => {
     } = nextRouter;
 
     setCurrentRouter(skills as string);
-  }, []);
+  }, [nextRouter.query]);
 
   const mappingMenuList = filterList.map((data, idx) => (
     <Link href={`/main/projects?skills=${data.router}`}>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Modal } from "Components";
 import GlobalStyle from "Styles/GlobalStyle";
 import { Global } from "@emotion/react";
@@ -10,8 +11,8 @@ import { ApolloProvider } from "@apollo/client";
 const renderModals = () => {
   return (
     <ModalConsumer>
-      {(state) =>
-        (state[0].modalList as ModalInfo[]).map((modal) => (
+      {state =>
+        (state[0].modalList as ModalInfo[]).map(modal => (
           <Modal key={modal.id} info={modal} />
         ))
       }

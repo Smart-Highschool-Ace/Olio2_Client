@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import * as S from "./Style";
-import { Slider, Progress } from "rsuite";
+import { Progress } from "rsuite";
 import { BlockPicker } from "react-color";
+import * as S from "./Style";
 import "rsuite/lib/styles/index.less";
 
 type MyStack = {
@@ -17,39 +17,39 @@ interface TechStackProps {
 const { Line } = Progress;
 
 const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
-  const [Stackvisible, setStackvisible] = useState(false);
-  const [displayColorPicker, setdisplayColorPicker] = useState(false);
+  const [Stackable, setStackable] = useState(false);
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [backcolor, setColor] = useState("");
 
   const setStack = () => {
-    setStackvisible(!Stackvisible);
-  };
-
-  const CloseStack = () => {
-    setStackvisible(false);
+    setStackable(!Stackable);
   };
 
   const handleClick = () => {
-    setdisplayColorPicker(!displayColorPicker);
+    setDisplayColorPicker(!displayColorPicker);
   };
 
   const handleClose = () => {
-    setdisplayColorPicker(false);
+    setDisplayColorPicker(false);
   };
 
   return (
     <S.Positioner>
       <S.TitleWrapper>
         <span>사용기술</span>
-        <div onClick={setStack}>추가 +</div>
+        <div role="button" onClick={setStack}>
+          추가 +
+        </div>
       </S.TitleWrapper>
       <S.StackWrapper onClick={handleClose}>
-        {Stackvisible && (
+        {Stackable && (
           <S.StackContent>
-            <S.ContentWrapper onClick={(e) => e.stopPropagation()}>
+            <S.ContentWrapper role="button" onClick={e => e.stopPropagation()}>
               <S.InputWrapper>
                 <input type="text" placeholder="사용기술을 입력해주세요" />
-                <button onClick={handleClick}>색상 선택</button>
+                <button type="button" onClick={handleClick}>
+                  색상 선택
+                </button>
               </S.InputWrapper>
               <Line
                 percent={50}
@@ -66,7 +66,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
                 >
                   <BlockPicker
                     color={backcolor}
-                    onChange={(color) => setColor(color.hex)}
+                    onChange={color => setColor(color.hex)}
                   />
                 </div>
               )}

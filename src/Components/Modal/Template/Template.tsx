@@ -20,7 +20,7 @@ const Template: React.FC<ModalTemplateProps> = ({
   return (
     <S.Positioner onClick={ClosePopUp}>
       <S.ModalWrapper
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
         width={width}
         height={height}
       >

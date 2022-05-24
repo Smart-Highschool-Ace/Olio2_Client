@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
 
-interface FieldChoiceProps {
-  visible?: boolean;
-  state?: string;
-}
-
 export const ModalForm = styled.form`
   width: 100%;
   height: 100%;

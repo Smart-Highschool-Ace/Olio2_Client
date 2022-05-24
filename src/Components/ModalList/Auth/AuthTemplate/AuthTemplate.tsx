@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import * as S from "./Style";
+import React from "react";
 import { ModalBanner } from "Assets";
-import LoginModal from "Components/ModalList/Auth/LoginModal/LoginModal";
+import * as S from "./Style";
 
 const AuthTemplate: React.FC = ({ children }) => {
-  const [isLoginModal, setIsLoginModal] = useState(true);
-
   return (
     <S.Positioner>
       <S.Img>

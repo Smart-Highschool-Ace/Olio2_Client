@@ -5,30 +5,6 @@ import { useRouter } from "next/router";
 import { Header, MainToggle } from "Components";
 import { PortfolioContainer, ProjectContainer } from "Containers";
 
-const renderContentByQueryId = (id) => {
-  switch (id) {
-    case "portfolios":
-      return <PortfolioContainer />;
-    case "projects":
-      return <ProjectContainer />;
-  }
-};
-
-const index: React.FC = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  return (
-    <Positioner>
-      <Header />
-      <ToggleWrapper>
-        <MainToggle />
-      </ToggleWrapper>
-      <ContentWrapper>{renderContentByQueryId(id)}</ContentWrapper>
-    </Positioner>
-  );
-};
-
 const Positioner = styled.div`
   width: 100%;
   height: 100vh;
@@ -53,4 +29,29 @@ const ContentWrapper = styled.div`
   margin-top: 6vh;
 `;
 
-export default index;
+const renderContentByQueryId = (id): JSX.Element => {
+  switch (id) {
+    case "portfolios":
+      return <PortfolioContainer />;
+    case "projects":
+      return <ProjectContainer />;
+    default:
+  }
+};
+
+const Index: React.FC = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return (
+    <Positioner>
+      <Header />
+      <ToggleWrapper>
+        <MainToggle />
+      </ToggleWrapper>
+      <ContentWrapper>{renderContentByQueryId(id)}</ContentWrapper>
+    </Positioner>
+  );
+};
+
+export default Index;

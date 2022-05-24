@@ -1,3 +1,4 @@
+import React from "react";
 import Document, {
   Html,
   Head,
@@ -15,11 +16,10 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
 
-      //TS Setting
+      // TS Setting
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,

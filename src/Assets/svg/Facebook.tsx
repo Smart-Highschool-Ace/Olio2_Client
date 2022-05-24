@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type FacebookProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const Facebook = ({width, height}: FacebookProps) => {
+function Facebook({ width, height }: FacebookProps) {
   return (
     <svg
       width={width}
@@ -24,11 +24,11 @@ const Facebook = ({width, height}: FacebookProps) => {
       />
     </svg>
   );
-};
+}
 
 Facebook.defaultProps = {
-    width: 50,
-    height: 50,
+  width: 50,
+  height: 50,
 };
 
 export default Facebook;

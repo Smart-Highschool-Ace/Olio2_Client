@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type PhoneImgProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const PhoneImg = ({width, height}: PhoneImgProps) => {
+function PhoneImg({ width, height }: PhoneImgProps) {
   return (
     <svg
       width={width}
@@ -34,13 +34,11 @@ const PhoneImg = ({width, height}: PhoneImgProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 PhoneImg.defaultProps = {
   width: 1097,
   height: 540,
 };
-
-
 
 export default PhoneImg;

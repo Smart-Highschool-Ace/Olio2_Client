@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 
@@ -8,6 +9,8 @@ interface ProjectResultProps {
 const ProjectResult: React.FC<ProjectResultProps> = (
   props: ProjectResultProps
 ) => {
+  const { state } = props;
+
   return (
     <S.ProjectResult>
       <div>프로젝트 결과물</div>
@@ -32,17 +35,17 @@ const ProjectResult: React.FC<ProjectResultProps> = (
               <I.Result1 />
               <I.Result2 />
               <I.Result2 />
-              <button>
+              <button type="button">
                 <I.Plus />
               </button>
             </>
           ),
           writing: (
-              <button className="addBtn">
-                <I.Plus />
-              </button>
+            <button type="button" className="addBtn">
+              <I.Plus />
+            </button>
           ),
-        }[props.state]
+        }[state]
       }
     </S.ProjectResult>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import * as S from "./Style";
 
 type MyProject = {
@@ -37,7 +38,7 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
         <S.ProjectContent>
           {ProjectDummyData.map((data, idx) => (
             <S.ProjectWrapper key={idx}>
-              <img src={data.icon} style={{ margin: "1.5rem" }} />
+              <Image src={data.icon} width="auto" height="auto" />
               <S.ProjectTitle>
                 <span>{data.name}</span>
                 <div>{data.description}</div>

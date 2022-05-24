@@ -1,8 +1,7 @@
 import React from "react";
 import { PortfolioType } from "Utils/GlobalTypes";
-import * as S from "./Style";
-
 import { Views, Star } from "Assets";
+import * as S from "./Style";
 
 interface BoardItemProps {
   list: PortfolioType;
@@ -10,8 +9,8 @@ interface BoardItemProps {
 
 const BoardItem: React.FC<BoardItemProps> = ({ list }) => {
   return (
-    <S.Positioner onClick={() => alert(list.title + " Clicked!")}>
-      <S.Thumbnail></S.Thumbnail>
+    <S.Positioner onClick={() => alert(`${list.title} Clicked!`)}>
+      <S.Thumbnail />
       <S.NameWrapper>
         <S.Name>{list.title}</S.Name>
         <S.Response>

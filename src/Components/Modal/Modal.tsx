@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import * as S from "./Style";
+import React, { useCallback } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
+import * as S from "./Style";
 
 interface ModalProps {
   info: ModalInfo;
 }
 
-const Modal = (props: ModalProps) => {
+function Modal(props: ModalProps) {
   const { info } = props;
   const { removeModal } = useModalContext();
 
@@ -18,12 +18,6 @@ const Modal = (props: ModalProps) => {
       })
     : undefined;
 
-  const onConfirm = useCallback(() => {
-    if (info.confirmAction) {
-      info.confirmAction();
-    }
-    removeModal(info.id);
-  }, [info, removeModal]);
   const onClose = useCallback(() => {
     if (info.closeAction) {
       info.closeAction();
@@ -46,6 +40,6 @@ const Modal = (props: ModalProps) => {
       </S.ModalBox>
     </S.ModalBackground>
   );
-};
+}
 
 export default Modal;

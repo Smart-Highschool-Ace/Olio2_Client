@@ -1,20 +1,19 @@
 import styled from "@emotion/styled";
 
-
 export const Positioner = styled.div`
-display: flex;
-flex-direction :column;
-width: 100%;
-margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
 `;
 
 export const StackWrapper = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
-height: 100%;
-margin-left: 70px;
-overflow: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-left: 70px;
+  overflow: auto;
 `;
 
 export const TitleWrapper = styled.div`

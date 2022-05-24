@@ -2,21 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Header } from "Components";
 
-const index: React.FC = () => {
-  return (
-    <Positioner>
-      <Header />
-      <Wrapper>
-        <Title>검색 결과</Title>
-        <Total>
-          <span>총 (1)건</span>
-        </Total>
-        <ResultWrapper></ResultWrapper>
-      </Wrapper>
-    </Positioner>
-  );
-};
-
 const Positioner = styled.div`
   width: 100%;
   height: 100vh;
@@ -65,5 +50,20 @@ const ResultWrapper = styled.div`
 
   cursor: pointer;
 `;
+
+const index: React.FC = () => {
+  return (
+    <Positioner>
+      <Header />
+      <Wrapper>
+        <Title>검색 결과</Title>
+        <Total>
+          <span>총 (1)건</span>
+        </Total>
+        <ResultWrapper />
+      </Wrapper>
+    </Positioner>
+  );
+};
 
 export default index;

@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
+import { useModalContext } from "Utils/Contexts/ModalContext";
 import * as S from "./Styled";
 import * as I from "../../../../Assets/index";
 import ProjectModal from "../ProjectModal/ProjectModal";
-import { useModalContext } from "Utils/Contexts/ModalContext";
 
 interface FieldChoiceProps {
   state: string;
@@ -10,13 +10,14 @@ interface FieldChoiceProps {
 
 const FieldChoice: React.FC<FieldChoiceProps> = (props: FieldChoiceProps) => {
   const { addModal, removeModal } = useModalContext();
+  const { state } = props;
 
   const handleClickRegisterToProjectModal = useCallback(() => {
     removeModal();
 
     addModal({
       title: "",
-      element: <ProjectModal state={props.state} />,
+      element: <ProjectModal state={state} />,
       width: "1450px",
       height: "1000px",
     });
@@ -32,14 +33,17 @@ const FieldChoice: React.FC<FieldChoiceProps> = (props: FieldChoiceProps) => {
         </S.Main>
         <S.FieldChoice>
           <div>
-            <button>WEB</button>
-            <button>ANDROID</button>
-            <button>IOS</button>
-            <button>AI</button>
-            <button>GAME</button>
-            <button>IOT</button>
+            <button type="button">WEB</button>
+            <button type="button">ANDROID</button>
+            <button type="button">IOS</button>
+            <button type="button">AI</button>
+            <button type="button">GAME</button>
+            <button type="button">IOT</button>
           </div>
-          <button onClick={() => handleClickRegisterToProjectModal()}>
+          <button
+            type="submit"
+            onClick={() => handleClickRegisterToProjectModal()}
+          >
             다 음
           </button>
         </S.FieldChoice>

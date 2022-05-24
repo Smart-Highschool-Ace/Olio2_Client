@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type WSProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const WS = ({width, height}: WSProps) => {
+function WS({ width, height }: WSProps) {
   return (
     <svg
       width={width}
@@ -50,11 +50,11 @@ const WS = ({width, height}: WSProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 WS.defaultProps = {
-    width: 205,
-    height: 185,
-}
+  width: 205,
+  height: 185,
+};
 
 export default WS;

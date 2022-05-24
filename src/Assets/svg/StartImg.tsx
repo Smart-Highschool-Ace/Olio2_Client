@@ -3,9 +3,9 @@ import * as React from "react";
 type StartImgProps = {
   width: number;
   height: number;
-}
+};
 
-const StartImg = ({width, height}: StartImgProps) => {
+function StartImg({ width, height }: StartImgProps) {
   return (
     <svg
       width={width}
@@ -34,11 +34,11 @@ const StartImg = ({width, height}: StartImgProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 StartImg.defaultProps = {
   width: 600,
   height: 440,
-}
+};
 
 export default StartImg;

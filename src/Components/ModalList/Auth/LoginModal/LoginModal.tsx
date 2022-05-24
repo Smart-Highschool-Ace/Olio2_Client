@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useEffect } from "react";
-import * as S from "./Style";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { AuthTemplate, RegisterModal } from "Components";
 import { gql, useMutation } from "@apollo/client";
 import useLocalForm from "hook/useLocalForm";
+import * as S from "./Style";
 
 const LOGIN = gql`
   mutation LoginMutation($loginEmail: String!, $loginPassword: String!) {
@@ -18,7 +18,7 @@ const LoginModal: React.FC = () => {
   const [emailFocus, setEmailFocus] = useState<Boolean>(false);
   const [passwordFocus, setPasswordFocus] = useState<Boolean>(false);
   const { addModal, removeModal } = useModalContext();
-  const [login, { data, error, loading }] = useMutation(LOGIN);
+  const [login, { data, error }] = useMutation(LOGIN);
   const form = useLocalForm<{ loginEmail: string; loginPassword: string }>({
     loginEmail: "",
     loginPassword: "",

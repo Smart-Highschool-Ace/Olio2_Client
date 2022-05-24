@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 
@@ -6,29 +7,30 @@ interface ModalTopProps {
 }
 
 const ModalTop: React.FC<ModalTopProps> = (props: ModalTopProps) => {
-  if (props.state == "writing") {
+  const { state } = props;
+
+  if (state === "writing") {
     return (
       <div>
         <S.ModalLogo>
-          <button id="cameraBtn">
+          <button type="button" id="cameraBtn">
             <I.Camera />
           </button>
         </S.ModalLogo>
         <S.ModalH2>
-        <input id="modalH2" type="text" placeholder="프로젝트 이름" autoFocus />
+          <input id="modalH2" type="text" placeholder="프로젝트 이름" />
         </S.ModalH2>
       </div>
     );
-  } else {
-    return (
-      <>
-        <S.ModalLogo>
-          <I.ProjectLogo />
-        </S.ModalLogo>
-        <S.ModalH2>취준진담</S.ModalH2>
-      </>
-    );
   }
+  return (
+    <>
+      <S.ModalLogo>
+        <I.ProjectLogo />
+      </S.ModalLogo>
+      <S.ModalH2>취준진담</S.ModalH2>
+    </>
+  );
 };
 
 export default ModalTop;

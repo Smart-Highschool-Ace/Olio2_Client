@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import * as S from "./Style";
-
 import { useRouter } from "next/router";
+import * as S from "./Style";
 
 // 초록 : #e9f8f6;
 // 파랑 : #7390c2;

@@ -27,8 +27,8 @@ export const ModalWrapper = styled.div<StyleProps>`
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
-  width: ${(props) => `${props.width}px`};
-  height: ${(props) => `${props.height}px`};
+  width: ${props => `${props.width}px`};
+  height: ${props => `${props.height}px`};
   background-color: white;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   border-radius: 20px;

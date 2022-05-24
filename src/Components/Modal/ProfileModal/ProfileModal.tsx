@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import * as S from "./Style";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import * as S from "./Style";
 import Template from "../Template/Template";
 
 const Avatar = dynamic(() => import("react-avatar-edit"), { ssr: false });
@@ -10,16 +11,16 @@ interface ModalProps {
   setProfile: React.Dispatch<React.SetStateAction<any>>;
 }
 
-const ProfileModal: React.FC<ModalProps> = (props) => {
+const ProfileModal: React.FC<ModalProps> = props => {
   const [preview, setPreview] = useState(null);
+  const { toggle, setProfile } = props;
 
   const onClose = () => {
     setPreview(null);
   };
 
-  const onCrop = (preview: any) => {
-    setPreview(preview);
-    console.log(preview);
+  const onCrop = (onCropPreview: any) => {
+    setPreview(onCropPreview);
   };
 
   const onBeforeFileLoad = (elem: any) => {
@@ -32,7 +33,7 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
   };
 
   const ClosePopUp = () => {
-    props.toggle();
+    toggle();
   };
 
   const SaveImage = () => {
@@ -40,13 +41,13 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
       alert("바꿀 사진을 선택해주세요");
     } else {
       alert("저장되었습니다!");
-      props.setProfile(preview);
+      setProfile(preview);
       ClosePopUp();
     }
   };
 
   return (
-    <Template toggle={props.toggle} width={1200} height={650}>
+    <Template toggle={toggle} width={1200} height={650}>
       <S.ModalInner>
         <S.ModalHeader>
           <span>Edit Media</span>
@@ -63,7 +64,7 @@ const ProfileModal: React.FC<ModalProps> = (props) => {
             />
           </S.ImageWrapper>
           <S.ImageWrapper>
-            <img src={preview} alt="Preview" />
+            <Image src={preview} alt="Preview" width="auto" height="auto" />
           </S.ImageWrapper>
         </S.ModalContent>
         <S.ModalBottom>

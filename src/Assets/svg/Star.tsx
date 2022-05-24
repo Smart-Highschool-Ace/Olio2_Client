@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Star = () => {
+function Star() {
   return (
     <svg
       width={16}
@@ -15,7 +15,7 @@ const Star = () => {
       />
     </svg>
   );
-};
+}
 
 Star.defaultProps = {
   width: 16,

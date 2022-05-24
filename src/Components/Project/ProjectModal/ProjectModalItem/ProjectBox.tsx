@@ -1,10 +1,12 @@
-import * as S from "./styled";
+import React from "react";
 
 interface ProjectBoxProps {
   state: string;
 }
 
 const ProjectBox: React.FC<ProjectBoxProps> = (props: ProjectBoxProps) => {
+  const { state } = props;
+
   return (
     <>
       {
@@ -54,7 +56,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = (props: ProjectBoxProps) => {
               </span>
             </div>
           ),
-        }[props.state]
+        }[state]
       }
     </>
   );

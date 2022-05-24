@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Mail = () => {
+function Mail() {
   return (
     <svg
       width={24}
@@ -19,6 +19,6 @@ const Mail = () => {
       <path clipRule="evenodd" d="M22 19l-7-8 7 8z" stroke="#333" />
     </svg>
   );
-};
+}
 
 export default Mail;

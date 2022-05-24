@@ -20,13 +20,13 @@ function useLocalForm<T>(
   const [form, setForm] = useState<T>(initialValue);
   const [errors, setErrors] = useState<FormError<T>>({});
   const [infoTexts, setInfoTexts] = useState<FormInfoText<T>>({});
-  const [touched, setTouched] = useState<FormTouched<T>>({});
+  const [, setTouched] = useState<FormTouched<T>>({});
   const [conditions] = useState<FormCondition<T>>(initialConditions);
 
   useEffect(() => {
     const initialErrors: FormError<T> = {};
     const initialTouched: FormTouched<T> = {};
-    Object.keys(form).forEach((key) => {
+    Object.keys(form).forEach(key => {
       initialErrors[key] = false;
       initialTouched[key] = false;
     });
@@ -36,24 +36,24 @@ function useLocalForm<T>(
 
   useMemo(() => {
     if (conditions) {
-      Object.keys(conditions).forEach((fieldName) => {
-        conditions[fieldName].map((condition) => {
+      Object.keys(conditions).forEach(fieldName => {
+        conditions[fieldName].forEach(condition => {
           if (form[fieldName]) {
             const res = condition(form[fieldName], form);
-            setErrors((prev) => ({
+            setErrors(prev => ({
               ...prev,
               [fieldName]: typeof res === "boolean" ? res : res.isError,
             }));
-            setInfoTexts((prev) => ({
+            setInfoTexts(prev => ({
               ...prev,
               [fieldName]: typeof res === "boolean" ? "" : res.message,
             }));
           } else {
-            setErrors((prev) => ({
+            setErrors(prev => ({
               ...prev,
               [fieldName]: false,
             }));
-            setInfoTexts((prev) => ({
+            setInfoTexts(prev => ({
               ...prev,
               [fieldName]: "",
             }));
@@ -65,11 +65,11 @@ function useLocalForm<T>(
 
   const update = useCallback(
     (fieldName: keyof T) => (value: any) => {
-      setForm((prev) => ({
+      setForm(prev => ({
         ...prev,
         [fieldName]: value,
       }));
-      setTouched((prev) => ({
+      setTouched(prev => ({
         ...prev,
         [fieldName]: true,
       }));
@@ -83,15 +83,15 @@ function useLocalForm<T>(
 
   const getInputProps = (fieldName: keyof T) => ({
     value: form[fieldName] as any,
-    onChange: (e) => update(fieldName)(e.target.value),
+    onChange: e => update(fieldName)(e.target.value),
   });
 
   const validate = () => {
     const result = errors
-      ? Object.keys(errors).filter((r) => !!errors[r]).length
+      ? Object.keys(errors).filter(r => !!errors[r]).length
       : 0;
 
-    return result > 0 ? false : true;
+    return !(result > 0);
   };
 
   return {
