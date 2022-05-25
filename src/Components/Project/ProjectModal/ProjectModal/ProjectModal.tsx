@@ -6,7 +6,7 @@ import * as C from "../ProjectModalItem";
 import FieldChoice from "../FieldChoice/FieldChoice";
 
 interface ProjectModalProps {
-  state: string;
+  state: "view" | "edit";
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = (
@@ -43,7 +43,7 @@ const ProjectModal: React.FC<ProjectModalProps> = (
                   </>
                 ),
                 edit: <button type="submit">저장</button>,
-              }[props.state]
+              }[state]
             }
           </S.ResultBox>
           <C.ModalToExplanation state={state} />
