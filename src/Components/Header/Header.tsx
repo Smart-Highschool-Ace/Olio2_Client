@@ -15,7 +15,7 @@ const Header: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal]);
 
   return (
     <S.Positioner>

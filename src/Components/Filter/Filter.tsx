@@ -7,51 +7,55 @@ const filterList = [
   {
     router: "all",
     title: "ALL",
+    id: 0,
   },
   {
     router: "web",
     title: "WEB",
+    id: 1,
   },
   {
     router: "android",
     title: "ANDROID",
+    id: 2,
   },
   {
     router: "ios",
     title: "IOS",
+    id: 3,
   },
   {
     router: "ai",
     title: "AI",
+    id: 4,
   },
   {
     router: "game",
     title: "GAME",
+    id: 5,
   },
   {
     router: "iot",
     title: "IOT",
+    id: 6,
   },
-];
+] as const;
 
 const Filter: React.FC = () => {
-  const nextRouter = useRouter();
-
+  const { query } = useRouter();
   const [currentRouter, setCurrentRouter] = useState("all");
 
   useEffect(() => {
-    const {
-      query: { skills },
-    } = nextRouter;
+    const skills = query?.skills || "all";
 
     setCurrentRouter(skills as string);
-  }, [nextRouter.query]);
+  }, [query]);
 
-  const mappingMenuList = filterList.map((data, idx) => (
+  const mappingMenuList = filterList.map(data => (
     <Link href={`/main/projects?skills=${data.router}`}>
       <S.Navigation
         isActive={currentRouter === data.router}
-        key={idx}
+        key={data.id}
         style={{ textDecoration: "none" }}
         onClick={() => setCurrentRouter(data.router)}
       >
