@@ -24,7 +24,7 @@ const ProjectModal: React.FC<ProjectModalProps> = (
       width: "1450px",
       height: "1000px",
     });
-  }, []);
+  }, [addModal, removeModal, state]);
 
   return (
     <S.ModalForm>
