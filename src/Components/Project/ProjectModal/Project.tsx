@@ -2,12 +2,9 @@ import React, { useCallback } from "react";
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import ProjectModal from "./ProjectModal/ProjectModal";
 import FieldChoice from "./FieldChoice/FieldChoice";
+import { ProjectType } from "./type";
 
-interface ProjectProps {
-  state: string;
-}
-
-function Project(props: ProjectProps) {
+function Project(props: { state: ProjectType }) {
   const { addModal } = useModalContext();
   const { state } = props;
 
@@ -19,7 +16,7 @@ function Project(props: ProjectProps) {
       width: "1450px",
       height: "1000px",
     });
-  }, []);
+  }, [addModal, state]);
 
   const handleClickRegisterToChoice = useCallback(() => {
     addModal({
@@ -29,7 +26,7 @@ function Project(props: ProjectProps) {
       width: "1450px",
       height: "1000px",
     });
-  }, []);
+  }, [addModal, state]);
 
   const openModal = () => {
     switch (state) {

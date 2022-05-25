@@ -4,14 +4,9 @@ import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 import * as C from "../ProjectModalItem";
 import FieldChoice from "../FieldChoice/FieldChoice";
+import { ProjectType } from "../type";
 
-interface ProjectModalProps {
-  state: "view" | "edit";
-}
-
-const ProjectModal: React.FC<ProjectModalProps> = (
-  props: ProjectModalProps
-) => {
+const ProjectModal: React.FC<{ state: ProjectType }> = props => {
   const { addModal, removeModal } = useModalContext();
   const { state } = props;
 
