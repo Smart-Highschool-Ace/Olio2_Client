@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import ProjectModal from "./ProjectModal/ProjectModal";
 import FieldChoice from "./FieldChoice/FieldChoice";
 import { useModalContext } from "Utils/Contexts/ModalContext";
