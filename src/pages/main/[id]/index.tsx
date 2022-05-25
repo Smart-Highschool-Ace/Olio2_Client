@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 
 import { Header, MainToggle } from "Components";
-import { PortfolioContainer, ProjectContainer } from "Containers";
+import { renderContentByQueryId } from "Utils/render/container";
 
 const Positioner = styled.div`
   width: 100%;
@@ -29,16 +29,6 @@ const ContentWrapper = styled.div`
   margin-top: 6vh;
 `;
 
-const renderContentByQueryId = (id): JSX.Element => {
-  switch (id) {
-    case "portfolios":
-      return <PortfolioContainer />;
-    case "projects":
-      return <ProjectContainer />;
-    default:
-  }
-};
-
 const Index: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -49,7 +39,7 @@ const Index: React.FC = () => {
       <ToggleWrapper>
         <MainToggle />
       </ToggleWrapper>
-      <ContentWrapper>{renderContentByQueryId(id)}</ContentWrapper>
+      <ContentWrapper>{renderContentByQueryId(id.toString())}</ContentWrapper>
     </Positioner>
   );
 };
