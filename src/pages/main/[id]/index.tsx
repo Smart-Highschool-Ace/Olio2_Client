@@ -31,15 +31,14 @@ const ContentWrapper = styled.div`
 
 const Index: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query;
-
+  const id = (router.query?.id as string) || "";
   return (
     <Positioner>
       <Header />
       <ToggleWrapper>
         <MainToggle />
       </ToggleWrapper>
-      <ContentWrapper>{renderContentByQueryId(id.toString())}</ContentWrapper>
+      <ContentWrapper>{renderContentByQueryId(id)}</ContentWrapper>
     </Positioner>
   );
 };

@@ -31,7 +31,7 @@ const ContentWrapper = styled.div`
 
 const Index: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const id = (router.query?.id as string) || "";
 
   return (
     <Positioner>

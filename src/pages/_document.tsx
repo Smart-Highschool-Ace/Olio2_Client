@@ -10,13 +10,22 @@ import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet();
+    const sheet: ServerStyleSheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => {
+            const { Component, pageProps, router } = props;
+            return sheet.collectStyles(
+              <App
+                Component={Component}
+                pageProps={pageProps}
+                router={router}
+              />
+            );
+          },
         });
 
       // TS Setting

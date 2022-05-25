@@ -5,8 +5,9 @@ import { Global } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
 import client from "lib/withApollo";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import { AppContext, AppInitialProps, AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
+import { NextComponentType } from "next";
 
 const renderModals = () => {
   return (
@@ -20,7 +21,10 @@ const renderModals = () => {
   );
 };
 
-function App({ Component, pageProps }: AppProps) {
+const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
+  Component,
+  pageProps,
+}: AppProps) => {
   return (
     <ApolloProvider client={client}>
       <ModalProvider>
@@ -30,6 +34,6 @@ function App({ Component, pageProps }: AppProps) {
       </ModalProvider>
     </ApolloProvider>
   );
-}
+};
 
 export default App;
