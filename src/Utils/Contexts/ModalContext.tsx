@@ -20,7 +20,7 @@ interface ModalDispatch {
 
 const ModalContext = createContext({});
 
-export function ModalProvider(props): JSX.Element {
+export const ModalProvider: React.FC = (props): JSX.Element => {
   const { children } = props;
 
   const initialState: ModalState = {
@@ -33,7 +33,7 @@ export function ModalProvider(props): JSX.Element {
       {children}
     </ModalContext.Provider>
   );
-}
+};
 
 export const ModalConsumer = ModalContext.Consumer;
 
