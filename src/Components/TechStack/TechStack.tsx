@@ -5,6 +5,7 @@ import * as S from "./Style";
 import "rsuite/lib/styles/index.less";
 
 type MyStack = {
+  id: number;
   name: string;
   proficiency: number;
   color: string;
@@ -73,8 +74,8 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
             </S.ContentWrapper>
           </S.StackContent>
         )}
-        {StackData.map((data, idx) => (
-          <S.StackContent key={idx}>
+        {StackData.map(data => (
+          <S.StackContent key={data.id}>
             <S.ContentWrapper>
               <span>{data.name}</span>
               <Line

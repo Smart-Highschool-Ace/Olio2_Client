@@ -18,7 +18,7 @@ const FieldChoice: React.FC<{ state: ProjectType }> = props => {
       width: "1450px",
       height: "1000px",
     });
-  }, []);
+  }, [addModal, removeModal, state]);
 
   return (
     <S.ModalForm>
