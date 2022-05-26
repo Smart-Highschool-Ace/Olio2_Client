@@ -23,13 +23,13 @@ const ProfileModal: React.FC<ModalProps> = props => {
     setPreview(onCropPreview);
   };
 
-  const onBeforeFileLoad = (elem: any) => {
+  const onBeforeFileLoad = (e: any) => {
+    const elem = e;
     if (elem.target.files[0].size > 700000) {
       alert("이미지의 크기가 너무 큽니다");
       elem.target.value = "";
-    } else {
-      console.log(typeof elem.target.files[0]);
     }
+    return elem;
   };
 
   const ClosePopUp = () => {
