@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
 import * as S from "./Style";
 
@@ -19,7 +19,7 @@ const InfoModal: React.FC = () => {
 
         <S.InputWrapper>
           <S.InputBox>
-            <label>이름</label>
+            <label htmlFor="name">이름</label>
             <S.InputName
               height={40}
               type="text"
@@ -30,7 +30,7 @@ const InfoModal: React.FC = () => {
           </S.InputBox>
 
           <S.InputBox>
-            <label>학교</label>
+            <label htmlFor="school">학교</label>
             <select id="school" name="school">
               <option value="dsm">대덕소프트웨어마이스터고등학교</option>
               <option value="dgsm">대구소프트웨어마이스터고등학교</option>
@@ -40,7 +40,7 @@ const InfoModal: React.FC = () => {
           </S.InputBox>
 
           <S.InputBox>
-            <label>한줄 소개 (70자)</label>
+            <label htmlFor="present">한줄 소개 (70자)</label>
             <S.Introduce
               height={130}
               maxLength={70}
