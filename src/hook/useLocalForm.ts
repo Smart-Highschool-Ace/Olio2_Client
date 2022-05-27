@@ -32,7 +32,7 @@ function useLocalForm<T>(
     });
     setErrors(initialErrors);
     setTouched(initialTouched);
-  }, []);
+  }, [form]);
 
   useMemo(() => {
     if (conditions) {
@@ -61,7 +61,7 @@ function useLocalForm<T>(
         });
       });
     }
-  }, [form]);
+  }, [conditions, form]);
 
   const update = useCallback(
     (fieldName: keyof T) => (value: any) => {
@@ -74,12 +74,12 @@ function useLocalForm<T>(
         [fieldName]: true,
       }));
     },
-    [form]
+    []
   );
 
   const reset = useCallback(() => {
     setForm(initialValue);
-  }, [form]);
+  }, [initialValue]);
 
   const getInputProps = (fieldName: keyof T) => ({
     value: form[fieldName] as any,
