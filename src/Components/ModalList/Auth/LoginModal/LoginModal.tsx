@@ -37,7 +37,7 @@ const LoginModal: React.FC = () => {
         alert("로그인 성공!");
       }
     }
-  }, [data, error]);
+  }, [data, error, removeModal]);
 
   const handleClickRegister = useCallback(() => {
     removeModal();
@@ -49,7 +49,7 @@ const LoginModal: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal, removeModal]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
