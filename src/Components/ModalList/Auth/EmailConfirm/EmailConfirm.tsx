@@ -42,8 +42,9 @@ const EmailConfirm: React.FC = () => {
   };
 
   const pressEEvnet: React.KeyboardEventHandler<HTMLInputElement> = e => {
-    e.key === "e" && e.preventDefault();
-    e.key === "-" && e.preventDefault();
+    if (e.key === "e" || e.key === "-") {
+      e.preventDefault();
+    }
   };
   return (
     <AuthTemplate>

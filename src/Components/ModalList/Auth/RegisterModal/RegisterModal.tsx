@@ -21,7 +21,7 @@ const RegisterModal: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal, removeModal]);
 
   const handleClickRegisterBtn = useCallback(() => {
     removeModal();
@@ -33,7 +33,7 @@ const RegisterModal: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [removeModal, addModal]);
 
   return (
     <AuthTemplate>
