@@ -41,6 +41,10 @@ const EmailConfirm: React.FC = () => {
     }
   };
 
+  const pressEEvnet: React.KeyboardEventHandler<HTMLInputElement> = e => {
+    e.key === "e" && e.preventDefault();
+    e.key === "-" && e.preventDefault();
+  };
   return (
     <AuthTemplate>
       <S.Positioner>
@@ -68,10 +72,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -85,10 +86,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -102,10 +100,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -119,10 +114,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -136,10 +128,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -153,10 +142,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={e => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEEvnet}
                   onChange={autoFocusing}
                 />
               </S.Pin>
