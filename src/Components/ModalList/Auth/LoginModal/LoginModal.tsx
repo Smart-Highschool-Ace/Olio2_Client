@@ -23,6 +23,10 @@ const LoginModal: React.FC = () => {
     loginEmail: "",
     loginPassword: "",
   });
+  const { value: loginEmail, onChange: emailOnChange } =
+    form.getInputProps("loginEmail");
+  const { value: loginPassword, onChange: passwordOnChage } =
+    form.getInputProps("loginPassword");
 
   useEffect(() => {
     if (data != null) {
@@ -64,7 +68,8 @@ const LoginModal: React.FC = () => {
             onBlur={() => setEmailFocus(false)}
             placeholder="Email"
             type="email"
-            {...form.getInputProps("loginEmail")}
+            value={loginEmail}
+            onChange={emailOnChange}
           />
         </S.InputWrapper>
         <S.InputWrapper focus={passwordFocus}>
@@ -75,7 +80,8 @@ const LoginModal: React.FC = () => {
             onBlur={() => setPasswordFocus(false)}
             placeholder="비밀번호"
             type="password"
-            {...form.getInputProps("loginPassword")}
+            value={loginPassword}
+            onChange={passwordOnChage}
           />
         </S.InputWrapper>
 

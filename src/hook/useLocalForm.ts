@@ -12,6 +12,10 @@ type FormTouched<T> = { [fieldName in keyof T]?: boolean };
 export type FormCondition<T> = {
   [fieldname in keyof T]?: ((value: any, form?: T) => ConditionResult)[];
 };
+interface GetInputPropsResult<T> {
+  value: T[keyof T];
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
 
 function useLocalForm<T>(
   initialValue?: T,
@@ -81,8 +85,8 @@ function useLocalForm<T>(
     setForm(initialValue);
   }, [initialValue]);
 
-  const getInputProps = (fieldName: keyof T) => ({
-    value: form[fieldName] as any,
+  const getInputProps = (fieldName: keyof T): GetInputPropsResult<T> => ({
+    value: form[fieldName],
     onChange: e => update(fieldName)(e.target.value),
   });
 
