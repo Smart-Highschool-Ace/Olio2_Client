@@ -1,5 +1,6 @@
 import { ProfileCamera, Clip, Mail } from "Assets";
-import { ProfileModal, TechStack } from "Components";
+import ProfileModal from "Components/Modal/ProfileModal/ProfileModal";
+import TechStack from "Components/TechStack/TechStack";
 import React, { useState } from "react";
 import * as S from "./Style";
 

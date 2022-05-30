@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from "react";
-import { AuthTemplate, EmailConfirm, LoginModal } from "Components";
-
 import { useModalContext } from "Utils/Contexts/ModalContext";
+import AuthTemplate from "../AuthTemplate/AuthTemplate";
+import EmailConfirm from "../EmailConfirm/EmailConfirm";
+import LoginModal from "../LoginModal/LoginModal";
+
 import * as S from "./Style";
 
 const RegisterModal: React.FC = () => {

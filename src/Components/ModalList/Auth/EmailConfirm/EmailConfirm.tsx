@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
-import { AuthTemplate, InfoModal } from "Components";
-
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { Envelope } from "Assets";
+import AuthTemplate from "../AuthTemplate/AuthTemplate";
+import InfoModal from "../../InfoModal/InfoModal";
+
 import * as S from "./Style";
 
 const EmailConfirm: React.FC = () => {
@@ -24,7 +25,7 @@ const EmailConfirm: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal, removeModal]);
 
   const autoFocusing = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { maxLength, value, name } = e.target;

@@ -1,6 +1,6 @@
 import React from "react";
 import { PortfolioType, ProjectType } from "Utils/GlobalTypes";
-import { BoardItem } from "Components";
+import BoardItem from "Components/BoardItem/BoardItem";
 import { useRouter } from "next/router";
 import PositionerStyle from "./Style";
 

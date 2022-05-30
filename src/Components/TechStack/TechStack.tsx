@@ -38,7 +38,7 @@ const TechStack: React.FC<TechStackProps> = ({ StackData }) => {
     <S.Positioner>
       <S.TitleWrapper>
         <span>사용기술</span>
-        <div role="button" onClick={setStack}>
+        <div role="button" tabIndex={0} onMouseDown={setStack}>
           추가 +
         </div>
       </S.TitleWrapper>

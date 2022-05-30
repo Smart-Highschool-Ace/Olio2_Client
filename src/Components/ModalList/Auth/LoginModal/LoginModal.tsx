@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useEffect } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
-import { AuthTemplate, RegisterModal } from "Components";
 import { gql, useMutation } from "@apollo/client";
 import useLocalForm from "hook/useLocalForm";
+import AuthTemplate from "../AuthTemplate/AuthTemplate";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import * as S from "./Style";
 
 const LOGIN = gql`

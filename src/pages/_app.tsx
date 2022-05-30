@@ -29,6 +29,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
     <ApolloProvider client={client}>
       <ModalProvider>
         <Global styles={GlobalStyle} />
+        {/* eslint-disable react/jsx-props-no-spreading */}
         <Component {...pageProps} />
         {renderModals()}
       </ModalProvider>
