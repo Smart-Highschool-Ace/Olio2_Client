@@ -88,7 +88,9 @@ const LoginModal: React.FC = () => {
         <S.BottomLabel>
           <div>
             <input type="checkbox" id="emailSave" name="emailSave" />
-            <label style={{ marginLeft: 3 }}>이메일 저장하기</label>
+            <label htmlFor="emailSave" style={{ marginLeft: 3 }}>
+              이메일 저장하기
+            </label>
           </div>
           <S.LoginBtn type="submit">로그인</S.LoginBtn>
         </S.BottomLabel>

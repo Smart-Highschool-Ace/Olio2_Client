@@ -26,6 +26,7 @@ const InfoModal: React.FC = () => {
               placeholder="이름을 입력하세요"
               maxLength={7}
               autoComplete="false"
+              id="name"
             />
           </S.InputBox>
 
@@ -42,6 +43,7 @@ const InfoModal: React.FC = () => {
           <S.InputBox>
             <label htmlFor="present">한줄 소개 (70자)</label>
             <S.Introduce
+              id="present"
               height={130}
               maxLength={70}
               placeholder="내용을 입력하세요"
