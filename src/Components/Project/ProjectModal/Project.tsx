@@ -1,6 +1,6 @@
-import React from "react";
 import { useHandleClickModalBtn } from "hook";
 import { ModalStateType } from "../../../Utils/GlobalTypes";
+import React, { useCallback } from "react";
 
 function Project(props: { state: ModalStateType }) {
   const { state } = props;

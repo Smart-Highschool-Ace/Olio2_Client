@@ -1,4 +1,5 @@
 import { FinalLogo } from "Assets";
+import path from "../../constants/path.json";
 import React from "react";
 import * as S from "./Style";
 
@@ -6,6 +7,8 @@ const StartPage: React.FC = () => {
   return (
     <S.Positioner>
       <S.Wrapper>
+        <link rel="preconnect" href={path.font_gstatic} />
+        <link href={path.antd_css} rel="stylesheet"></link>
         <S.StartOlio>
           쉽고 간편한 포트폴리오 웹 서비스
           <br />

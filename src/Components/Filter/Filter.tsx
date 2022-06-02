@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as S from "./Style";
+import path from "../../constants/path.json
 
 const filterList = [
   {
@@ -51,8 +52,8 @@ const Filter: React.FC = () => {
     setCurrentRouter(skills as string);
   }, [query]);
 
-  const mappingMenuList = filterList.map(data => (
-    <Link href={`/main/projects?skills=${data.router}`}>
+  const mappingMenuList = filterList.map((data, idx) => (
+    <Link href={`${path.MAIN_PROJECT}?skills=${data.router}`}>
       <S.Navigation
         isActive={currentRouter === data.router}
         key={data.id}
