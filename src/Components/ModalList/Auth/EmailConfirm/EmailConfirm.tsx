@@ -42,7 +42,7 @@ const EmailConfirm: React.FC = () => {
     }
   };
 
-  const pressEEvnet: React.KeyboardEventHandler<HTMLInputElement> = e => {
+  const pressEvent: React.KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key === "e" || e.key === "-") {
       e.preventDefault();
     }
@@ -74,7 +74,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -88,7 +88,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -102,7 +102,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -116,7 +116,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -130,7 +130,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
@@ -144,7 +144,7 @@ const EmailConfirm: React.FC = () => {
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={pressEEvnet}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>

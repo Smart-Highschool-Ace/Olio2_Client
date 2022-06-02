@@ -1,8 +1,6 @@
-import React, { useState, useCallback } from "react";
-import { useModalContext } from "Utils/Contexts/ModalContext";
+import React, { useState } from "react";
+import { useHandleClickModalBtn } from "hook";
 import AuthTemplate from "../AuthTemplate/AuthTemplate";
-import EmailConfirm from "../EmailConfirm/EmailConfirm";
-import LoginModal from "../LoginModal/LoginModal";
 
 import * as S from "./Style";
 
@@ -11,31 +9,10 @@ const RegisterModal: React.FC = () => {
   const [passwordFocus, setPasswordFocus] = useState(false);
   const [passwordConfirmFocus, setPasswordConfirmFocus] = useState(false);
 
-  const { addModal, removeModal } = useModalContext();
-
-  const handleClickLogin = useCallback(() => {
-    removeModal();
-
-    addModal({
-      title: "",
-      element: <LoginModal />,
-      showOnlyBody: true,
-      width: "1150px",
-      height: "697px",
-    });
-  }, [addModal, removeModal]);
-
-  const handleClickRegisterBtn = useCallback(() => {
-    removeModal();
-
-    addModal({
-      title: "",
-      element: <EmailConfirm />,
-      showOnlyBody: true,
-      width: "1150px",
-      height: "697px",
-    });
-  }, [removeModal, addModal]);
+  const handleClickLogin = useHandleClickModalBtn({ modalName: "Login" });
+  const handleClickRegisterBtn = useHandleClickModalBtn({
+    modalName: "EmailConfirm",
+  });
 
   return (
     <AuthTemplate>

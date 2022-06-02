@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { gql, useMutation } from "@apollo/client";
 import useLocalForm from "hook/useLocalForm";
+import { useHandleClickModalBtn } from "hook";
 import AuthTemplate from "../AuthTemplate/AuthTemplate";
-import RegisterModal from "../RegisterModal/RegisterModal";
 import * as S from "./Style";
 
 const LOGIN = gql`
@@ -18,7 +18,7 @@ const LOGIN = gql`
 const LoginModal: React.FC = () => {
   const [emailFocus, setEmailFocus] = useState<Boolean>(false);
   const [passwordFocus, setPasswordFocus] = useState<Boolean>(false);
-  const { addModal, removeModal } = useModalContext();
+  const { removeModal } = useModalContext();
   const [login, { data, error }] = useMutation(LOGIN);
   const form = useLocalForm<{ loginEmail: string; loginPassword: string }>({
     loginEmail: "",
@@ -40,17 +40,7 @@ const LoginModal: React.FC = () => {
     }
   }, [data, error, removeModal]);
 
-  const handleClickRegister = useCallback(() => {
-    removeModal();
-
-    addModal({
-      title: "",
-      element: <RegisterModal />,
-      showOnlyBody: true,
-      width: "1150px",
-      height: "697px",
-    });
-  }, [addModal, removeModal]);
+  const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
