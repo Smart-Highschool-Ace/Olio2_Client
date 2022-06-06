@@ -1,11 +1,7 @@
 import * as React from "react";
+import { DefaultImageProps } from "Utils/GlobalTypes";
 
-type SSProps = {
-  width: number;
-  height: number;
-};
-
-function SS({ width, height }: SSProps) {
+function SS({ width, height }: DefaultImageProps) {
   return (
     <svg
       width={width}

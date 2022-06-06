@@ -46,3 +46,8 @@ export type ModalName =
   | "EmailConfirm";
 
 export type ModalStateType = "view" | "edit" | "writing";
+
+export interface DefaultImageProps {
+  width: string;
+  height: string;
+}

@@ -1,11 +1,7 @@
 import * as React from "react";
+import { DefaultImageProps } from "Utils/GlobalTypes";
 
-type PhoneImgProps = {
-  width: number;
-  height: number;
-};
-
-function PhoneImg({ width, height }: PhoneImgProps) {
+function PhoneImg({ width, height }: DefaultImageProps) {
   return (
     <svg
       width={width}

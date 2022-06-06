@@ -1,11 +1,7 @@
 import * as React from "react";
+import { DefaultImageProps } from "Utils/GlobalTypes";
 
-type GithubProps = {
-  width: number;
-  height: number;
-};
-
-function Github({ width, height }: GithubProps) {
+function Github({ width, height }: DefaultImageProps) {
   return (
     <svg
       width={width}
