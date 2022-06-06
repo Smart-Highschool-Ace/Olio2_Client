@@ -8,7 +8,6 @@ function Check(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      /* eslint-disable react/jsx-props-no-spreading */
       {...props}
     >
       <g stroke="#8D8D8D">

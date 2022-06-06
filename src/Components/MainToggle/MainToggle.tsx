@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import * as S from "./Style";
+import path from "../../constants/path.json";
+
 import { useRouter } from "next/router";
 import * as S from "./Style";
 
@@ -13,11 +16,11 @@ const MainToggle: React.FC = () => {
 
   const returnLeftColor = () => {
     setLeftActive(!leftActive);
-    if (id === "portfolios") router.push("/main/projects?skills=all");
+    if (id === "portfolios") router.push(path.MAIN_PROJECT_WITH_ALL_SKILL);
   };
   const returnRightColor = () => {
     setRightActive(!rightActive);
-    if (id === `projects`) router.push("/main/portfolios");
+    if (id === `projects`) router.push(path.MAIN_PORTFOLIO);
   };
 
   useEffect(() => {

@@ -1,6 +1,6 @@
-import React from "react";
 import { useHandleClickModalBtn } from "hook";
 import { ModalStateType } from "../../../Utils/GlobalTypes";
+import React, { useCallback } from "react";
 
 function Project(props: { state: ModalStateType }) {
   const { state } = props;
@@ -16,12 +16,10 @@ function Project(props: { state: ModalStateType }) {
   });
 
   const openModal = () => {
-    switch (state) {
-      case "writing":
-        handleClickRegisterToChoice();
-        break;
-      default:
-        handleClickRegister();
+    if (state === "writing") {
+      handleClickRegisterToChoice();
+    } else {
+      handleClickRegister();
     }
   };
 
