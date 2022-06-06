@@ -16,12 +16,10 @@ function Project(props: { state: ModalStateType }) {
   });
 
   const openModal = () => {
-    switch (state) {
-      case "writing":
-        handleClickRegisterToChoice();
-        break;
-      default:
-        handleClickRegister();
+    if (state === "writing") {
+      handleClickRegisterToChoice();
+    } else {
+      handleClickRegister();
     }
   };
 
