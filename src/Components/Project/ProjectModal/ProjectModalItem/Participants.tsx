@@ -1,3 +1,4 @@
+import React from "react";
 import * as I from "../../../../Assets/index";
 import * as S from "./styled";
 
@@ -8,6 +9,7 @@ interface ParticipantsProps {
 const Participants: React.FC<ParticipantsProps> = (
   props: ParticipantsProps
 ) => {
+  const { state } = props;
   return (
     <>
       <S.ParticipantAdd>
@@ -21,10 +23,12 @@ const Participants: React.FC<ParticipantsProps> = (
                   <input type="text" placeholder="검색" />
                 </div>
                 <textarea placeholder="맡은 역할" />
-                <button id="addBtn">추가</button>
+                <button type="button" id="addBtn">
+                  추가
+                </button>
               </S.SearchBar>
             ),
-          }[props.state]
+          }[state]
         }
       </S.ParticipantAdd>
       <S.Participants>
@@ -32,7 +36,7 @@ const Participants: React.FC<ParticipantsProps> = (
           {
             view: (
               <>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -40,7 +44,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3308 />
                   <div>
                     <div>3308 김아련</div>
@@ -48,7 +52,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3111 />
                   <div>
                     <div>3111 이대훈</div>
@@ -56,7 +60,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -64,7 +68,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -76,7 +80,7 @@ const Participants: React.FC<ParticipantsProps> = (
             ),
             viewOnly: (
               <>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -84,7 +88,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3308 />
                   <div>
                     <div>3308 김아련</div>
@@ -92,7 +96,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3111 />
                   <div>
                     <div>3111 이대훈</div>
@@ -100,7 +104,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -108,7 +112,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     <I.Arrow />
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -120,7 +124,7 @@ const Participants: React.FC<ParticipantsProps> = (
             ),
             edit: (
               <>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -130,7 +134,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     </div>
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -140,7 +144,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     </div>
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -150,7 +154,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     </div>
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -160,7 +164,7 @@ const Participants: React.FC<ParticipantsProps> = (
                     </div>
                   </div>
                 </button>
-                <button>
+                <button type="button">
                   <I.Profile3218 />
                   <div>
                     <div>3218 진예원</div>
@@ -173,34 +177,34 @@ const Participants: React.FC<ParticipantsProps> = (
               </>
             ),
             writing: (
-              <>
-                <S.Participants>
-                  <div>
-              <S.SearchBar>
+              <S.Participants>
                 <div>
-                  <I.Search />
-                  <input type="text" placeholder="검색" />
-                </div>
-                <textarea placeholder="맡은 역할" />
-                <button id="addBtn">추가</button>
-              </S.SearchBar>
-                  </div>
-                  <div className="participantsGroup">
-                    <button>
-                      <I.Profile3218 />
-                      <div>
-                        <div>3218 진예원</div>
-                        <span>기획 및 UI/UX 디자인</span>
-                        <div>
-                          <I.X />
-                        </div>
-                      </div>
+                  <S.SearchBar>
+                    <div>
+                      <I.Search />
+                      <input type="text" placeholder="검색" />
+                    </div>
+                    <textarea placeholder="맡은 역할" />
+                    <button type="button" id="addBtn">
+                      추가
                     </button>
-                  </div>
-                </S.Participants>
-              </>
+                  </S.SearchBar>
+                </div>
+                <div className="participantsGroup">
+                  <button type="button">
+                    <I.Profile3218 />
+                    <div>
+                      <div>3218 진예원</div>
+                      <span>기획 및 UI/UX 디자인</span>
+                      <div>
+                        <I.X />
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </S.Participants>
             ),
-          }[props.state]
+          }[state]
         }
       </S.Participants>
     </>

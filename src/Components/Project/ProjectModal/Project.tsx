@@ -1,46 +1,33 @@
+import { useHandleClickModalBtn } from "hook";
+import { ModalStateType } from "../../../Utils/GlobalTypes";
 import React, { useCallback } from "react";
-import ProjectModal from "./ProjectModal/ProjectModal";
-import FieldChoice from "./FieldChoice/FieldChoice";
-import { useModalContext } from "Utils/Contexts/ModalContext";
 
-interface ProjectProps {
-  state: string;
-}
+function Project(props: { state: ModalStateType }) {
+  const { state } = props;
 
-const Project = (props: ProjectProps) => {
-  const { addModal } = useModalContext();
+  const handleClickRegister = useHandleClickModalBtn({
+    modalName: "Project",
+    state,
+  });
 
-  const handleClickRegister = useCallback(() => {
-    addModal({
-      title: "",
-      element: <ProjectModal state={props.state} />,
-      showOnlyBody: true,
-      width: "1450px",
-      height: "1000px",
-    });
-  }, []);
-
-  const handleClickRegisterToChoice = useCallback(() => {
-    addModal({
-      title: "",
-      element: <FieldChoice state={props.state} />,
-      showOnlyBody: true,
-      width: "1450px",
-      height: "1000px",
-    });
-  }, []);
+  const handleClickRegisterToChoice = useHandleClickModalBtn({
+    modalName: "FieldChoice",
+    state,
+  });
 
   const openModal = () => {
-    switch (props.state) {
-      case "writing":
-        handleClickRegisterToChoice();
-        break;
-      default:
-        handleClickRegister();
+    if (state === "writing") {
+      handleClickRegisterToChoice();
+    } else {
+      handleClickRegister();
     }
   };
 
-  return <button onClick={() => openModal()}>modal을 보고싶어?</button>;
-};
+  return (
+    <button type="button" onClick={() => openModal()}>
+      modal 을 보고싶어?
+    </button>
+  );
+}
 
 export default Project;

@@ -1,23 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
 import * as S from "./Style";
 
-import { useModalContext } from "Utils/Contexts/ModalContext";
-import { Camera, GreenMark, LightGreenMark, Logo } from "Assets";
-
 const InfoModal: React.FC = () => {
-  const { addModal, removeModal } = useModalContext();
-  const [inputs, setInputs] = useState({
-    name: "",
-    school: "",
-    intro: "",
-  });
-
-  const { name, school, intro } = inputs;
-
-  // setInterval(() => {
-  //   console.log(inputs);
-  // }, 2000);
-
   return (
     <S.Positioner>
       <S.LeftMark>
@@ -34,18 +19,19 @@ const InfoModal: React.FC = () => {
 
         <S.InputWrapper>
           <S.InputBox>
-            <label>이름</label>
+            <label htmlFor="name">이름</label>
             <S.InputName
               height={40}
               type="text"
               placeholder="이름을 입력하세요"
               maxLength={7}
               autoComplete="false"
+              id="name"
             />
           </S.InputBox>
 
           <S.InputBox>
-            <label>학교</label>
+            <label htmlFor="school">학교</label>
             <select id="school" name="school">
               <option value="dsm">대덕소프트웨어마이스터고등학교</option>
               <option value="dgsm">대구소프트웨어마이스터고등학교</option>
@@ -55,8 +41,9 @@ const InfoModal: React.FC = () => {
           </S.InputBox>
 
           <S.InputBox>
-            <label>한줄 소개 (70자)</label>
+            <label htmlFor="present">한줄 소개 (70자)</label>
             <S.Introduce
+              id="present"
               height={130}
               maxLength={70}
               placeholder="내용을 입력하세요"

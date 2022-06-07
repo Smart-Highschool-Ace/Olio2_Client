@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./styled";
 import * as I from "../../../../Assets/index";
 
@@ -8,6 +9,8 @@ interface ProjectModalProps {
 const ModalToExplanation: React.FC<ProjectModalProps> = (
   props: ProjectModalProps
 ) => {
+  const { state } = props;
+
   return (
     <S.ModalToExplanation>
       {
@@ -16,7 +19,7 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
             <>
               <span>3개교 마이스터고등학교 커뮤니티 앱 서비스</span>
               <span>
-                <button>IOS</button>
+                <button type="button">IOS</button>
                 <span>2020.11.23 ~ 2020.11.25</span>
               </span>
             </>
@@ -25,7 +28,7 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
             <>
               <span>3개교 마이스터고등학교 커뮤니티 앱 서비스</span>
               <span>
-                <button>IOS</button>
+                <button type="button">IOS</button>
                 <span>2020.11.23 ~ 2020.11.25</span>
               </span>
             </>
@@ -38,7 +41,7 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
               <div>
                 <div>
                   <span>참여기간</span>
-                  <button>
+                  <button type="button">
                     진행중
                     <I.Check />
                   </button>
@@ -48,21 +51,21 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
                   placeholder="시작년도"
                   maxLength={4}
                   pattern="[0-9]{4}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
                 <input
                   type="text"
                   placeholder="월"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
                 <input
                   type="text"
                   placeholder="일"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
                 <I.Line />
                 <input
@@ -70,21 +73,21 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
                   placeholder="종료년도"
                   maxLength={4}
                   pattern="[0-9]{4}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
                 <input
                   type="text"
                   placeholder="월"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
                 <input
                   type="text"
                   placeholder="일"
                   maxLength={2}
                   pattern="[0-9]{2}"
-                  title={"숫자를 입력해주세요"}
+                  title="숫자를 입력해주세요"
                 />
               </div>
             </>
@@ -95,7 +98,7 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
               <div>
                 <div>
                   <span>참여기간</span>
-                  <button>
+                  <button type="button">
                     진행중
                     <I.Check />
                   </button>
@@ -140,7 +143,7 @@ const ModalToExplanation: React.FC<ProjectModalProps> = (
               </div>
             </>
           ),
-        }[props.state]
+        }[state]
       }
     </S.ModalToExplanation>
   );

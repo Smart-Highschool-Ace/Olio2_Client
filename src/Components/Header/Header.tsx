@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { Logo, Search } from "Assets";
-import * as S from "./Style";
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import LoginModal from "Components/ModalList/Auth/LoginModal/LoginModal";
+import * as S from "./Style";
 
 const Header: React.FC = () => {
   const { addModal } = useModalContext();
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal]);
 
   return (
     <S.Positioner>
@@ -30,7 +30,9 @@ const Header: React.FC = () => {
           <S.SearchBar placeholder="검색어를 입력하세요" />
         </S.SearchWrapper>
         <S.AuthWrapper>
-          <div onClick={() => handleClickLogin()}>로그인</div>
+          <button type="button" onClick={handleClickLogin}>
+            로그인
+          </button>
         </S.AuthWrapper>
       </S.ContentWrapper>
     </S.Positioner>

@@ -30,7 +30,7 @@ export const InputWrapper = styled.div<Color>`
   flex-direction: column;
   margin-top: 50px;
 
-  border-bottom: 2px solid ${(props) => (props.focus ? "#5a948b" : "#C4C4C4")};
+  border-bottom: 2px solid ${props => (props.focus ? "#5a948b" : "#C4C4C4")};
 `;
 
 export const FormText = styled.span`

@@ -1,16 +1,17 @@
-import React, { createRef, useCallback, useEffect } from "react";
-import { AuthTemplate } from "Components";
-import * as S from "./Style";
-
+import React, { useCallback } from "react";
 import { useModalContext } from "Utils/Contexts/ModalContext";
-import { InfoModal } from "Components";
 import { Envelope } from "Assets";
+import AuthTemplate from "../AuthTemplate/AuthTemplate";
+import InfoModal from "../../InfoModal/InfoModal";
+
+import * as S from "./Style";
 
 const EmailConfirm: React.FC = () => {
   const { addModal, removeModal } = useModalContext();
 
-  const numberMaxLength = (e: React.FormEvent<HTMLInputElement>) => {
-    let { maxLength, value } = e.nativeEvent.target as HTMLInputElement;
+  const numberMaxLength = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { maxLength } = e.target;
+    let { value } = e.target;
     if (value.length > maxLength) value = value.slice(0, maxLength);
   };
 
@@ -24,11 +25,11 @@ const EmailConfirm: React.FC = () => {
       width: "1150px",
       height: "697px",
     });
-  }, []);
+  }, [addModal, removeModal]);
 
   const autoFocusing = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { maxLength, value, name } = e.target;
-    const [fieldName, fieldIndex] = name.split("-");
+    const [, fieldIndex] = name.split("-");
 
     if (value.length >= maxLength) {
       if (parseInt(fieldIndex, 10) < 6) {
@@ -41,6 +42,11 @@ const EmailConfirm: React.FC = () => {
     }
   };
 
+  const pressEvent: React.KeyboardEventHandler<HTMLInputElement> = e => {
+    if (e.key === "e" || e.key === "-") {
+      e.preventDefault();
+    }
+  };
   return (
     <AuthTemplate>
       <S.Positioner>
@@ -60,103 +66,85 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-1"
-                  autoFocus={true}
+                  autoFocus
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-2"
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-3"
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-4"
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-5"
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={(e) => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-6"
                   autoCorrect="off"
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck="false"
                   type="number"
-                  onKeyDown={(e) => {
-                    e.key === "e" && e.preventDefault();
-                    e.key === "-" && e.preventDefault();
-                  }}
+                  onKeyDown={pressEvent}
                   onChange={autoFocusing}
                 />
               </S.Pin>

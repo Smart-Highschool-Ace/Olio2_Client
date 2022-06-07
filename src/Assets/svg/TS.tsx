@@ -1,11 +1,11 @@
 import * as React from "react";
 
 type TSProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
 };
 
-const TS = ({width, height}: TSProps) => {
+function TS({ width, height }: TSProps) {
   return (
     <svg
       width={205}
@@ -50,11 +50,11 @@ const TS = ({width, height}: TSProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 TS.defaultProps = {
-    width: 205,
-    height: 185,
-}
+  width: 205,
+  height: 185,
+};
 
 export default TS;

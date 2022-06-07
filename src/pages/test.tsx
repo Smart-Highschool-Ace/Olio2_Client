@@ -2,7 +2,7 @@ import { Header } from "Components";
 import TestModal from "Components/Modal/TestModal/TestModal";
 import React, { useState } from "react";
 
-const test = () => {
+const Test: React.FC = () => {
   const [PopUp, setPopUp] = useState(false);
 
   const CheckPopUp = () => {
@@ -11,7 +11,7 @@ const test = () => {
   return (
     <div>
       <Header />
-      <button onClick={CheckPopUp} style={{ marginTop: 100 }}>
+      <button type="button" onClick={CheckPopUp} style={{ marginTop: 100 }}>
         테스트 모달 열기
       </button>
       {PopUp && <TestModal toggle={CheckPopUp} />}
@@ -19,4 +19,4 @@ const test = () => {
   );
 };
 
-export default test;
+export default Test;

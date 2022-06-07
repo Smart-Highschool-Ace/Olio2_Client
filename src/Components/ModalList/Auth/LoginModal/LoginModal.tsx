@@ -1,10 +1,11 @@
-import React, { useState, useCallback, useEffect } from "react";
-import * as S from "./Style";
+import React, { useState, useEffect } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
-import { AuthTemplate, RegisterModal } from "Components";
 import { gql, useMutation } from "@apollo/client";
 import useLocalForm from "hook/useLocalForm";
+import { useHandleClickModalBtn } from "hook";
+import AuthTemplate from "../AuthTemplate/AuthTemplate";
+import * as S from "./Style";
 
 const LOGIN = gql`
   mutation LoginMutation($loginEmail: String!, $loginPassword: String!) {
@@ -17,12 +18,16 @@ const LOGIN = gql`
 const LoginModal: React.FC = () => {
   const [emailFocus, setEmailFocus] = useState<Boolean>(false);
   const [passwordFocus, setPasswordFocus] = useState<Boolean>(false);
-  const { addModal, removeModal } = useModalContext();
-  const [login, { data, error, loading }] = useMutation(LOGIN);
+  const { removeModal } = useModalContext();
+  const [login, { data, error }] = useMutation(LOGIN);
   const form = useLocalForm<{ loginEmail: string; loginPassword: string }>({
     loginEmail: "",
     loginPassword: "",
   });
+  const { value: loginEmail, onChange: emailOnChange } =
+    form.getInputProps("loginEmail");
+  const { value: loginPassword, onChange: passwordOnChage } =
+    form.getInputProps("loginPassword");
 
   useEffect(() => {
     if (data != null) {
@@ -33,19 +38,9 @@ const LoginModal: React.FC = () => {
         alert("로그인 성공!");
       }
     }
-  }, [data, error]);
+  }, [data, error, removeModal]);
 
-  const handleClickRegister = useCallback(() => {
-    removeModal();
-
-    addModal({
-      title: "",
-      element: <RegisterModal />,
-      showOnlyBody: true,
-      width: "1150px",
-      height: "697px",
-    });
-  }, []);
+  const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,7 +59,8 @@ const LoginModal: React.FC = () => {
             onBlur={() => setEmailFocus(false)}
             placeholder="Email"
             type="email"
-            {...form.getInputProps("loginEmail")}
+            value={loginEmail}
+            onChange={emailOnChange}
           />
         </S.InputWrapper>
         <S.InputWrapper focus={passwordFocus}>
@@ -75,14 +71,17 @@ const LoginModal: React.FC = () => {
             onBlur={() => setPasswordFocus(false)}
             placeholder="비밀번호"
             type="password"
-            {...form.getInputProps("loginPassword")}
+            value={loginPassword}
+            onChange={passwordOnChage}
           />
         </S.InputWrapper>
 
         <S.BottomLabel>
           <div>
             <input type="checkbox" id="emailSave" name="emailSave" />
-            <label style={{ marginLeft: 3 }}>이메일 저장하기</label>
+            <label htmlFor="emailSave" style={{ marginLeft: 3 }}>
+              이메일 저장하기
+            </label>
           </div>
           <S.LoginBtn type="submit">로그인</S.LoginBtn>
         </S.BottomLabel>

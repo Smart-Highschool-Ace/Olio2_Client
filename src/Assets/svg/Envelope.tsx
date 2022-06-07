@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Envelope = () => {
+function Envelope() {
   return (
     <svg
       width={72}
@@ -19,6 +19,6 @@ const Envelope = () => {
       <path clipRule="evenodd" d="M66 57L45 33l21 24z" stroke="#5A948B" />
     </svg>
   );
-};
+}
 
 export default Envelope;

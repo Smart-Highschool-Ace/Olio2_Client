@@ -1,7 +1,9 @@
 import React from "react";
+import Image from "next/image";
 import * as S from "./Style";
 
 type MyProject = {
+  project_id: number;
   name: string;
   icon: string;
   description: string;
@@ -35,9 +37,9 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           <span>프로젝트</span>
         </S.ContentTitle>
         <S.ProjectContent>
-          {ProjectDummyData.map((data, idx) => (
-            <S.ProjectWrapper key={idx}>
-              <img src={data.icon} style={{ margin: "1.5rem" }} />
+          {ProjectDummyData.map(data => (
+            <S.ProjectWrapper key={data.project_id}>
+              <Image src={data.icon} width="auto" height="auto" />
               <S.ProjectTitle>
                 <span>{data.name}</span>
                 <div>{data.description}</div>
@@ -52,8 +54,8 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           <span>수상경력</span>
         </S.ContentTitle>
         <S.EtcContent>
-          {AwardDummyData.map((data, idx) => (
-            <S.EtcWrapper key={idx}>
+          {AwardDummyData.map(data => (
+            <S.EtcWrapper key={data.name}>
               <span>{data.name}</span>
               <div>{data.organization}</div>
               <div>{data.date}</div>
@@ -69,8 +71,8 @@ const ProfileItems: React.FC<ProfileItemProps> = (props: ProfileItemProps) => {
           <span>자격증</span>
         </S.ContentTitle>
         <S.EtcContent>
-          {CertificateDummyData.map((data, idx) => (
-            <S.EtcWrapper key={idx}>
+          {CertificateDummyData.map(data => (
+            <S.EtcWrapper key={data.name}>
               <span>{data.name}</span>
               <div>{data.organization}</div>
               <div>{data.date}</div>

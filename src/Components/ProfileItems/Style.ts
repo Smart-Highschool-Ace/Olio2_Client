@@ -35,7 +35,7 @@ export const ProjectContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, minmax(105px, auto));
-	grid-auto-rows: minmax(105px, auto);
+  grid-auto-rows: minmax(105px, auto);
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   margin: 1rem 5rem 3rem 0.7rem;
@@ -59,7 +59,7 @@ export const AddWrapper = styled.div`
   border-radius: 10px;
   font-weight: 600;
   font-size: 38px;
-  color: #5A948B;
+  color: #5a948b;
 `;
 
 export const ProjectTitle = styled.div`
@@ -74,7 +74,7 @@ export const ProjectTitle = styled.div`
   }
 
   div {
-    color: #9A9A9A;
+    color: #9a9a9a;
     font-weight: 600;
     font-size: 14px;
   }
@@ -100,9 +100,9 @@ export const EtcWrapper = styled.div`
   span {
     font-size: 18px;
     font-weight: 600;
-    color: #504F4F;
+    color: #504f4f;
   }
-`
+`;
 
 export const EtcContent = styled.div`
   margin-bottom: 3rem;

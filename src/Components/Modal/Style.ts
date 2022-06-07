@@ -20,8 +20,8 @@ export const ModalBox = styled.div<ModalBoxProps>`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: ${props => props.width};
+  height: ${props => props.height};
   border-radius: 7px;
   box-shadow: 4px 6px 20px 0 rgba(0, 0, 0, 0.09);
   transform: translate(-50%, -50%);

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const GreenMark = () => {
+function GreenMark() {
   return (
     <svg
       style={{ borderTopRightRadius: 7 }}
@@ -16,6 +16,6 @@ const GreenMark = () => {
       />
     </svg>
   );
-};
+}
 
 export default GreenMark;

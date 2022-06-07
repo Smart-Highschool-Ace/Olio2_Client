@@ -1,40 +1,36 @@
+import React from "react";
 import * as I from "../../../../Assets/index";
 import * as S from "./styled";
 
 interface GithubBtnProps {
-  state: string;
+  state: "view" | "viewOnly" | "writing";
 }
 
-const GithubBtn: React.FC<GithubBtnProps> = (props: GithubBtnProps) => {
-  if (props.state == "view" || props.state == "viewOnly") {
+const GithubBtn: React.FC<GithubBtnProps> = ({ state }: GithubBtnProps) => {
+  if (state === "view" || state === "viewOnly") {
     return (
       <S.GithubBtn>
-        <button className="githubBtn">
+        <button type="button" className="githubBtn">
           <I.githubImg />
         </button>
       </S.GithubBtn>
     );
-  } else if (props.state == "writing") {
-    return (
-      <div>
-        <div>
-          <I.GithubLogo />
-          Github 링크
-        </div>
-        <input type="URL" placeholder="링크를 입력해주세요." />
-      </div>
-    );
-  } else {
-    return (
-      <span className="githubLogo">
-        <div>
-          <I.GithubLogo />
-          Github 링크
-        </div>
-        <input type="URL" placeholder="링크를 입력해주세요." />
-      </span>
-    );
   }
+
+  const template = (
+    <>
+      <div>
+        <I.GithubLogo />
+        Github 링크
+      </div>
+      <input type="URL" placeholder="링크를 입력해주세요." />
+    </>
+  );
+  return state === "writing" ? (
+    <div>{template}</div>
+  ) : (
+    <span className="githubLogo">{template}</span>
+  );
 };
 
 export default GithubBtn;

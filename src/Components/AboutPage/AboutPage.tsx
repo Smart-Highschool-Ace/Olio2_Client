@@ -10,7 +10,7 @@ const StartPage: React.FC = () => {
           <S.MiniTitle>OLIO</S.MiniTitle>
           <S.MiniSub>소프트웨어마이스터고등학교 포트폴리오 웹 서비스</S.MiniSub>
           <S.MiniInfo>
-            기존에 있던 ‘드림북'을 대체하기 위한
+            기존에 있던 &apos;드림북&apos;을 대체하기 위한
             <br />
             포트폴리오 웹 서비스 입니다.
           </S.MiniInfo>
@@ -20,7 +20,7 @@ const StartPage: React.FC = () => {
             <WS />
             <h5>공간제약이 없는 웹 서비스</h5>
             <p>
-              책으로 이루어진 ‘드림북'을 대체한 웹서비스로 <br />
+              책으로 이루어진 &apos;드림북&apos;을 대체한 웹서비스로 <br />
               공간의 제약을 받지 않고 열람 가능
             </p>
           </S.WS>

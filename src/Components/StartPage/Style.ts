@@ -79,4 +79,3 @@ export const StartedBtn1 = styled.button`
   margin-left: 13vw;
   margin-top: 9.8vh;
 `;
-

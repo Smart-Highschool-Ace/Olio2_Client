@@ -64,10 +64,9 @@ export const AuthWrapper = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  div {
+  button {
     font-size: 17px;
     font-weight: 100;
-
     cursor: pointer;
   }
 `;

@@ -59,7 +59,7 @@ export const InputWrapper = styled.div<Color>`
   height: 60px;
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid ${(props) => (props.focus ? "#5a948b" : "#C4C4C4")};
+  border-bottom: 2px solid ${props => (props.focus ? "#5a948b" : "#C4C4C4")};
 
   margin-top: 40px;
 

@@ -5,7 +5,7 @@ type FinalLogoProps = {
   height: number;
 };
 
-const FinalLogo = ({width, height}: FinalLogoProps) => {
+function FinalLogo({ width, height }: FinalLogoProps) {
   return (
     <svg
       width={width}
@@ -118,11 +118,11 @@ const FinalLogo = ({width, height}: FinalLogoProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 FinalLogo.defaultProps = {
   width: 830,
   height: 732,
-}
+};
 
 export default FinalLogo;

@@ -1,11 +1,7 @@
 import * as React from "react";
+import { DefaultImageProps } from "Utils/GlobalTypes";
 
-type InstagramProps = {
-    width: number;
-    height: number;
-};
-
-const Instagram = ({width, height}: InstagramProps) => {
+function Instagram({ width, height }: DefaultImageProps) {
   return (
     <svg
       width={width}
@@ -28,11 +24,11 @@ const Instagram = ({width, height}: InstagramProps) => {
       />
     </svg>
   );
-};
+}
 
 Instagram.defaultProps = {
-    width: 50,
-    height: 50,
+  width: 50,
+  height: 50,
 };
 
 export default Instagram;

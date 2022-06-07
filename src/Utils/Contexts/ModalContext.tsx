@@ -20,7 +20,7 @@ interface ModalDispatch {
 
 const ModalContext = createContext({});
 
-export const ModalProvider = (props) => {
+export const ModalProvider: React.FC = (props): JSX.Element => {
   const { children } = props;
 
   const initialState: ModalState = {
@@ -44,7 +44,7 @@ export const useModalContext = (): ModalState & ModalDispatch => {
   ];
 
   function addModal(modalInfo: ModalInfo) {
-    setState((prev) => ({
+    setState(prev => ({
       ...prev,
       modalList: prev.modalList.concat({
         ...modalInfo,
@@ -56,7 +56,7 @@ export const useModalContext = (): ModalState & ModalDispatch => {
   }
 
   function removeModal(id?: number) {
-    setState((prev) => ({
+    setState(prev => ({
       ...prev,
       modalList: prev.modalList.filter((modal, i) =>
         id ? id !== modal.id : prev.modalList.length - 1 !== i

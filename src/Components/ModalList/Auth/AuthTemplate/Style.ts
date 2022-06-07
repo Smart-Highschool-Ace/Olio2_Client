@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-interface Color {
-  focus: Boolean;
-}
-
 export const Positioner = styled.div`
   display: flex;
   align-items: center;

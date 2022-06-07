@@ -22,7 +22,7 @@ const StartPage: React.FC = () => {
           포트폴리오를 모아놓은 포트폴리오 웹 서비스입니다.
         </S.Info>
         <Link href={path.MAIN_PORTFOLIO}>
-          <S.StartedBtn1>Let's Start</S.StartedBtn1>
+          <S.StartedBtn1>Let&apos;s Start</S.StartedBtn1>
         </Link>
       </S.Wrapper>
     </S.Positioner>

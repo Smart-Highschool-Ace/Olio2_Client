@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Search = () => {
+function Search() {
   return (
     <svg
       width={17}
@@ -13,7 +13,7 @@ const Search = () => {
       <path stroke="#989898" d="M10.395 12.693l6.139 7.894" />
     </svg>
   );
-};
+}
 
 Search.defaultProps = {
   width: 17,

@@ -7,7 +7,7 @@ const StartPage: React.FC = () => {
     <S.Positioner>
       <S.Wrapper>
         <S.Explain2>“ 웹 뿐만아니라 앱에서도 가능 ! ”</S.Explain2>
-        <S.Rec2></S.Rec2>
+        <S.Rec2 />
         <S.ExAbout2>
           지금 너무너무 배가고파서 뒤질 것 같다. 그래서 갈비탕을 먹을거다.지금
           너무너무 배가고파서 뒤질 것 같다. 그래서 갈비탕을 먹을거다.지금

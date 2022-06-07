@@ -5,7 +5,7 @@ type LogoProps = {
   height: number;
 };
 
-const Logo = ({ width, height }: LogoProps) => {
+function Logo({ width, height }: LogoProps) {
   return (
     <svg
       width={width}
@@ -37,7 +37,7 @@ const Logo = ({ width, height }: LogoProps) => {
       </defs>
     </svg>
   );
-};
+}
 
 Logo.defaultProps = {
   width: 105,

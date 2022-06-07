@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Positioner = styled.div`
+const Positioner = styled.div`
   width: 100%;
   cursor: pointer;
   display: grid;
@@ -8,3 +8,5 @@ export const Positioner = styled.div`
   grid-row-gap: 5em;
   justify-items: center;
 `;
+
+export default Positioner;

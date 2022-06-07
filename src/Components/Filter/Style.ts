@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-interface isActive {
+interface IsActive {
   isActive: Boolean;
 }
 
@@ -26,7 +26,7 @@ export const NavWrapper = styled.div`
   align-items: center;
 `;
 
-export const Navigation = styled.div<isActive>`
+export const Navigation = styled.div<IsActive>`
   font-family: Apple SD Gothic Neo;
   font-style: normal;
   font-weight: 600;
@@ -40,7 +40,7 @@ export const Navigation = styled.div<isActive>`
   text-decoration: none;
   cursor: pointer;
 
-  ${(p) =>
+  ${p =>
     p.isActive &&
     `color: #ffffff;
     background-color: #3d3d3d;`}
