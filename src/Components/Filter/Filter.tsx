@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as S from "./Style";
-import path from "../../constants/path.json
+import path from "../../constants/path.json";
 
 const filterList = [
   {
