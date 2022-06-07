@@ -9,9 +9,9 @@ import * as S from "./Style";
 const EmailConfirm: React.FC = () => {
   const { addModal, removeModal } = useModalContext();
 
-  const numberMaxLength = (e: React.FormEvent<HTMLInputElement>) => {
-    const { maxLength } = e.nativeEvent.target as HTMLInputElement;
-    let { value } = e.nativeEvent.target as HTMLInputElement;
+  const numberMaxLength = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { maxLength } = e.target;
+    let { value } = e.target;
     if (value.length > maxLength) value = value.slice(0, maxLength);
   };
 
@@ -66,7 +66,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-1"
                   autoFocus
                   autoCorrect="off"
@@ -81,7 +81,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-2"
                   autoCorrect="off"
                   autoComplete="off"
@@ -95,7 +95,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-3"
                   autoCorrect="off"
                   autoComplete="off"
@@ -109,7 +109,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-4"
                   autoCorrect="off"
                   autoComplete="off"
@@ -123,7 +123,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-5"
                   autoCorrect="off"
                   autoComplete="off"
@@ -137,7 +137,7 @@ const EmailConfirm: React.FC = () => {
               <S.Pin>
                 <S.PinInput
                   maxLength={1}
-                  onInput={e => numberMaxLength(e)}
+                  onInput={numberMaxLength}
                   name="input-6"
                   autoCorrect="off"
                   autoComplete="off"
