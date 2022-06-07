@@ -3,11 +3,10 @@ import * as I from "../../../../Assets/index";
 import * as S from "./styled";
 
 interface GithubBtnProps {
-  state: string;
+  state: "view" | "viewOnly" | "writing";
 }
 
-const GithubBtn: React.FC<GithubBtnProps> = (props: GithubBtnProps) => {
-  const { state } = props;
+const GithubBtn: React.FC<GithubBtnProps> = ({ state }: GithubBtnProps) => {
   if (state === "view" || state === "viewOnly") {
     return (
       <S.GithubBtn>
@@ -17,25 +16,20 @@ const GithubBtn: React.FC<GithubBtnProps> = (props: GithubBtnProps) => {
       </S.GithubBtn>
     );
   }
-  if (state === "writing") {
-    return (
-      <div>
-        <div>
-          <I.GithubLogo />
-          Github 링크
-        </div>
-        <input type="URL" placeholder="링크를 입력해주세요." />
-      </div>
-    );
-  }
-  return (
-    <span className="githubLogo">
+
+  const template = (
+    <>
       <div>
         <I.GithubLogo />
         Github 링크
       </div>
       <input type="URL" placeholder="링크를 입력해주세요." />
-    </span>
+    </>
+  );
+  return state === "writing" ? (
+    <div>{template}</div>
+  ) : (
+    <span className="githubLogo">{template}</span>
   );
 };
 
