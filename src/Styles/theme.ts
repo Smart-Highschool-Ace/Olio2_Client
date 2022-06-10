@@ -1,11 +1,13 @@
-import { DefaultTheme } from "styled-components";
+import { Theme } from "@emotion/react";
 
-const whiteTheme: DefaultTheme = {
+const theme: Theme = {
   borderRadius: "5px",
   bodyWidth: "1080px",
 
   colors: {
     main: "#5A948B",
+    green: "#e9f8f6",
+    blue: "#7390c2",
     white: "#ffffff",
     black: "#3D3D3D",
   },
@@ -24,4 +26,4 @@ const whiteTheme: DefaultTheme = {
   },
 };
 
-export { whiteTheme };
+export default theme;

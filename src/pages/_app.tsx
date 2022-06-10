@@ -1,15 +1,14 @@
 import React from "react";
 import { Modal } from "Components";
 import GlobalStyle from "Styles/GlobalStyle";
-import { ThemeProvider } from "@emotion/react";
-import { Global } from "@emotion/react";
+import { Global, ThemeProvider } from "@emotion/react";
 import { ModalProvider, ModalConsumer } from "Utils/Contexts/ModalContext";
 import ModalInfo from "Utils/Models/ModalInfo";
 import client from "lib/withApollo";
 import { AppContext, AppInitialProps, AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
 import { NextComponentType } from "next";
-import { whiteTheme } from "../Styles/theme";
+import theme from "Styles/theme";
 
 const renderModals = () => {
   return (
@@ -29,7 +28,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
 }: AppProps) => {
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={whiteTheme}>
+      <ThemeProvider theme={theme}>
         <ModalProvider>
           <Global styles={GlobalStyle} />
           {/* eslint-disable react/jsx-props-no-spreading */}
