@@ -1,11 +1,8 @@
 import { css } from "@emotion/react";
 
 const GlobalStyle = css`
-  input:focus,
-  select:focus,
-  textarea:focus,
-  button:focus {
-    outline: none;
+  body {
+    font-family: "Apple SD Gothic Neo", sans-serif;
   }
 
   button {
