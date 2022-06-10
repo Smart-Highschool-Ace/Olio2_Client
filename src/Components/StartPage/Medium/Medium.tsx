@@ -2,7 +2,7 @@ import { SS, TS, WS } from "Assets";
 import React from "react";
 import * as S from "./Style";
 
-const StartPage: React.FC = () => {
+const Medium: React.FC = () => {
   return (
     <S.Positioner>
       <S.Wrapper>
@@ -46,4 +46,4 @@ const StartPage: React.FC = () => {
   );
 };
 
-export default StartPage;
+export default Medium;

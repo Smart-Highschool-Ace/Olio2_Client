@@ -1,10 +1,10 @@
 import { StartImg } from "Assets";
 import Link from "next/link";
-import path from "../../constants/path.json";
+import path from "../../../constants/path.json";
 import React from "react";
 import * as S from "./Style";
 
-const StartPage: React.FC = () => {
+const Top: React.FC = () => {
   return (
     <S.Positioner>
       <S.Wrapper>
@@ -29,4 +29,4 @@ const StartPage: React.FC = () => {
   );
 };
 
-export default StartPage;
+export default Top;

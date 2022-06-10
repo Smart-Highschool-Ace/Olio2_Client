@@ -1,21 +1,17 @@
 import styled from "@emotion/styled";
 import Head from "next/head";
 
-import {
-  Header,
-  StartPage,
-  MockupPageProject,
-  MockupPagePortfolio,
-  AboutPage,
-  LastPage,
-} from "Components";
+import { Header, StartPage } from "Components";
 import React from "react";
 
 const Wrapper = styled.div`
   background: url(/StartBackground.svg);
 `;
 
-const index: React.FC = () => {
+// TODO login token 에 따라 index page 가 바뀌어야 함
+// TODO token ? searchResultPage : StartPage
+
+const Index: React.FC = () => {
   return (
     <div>
       <Head>
@@ -25,14 +21,12 @@ const index: React.FC = () => {
 
       <Wrapper>
         <Header />
-        <StartPage />
-        <MockupPagePortfolio />
-        <MockupPageProject />
-        <AboutPage />
-        <LastPage />
+        <StartPage.Top />
+        <StartPage.Medium />
+        <StartPage.Bottom />
       </Wrapper>
     </div>
   );
 };
 
-export default index;
+export default Index;

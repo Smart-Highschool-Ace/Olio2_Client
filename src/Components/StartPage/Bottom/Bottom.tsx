@@ -1,9 +1,9 @@
 import { FinalLogo } from "Assets";
-import path from "../../constants/path.json";
+import path from "../../../constants/path.json";
 import React from "react";
 import * as S from "./Style";
 
-const StartPage: React.FC = () => {
+const Bottom: React.FC = () => {
   return (
     <S.Positioner>
       <S.Wrapper>
@@ -28,4 +28,4 @@ const StartPage: React.FC = () => {
   );
 };
 
-export default StartPage;
+export default Bottom;
