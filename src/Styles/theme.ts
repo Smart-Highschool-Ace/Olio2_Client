@@ -1,5 +1,9 @@
 import { Theme } from "@emotion/react";
 
+function pxToRem(px: number): string {
+  return `${px / 16}rem`;
+}
+
 const theme: Theme = {
   borderRadius: "5px",
   bodyWidth: "1080px",
@@ -13,16 +17,17 @@ const theme: Theme = {
   },
 
   fontSize: {
-    h1: "3.125rem",
-    h2: "1.875rem",
-    large: "1.25rem",
-    medium: "0.938rem",
-    small: "0.625rem",
+    h1: pxToRem(50),
+    h2: pxToRem(30),
+    large: pxToRem(20),
+    medium: pxToRem(15),
+    small: pxToRem(10),
   },
 
   buttonPadding: {
-    large: "1.125rem",
-    small: "0.625rem",
+    large: pxToRem(20) + pxToRem(60),
+    medium: pxToRem(15),
+    small: pxToRem(10),
   },
 };
 
