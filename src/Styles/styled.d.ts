@@ -23,6 +23,7 @@ declare module "@emotion/react" {
 
     buttonPadding: {
       large: string;
+      medium: string;
       small: string;
     };
   }
