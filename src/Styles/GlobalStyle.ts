@@ -9,6 +9,8 @@ const GlobalStyle = css`
     cursor: pointer;
     outline: none;
     border: 0;
+    font-weight: bold;
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar {
