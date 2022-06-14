@@ -25,9 +25,9 @@ const theme: Theme = {
   },
 
   buttonPadding: {
-    large: pxToRem(20) + pxToRem(60),
-    medium: pxToRem(15),
-    small: pxToRem(10),
+    large: pxToRem(20) + " " + pxToRem(60),
+    medium: pxToRem(15) + " " + pxToRem(45),
+    small: pxToRem(10) + " " + pxToRem(30),
   },
 };
 
