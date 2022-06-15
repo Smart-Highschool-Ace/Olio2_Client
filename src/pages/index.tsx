@@ -19,7 +19,7 @@ const Index: React.FC = () => {
         <title>Olio</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href={path.font_gstatic} />
-        <link href={path.josefin_font} rel="stylesheet" />
+        <link rel="stylesheet" href={path.josefin_font} />
       </Head>
 
       <Wrapper>
