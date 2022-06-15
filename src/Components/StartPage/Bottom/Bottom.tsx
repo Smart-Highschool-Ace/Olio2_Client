@@ -1,29 +1,26 @@
-import { FinalLogo } from "Assets";
-import path from "../../../constants/path.json";
 import React from "react";
+import path from "constants/path.json";
+import StartBtn from "Styles/StartBtn";
 import * as S from "./Style";
+import { FinalLogo } from "Assets";
 
 const Bottom: React.FC = () => {
   return (
     <S.Positioner>
-      <S.Wrapper>
-        <link rel="preconnect" href={path.font_gstatic} />
-        <link href={path.antd_css} rel="stylesheet"></link>
-        <S.StartOlio>
-          쉽고 간편한 포트폴리오 웹 서비스
-          <br />
+      <link rel="preconnect" href={path.font_gstatic} />
+      <link href={path.antd_css} rel="stylesheet" />
+      <S.StartSvg>
+        <FinalLogo />
+      </S.StartSvg>
+      <S.RightWrapper>
+        <S.Title>
+          <p>쉽고 간편한 포트폴리오 웹 서비스</p>
           <p>
-            <S.Apostrophe>
-              &apos; <S.Olio2>olio</S.Olio2> &apos;
-            </S.Apostrophe>
-            시작하세요
+            <S.Highlight>olio </S.Highlight> 시작하세요.
           </p>
-        </S.StartOlio>
-        <S.StartedBtn3>Let&apos;s Started</S.StartedBtn3>
-        <S.FinalLogo>
-          <FinalLogo />
-        </S.FinalLogo>
-      </S.Wrapper>
+        </S.Title>
+        <StartBtn backgroundColor={"white"}>Let&apos;s Started</StartBtn>
+      </S.RightWrapper>
     </S.Positioner>
   );
 };

@@ -1,47 +1,35 @@
 import styled from "@emotion/styled";
 
-export const Positioner = styled.div`
-  position: relative;
+export const Positioner = styled.main`
+  max-width: 1080px;
+  margin: 150px auto 0;
   display: flex;
-  width: 100%;
 `;
 
-export const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
+export const StartSvg = styled.div`
+  margin: 20% 0 0;
+  height: 40%;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
-export const StartImg = styled.span`
-  display: flex;
-  margin-top: 46.7vh;
-  margin-left: 61.45vw;
-`;
-
-export const SMH = styled.span`
-  font-family: Josefin Sans;
-  font-style: normal;
+export const SMH = styled.h1`
+  font-family: Josefin Sans, sans-serif;
   font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  color: #000000;
-  display: flex;
-  margin-left: 13vw;
-  margin-top: -54.7vh;
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
-export const SMYP = styled.span`
-  font-family: Josefin Sans;
-  font-style: normal;
+export const SMYP = styled.h1`
+  font-family: Josefin Sans, sans-serif;
   font-weight: bold;
-  font-size: 50px;
-  line-height: 50px;
-  color: #000000;
-  display: flex;
-  margin-left: 13vw;
-  margin-top: 2vh;
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
-export const Olio1 = styled.span`
+export const Highlight = styled.span`
   background: linear-gradient(
     to bottom,
     rgba(109, 173, 168, 1),
@@ -52,30 +40,7 @@ export const Olio1 = styled.span`
 `;
 
 export const Info = styled.span`
-  font-family: Apple SD Gothic Neo;
-  font-style: normal;
   font-weight: 100;
-  font-size: 25px;
-  line-height: 30px;
-  color: #000000;
-  display: flex;
-  margin-left: 13vw;
-  margin-top: 4vh;
-`;
-
-export const StartedBtn1 = styled.button`
-  width: 207px;
-  height: 69px;
-  background: #6e8783;
-  border-radius: 10px;
-  border: 0;
-  font-family: Josefin Sans;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  color: #ffffff;
-  margin-left: 13vw;
-  margin-top: 9.8vh;
+  font-size: ${({ theme }) => theme.fontSize.h2};
+  color: ${({ theme }) => theme.colors.black};
 `;
