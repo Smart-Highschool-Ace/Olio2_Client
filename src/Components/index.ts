@@ -1,9 +1,4 @@
 export { default as Header } from "./Header/Header";
-export { default as StartPage } from "./StartPage/StartPage";
-export { default as MockupPageProject } from "./MockupPage_portfolio/MockupPage_portfolio";
-export { default as MockupPagePortfolio } from "./MockupPage_project/Mockup_project";
-export { default as AboutPage } from "./AboutPage/AboutPage";
-export { default as LastPage } from "./LastPage/LastPage";
 export { default as Profile } from "./Profile/Profile";
 export { default as ProfileInfo } from "./ProfileInfo/ProfileInfo";
 export { default as ProfileModal } from "./Modal/ProfileModal/ProfileModal";
@@ -22,3 +17,4 @@ export { default as InfoModal } from "./ModalList/InfoModal/InfoModal";
 export { default as ProjectModal } from "./Project/ProjectModal/ProjectModal/ProjectModal";
 export { default as FieldChoice } from "./Project/ProjectModal/FieldChoice/FieldChoice";
 export { default as Project } from "./Project/ProjectModal/Project";
+export { default as StartPage } from "./StartPage";
