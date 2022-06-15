@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import { Header, StartPage } from "Components";
 import React from "react";
+import path from "constants/path.json";
 
 const Wrapper = styled.div`
   background: url(/StartBackground.svg);
@@ -17,6 +18,8 @@ const Index: React.FC = () => {
       <Head>
         <title>Olio</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href={path.font_gstatic} />
+        <link href={path.josefin_font} rel="stylesheet" />
       </Head>
 
       <Wrapper>
