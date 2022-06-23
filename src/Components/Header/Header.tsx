@@ -20,20 +20,21 @@ const Header: React.FC = () => {
   return (
     <S.Positioner>
       <S.ContentWrapper>
-        <S.Logo>
+        <S.Logo aria-description={"logo"}>
           <Logo height={47} />
         </S.Logo>
         <S.SearchWrapper>
-          <S.SearchButton onClick={() => alert("검색입니다!")}>
+          <S.SearchBar placeholder="검색어를 입력하세요" />
+          <S.SearchButton
+            aria-label={"검색"}
+            onClick={() => alert("검색입니다!")}
+          >
             <Search />
           </S.SearchButton>
-          <S.SearchBar placeholder="검색어를 입력하세요" />
         </S.SearchWrapper>
-        <S.AuthWrapper>
-          <button type="button" onClick={handleClickLogin}>
-            로그인
-          </button>
-        </S.AuthWrapper>
+        <S.LoginButton type="button" onClick={handleClickLogin}>
+          로그인
+        </S.LoginButton>
       </S.ContentWrapper>
     </S.Positioner>
   );

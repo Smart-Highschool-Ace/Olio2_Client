@@ -1,51 +1,47 @@
 import styled from "@emotion/styled";
 
-export const Positioner = styled.div`
-  border-bottom: 1px solid #d6d6d6;
-  background-color: #ffffff;
-  top: 0px;
-  left: 0px;
+export const Positioner = styled.header`
+  background-color: ${({ theme }) => theme.colors.white};
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 85px;
   width: 100%;
-  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.08));
+  z-index: 99;
 `;
 
 export const ContentWrapper = styled.div`
+  margin: 0 auto;
   display: flex;
-  margin: 0px auto;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 85px;
-  padding-left: 3%;
-  padding-right: 6%;
+  max-width: 1080px;
+  height: 100%;
 `;
 
-export const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const Logo = styled.h1`
   height: 100%;
-
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
 export const SearchWrapper = styled.div`
-  width: 580px;
+  width: 55%;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.5px solid;
-
   cursor: pointer;
 `;
 
-export const SearchButton = styled.div`
+export const SearchButton = styled.button`
   height: 100%;
-
   display: flex;
   align-items: center;
-  justify-content: center;
+  background: ${({ theme }) => theme.colors.white};
 `;
 
 export const SearchBar = styled.input`
@@ -53,20 +49,11 @@ export const SearchBar = styled.input`
   height: 100%;
   border: none;
   text-decoration: none;
-
-  :focus {
-    outline: none;
-  }
 `;
 
-export const AuthWrapper = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  button {
-    font-size: 17px;
-    font-weight: 100;
-    cursor: pointer;
-  }
+export const LoginButton = styled.button`
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  font-weight: 100;
+  cursor: pointer;
+  background: ${({ theme }) => theme.colors.white};
 `;
