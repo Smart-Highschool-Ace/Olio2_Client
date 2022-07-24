@@ -14,6 +14,9 @@ module.exports = withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
   },
+  images: {
+    domains: ["media.discordapp.net", "cdn.discordapp.com"],
+  },
   env: {
     GQL_ENDPOINT: process.env.NEXT_PUBLIC_API_URL,
   },
