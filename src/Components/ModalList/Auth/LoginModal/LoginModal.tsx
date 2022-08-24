@@ -8,13 +8,21 @@ import * as S from "./Style";
 import LOGIN from "lib/graphQL/login.graphql";
 import GoogleLogin from "react-google-login";
 
+interface newToken {
+  token: string;
+  error: string;
+}
+
 const LoginModal: React.FC = () => {
   const { removeModal } = useModalContext();
-  const [login, { data, error }] = useMutation(LOGIN);
+  const [login, { data, error }] = useMutation<
+    { googleToken: newToken },
+    { token: string }
+  >(LOGIN);
 
   useEffect(() => {
     if (data != null) {
-      localStorage.setItem("token", data.login.token);
+      localStorage.setItem("token", data.googleToken.token);
 
       if (!error) {
         removeModal();
@@ -25,7 +33,7 @@ const LoginModal: React.FC = () => {
 
   const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
   const responseGoogle = response => {
-    console.log(response);
+    console.log(login(response.accessToken));
   };
 
   return (
