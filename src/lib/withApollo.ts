@@ -25,8 +25,7 @@ const authLink = setContext((_, { headers }) => {
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   ssrMode: true,
   cache: new InMemoryCache(),
-  link: authLink.concat(httpLink),
-  uri: "https://smart-highschool-ace.github.io/Olio2_API/",
+  uri: "https://smart-highschool-ace.github.io/Olio2_API/graphql",
 });
 
 export default client;
