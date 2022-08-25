@@ -1,97 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
-import { gql, useMutation } from "@apollo/client";
-import useLocalForm from "hook/useLocalForm";
-import { useHandleClickModalBtn } from "hook";
+import { useMutation } from "@apollo/client";
 import AuthTemplate from "../AuthTemplate/AuthTemplate";
 import * as S from "./Style";
+import LOGIN from "lib/graphQL/login.graphql";
+import GoogleLogin from "react-google-login";
 
-const LOGIN = gql`
-  mutation LoginMutation($loginEmail: String!, $loginPassword: String!) {
-    login(email: $loginEmail, password: $loginPassword) {
-      token
-    }
-  }
-`;
+interface NewToken {
+  token: string;
+  error: string;
+}
 
 const LoginModal: React.FC = () => {
-  const [emailFocus, setEmailFocus] = useState<Boolean>(false);
-  const [passwordFocus, setPasswordFocus] = useState<Boolean>(false);
   const { removeModal } = useModalContext();
-  const [login, { data, error }] = useMutation(LOGIN);
-  const form = useLocalForm<{ loginEmail: string; loginPassword: string }>({
-    loginEmail: "",
-    loginPassword: "",
-  });
-  const { value: loginEmail, onChange: emailOnChange } =
-    form.getInputProps("loginEmail");
-  const { value: loginPassword, onChange: passwordOnChage } =
-    form.getInputProps("loginPassword");
+  const [login, { data, error }] = useMutation<
+    { login: NewToken },
+    { token: string }
+  >(LOGIN);
 
   useEffect(() => {
     if (data != null) {
       localStorage.setItem("token", data.login.token);
 
-      if (!error) {
+      if (error) {
+        alert("로그인에 실패하였습니다." + error);
+      } else {
         removeModal();
         alert("로그인 성공!");
       }
     }
   }, [data, error, removeModal]);
 
-  const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    login({ variables: form });
+  const responseGoogle = response => {
+    const googleToken = response.tokenId;
+    login({ variables: { token: googleToken } });
   };
 
   return (
     <AuthTemplate>
-      <S.LoginWrapper onSubmit={handleSubmit} noValidate>
+      <S.LoginWrapper>
         <S.Title>로그인</S.Title>
-        <S.InputWrapper focus={emailFocus}>
-          <S.FormText>이메일</S.FormText>
-          <S.Input
-            name="loginEmail"
-            onFocus={() => setEmailFocus(true)}
-            onBlur={() => setEmailFocus(false)}
-            placeholder="Email"
-            type="email"
-            value={loginEmail}
-            onChange={emailOnChange}
-          />
-        </S.InputWrapper>
-        <S.InputWrapper focus={passwordFocus}>
-          <S.FormText>비밀번호</S.FormText>
-          <S.Input
-            name="loginPassword"
-            onFocus={() => setPasswordFocus(true)}
-            onBlur={() => setPasswordFocus(false)}
-            placeholder="비밀번호"
-            type="password"
-            value={loginPassword}
-            onChange={passwordOnChage}
-          />
-        </S.InputWrapper>
-
-        <S.BottomLabel>
-          <div>
-            <input type="checkbox" id="emailSave" name="emailSave" />
-            <label htmlFor="emailSave" style={{ marginLeft: 3 }}>
-              이메일 저장하기
-            </label>
-          </div>
-          <S.LoginBtn type="submit">로그인</S.LoginBtn>
-        </S.BottomLabel>
+        <h4>학교 계정으로 로그인해주세요.</h4>
+        <br />
+        <GoogleLogin
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
+          buttonText="Google 계정으로 로그인하기"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
       </S.LoginWrapper>
-      <S.Footer>
-        <S.Item>아이디/비밀번호 찾기</S.Item>
-        <S.Item onClick={() => handleClickRegister()}>
-          아직 계정이 없으신가요?
-        </S.Item>
-      </S.Footer>
     </AuthTemplate>
   );
 };

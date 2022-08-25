@@ -5,6 +5,7 @@ import Positioner from "./Style";
 
 const MyProfileDummyData = [
   {
+    id: 1,
     name: "안채웅",
     std_no: "3109",
     school: "광주소프트웨어마이스터고등학교",
@@ -18,26 +19,31 @@ const MyProfileDummyData = [
 
 const ProjectDummyData = [
   {
+    project_id: 1,
     name: "ONDO",
     icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410920094990356/2c14918aadd67cf1.png",
     description: "감정온도 일기장",
   },
   {
+    project_id: 2,
     name: "Beansil Web",
     icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410916999725076/f820b1bb78c2919f.png",
     description: "빈실 동아리를 소개하는 웹 페이지",
   },
   {
+    project_id: 3,
     name: "DOTORI",
     icon: "https://media.discordapp.net/attachments/757847456489668659/818410913739964416/b70f35fef0db50ae.png",
     description: "기숙사 관리 웹 서비스",
   },
   {
+    project_id: 4,
     name: "olio",
     icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410921604939786/4823f246d82ec8c9.png",
     description: "포트폴리오 관리 웹사이트",
   },
   {
+    project_id: 5,
     name: "SLAT",
     icon: "https://cdn.discordapp.com/attachments/757847456489668659/818410918492504085/9f0d2771a011c69e.png",
     description: "학교생활 시간표 알림 앱 서비스",

@@ -18,7 +18,7 @@ export const Title = styled.div`
   font-weight: bold;
   font-size: 30px;
   line-height: 36px;
-  margin-bottom: 89px;
+  margin-bottom: 30px;
 
   color: #000;
 `;

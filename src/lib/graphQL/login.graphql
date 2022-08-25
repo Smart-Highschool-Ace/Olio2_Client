@@ -1,0 +1,6 @@
+mutation login($token : String!){
+  login(token : $token) {
+	  token
+    error
+  }
+}
