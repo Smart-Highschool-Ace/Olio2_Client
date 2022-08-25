@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 import { useModalContext } from "Utils/Contexts/ModalContext";
 import { useMutation } from "@apollo/client";
-import { useHandleClickModalBtn } from "hook";
 import AuthTemplate from "../AuthTemplate/AuthTemplate";
 import * as S from "./Style";
 import LOGIN from "lib/graphQL/login.graphql";
@@ -33,7 +32,6 @@ const LoginModal: React.FC = () => {
     }
   }, [data, error, removeModal]);
 
-  const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
   const responseGoogle = response => {
     const googleToken = response.tokenId;
     login({ variables: { token: googleToken } });
