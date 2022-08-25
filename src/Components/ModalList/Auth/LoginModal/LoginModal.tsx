@@ -22,9 +22,11 @@ const LoginModal: React.FC = () => {
 
   useEffect(() => {
     if (data != null) {
-      localStorage.setItem("token", data.googleToken.token);
+      localStorage.setItem("token", data.login.token);
 
-      if (!error) {
+      if (error) {
+        alert("로그인에 실패하였습니다." + error);
+      } else {
         removeModal();
         alert("로그인 성공!");
       }
@@ -33,7 +35,8 @@ const LoginModal: React.FC = () => {
 
   const handleClickRegister = useHandleClickModalBtn({ modalName: "Register" });
   const responseGoogle = response => {
-    console.log(login(response.accessToken));
+    const googleToken = response.tokenId;
+    login({ variables: { token: googleToken } });
   };
 
   return (
