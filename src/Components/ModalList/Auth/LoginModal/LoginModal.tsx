@@ -8,7 +8,7 @@ import * as S from "./Style";
 import LOGIN from "lib/graphQL/login.graphql";
 import GoogleLogin from "react-google-login";
 
-interface newToken {
+interface NewToken {
   token: string;
   error: string;
 }
@@ -16,7 +16,7 @@ interface newToken {
 const LoginModal: React.FC = () => {
   const { removeModal } = useModalContext();
   const [login, { data, error }] = useMutation<
-    { googleToken: newToken },
+    { login: NewToken },
     { token: string }
   >(LOGIN);
 
