@@ -38,12 +38,7 @@ export type ServiceType = {
   skill: string[];
 };
 
-export type ModalName =
-  | "Project"
-  | "Login"
-  | "FieldChoice"
-  | "Register"
-  | "EmailConfirm";
+export type ModalName = "Project" | "Login" | "FieldChoice";
 
 export type ModalStateType = "view" | "edit" | "writing";
 

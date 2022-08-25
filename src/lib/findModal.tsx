@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  EmailConfirm,
-  FieldChoice,
-  LoginModal,
-  ProjectModal,
-  RegisterModal,
-} from "../Components";
+import { FieldChoice, LoginModal, ProjectModal } from "../Components";
 import { ModalName, ModalStateType } from "../Utils/GlobalTypes";
 
 const findModal = (
@@ -16,8 +10,6 @@ const findModal = (
     Project: <ProjectModal state={state} />,
     Login: <LoginModal />,
     FieldChoice: <FieldChoice state={state} />,
-    Register: <RegisterModal />,
-    EmailConfirm: <EmailConfirm />,
   };
 
   return <>{findModalObject[modalName]}</>;
