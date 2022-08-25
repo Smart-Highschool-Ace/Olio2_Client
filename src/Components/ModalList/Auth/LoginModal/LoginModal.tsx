@@ -46,9 +46,7 @@ const LoginModal: React.FC = () => {
         <h4>학교 계정으로 로그인해주세요.</h4>
         <br />
         <GoogleLogin
-          clientId={
-            "13279153688-5v5k3kivecd0n9e208hq9fdcjr6fhbn1.apps.googleusercontent.com"
-          }
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
           buttonText="Google 계정으로 로그인하기"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
