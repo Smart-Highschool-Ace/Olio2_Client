@@ -1,22 +1,9 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Logo, Search } from "Assets";
-import { useModalContext } from "Utils/Contexts/ModalContext";
-import LoginModal from "Components/ModalList/Auth/LoginModal/LoginModal";
+import GoogleLoginButton from "Components/GoogleLogin/GoogleLoginButton";
 import * as S from "./Style";
 
 const Header: React.FC = () => {
-  const { addModal } = useModalContext();
-
-  const handleClickLogin = useCallback(() => {
-    addModal({
-      title: "",
-      element: <LoginModal />,
-      showOnlyBody: true,
-      width: "1150px",
-      height: "697px",
-    });
-  }, [addModal]);
-
   return (
     <S.Positioner>
       <S.ContentWrapper>
@@ -32,9 +19,7 @@ const Header: React.FC = () => {
             <Search />
           </S.SearchButton>
         </S.SearchWrapper>
-        <S.LoginButton type="button" onClick={handleClickLogin}>
-          로그인
-        </S.LoginButton>
+        <GoogleLoginButton />
       </S.ContentWrapper>
     </S.Positioner>
   );
